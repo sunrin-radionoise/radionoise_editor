@@ -20,8 +20,10 @@ d:\documents\visual studio 2017\Projects\Code_Editor\Code_Editor\bin\Debug\Socke
 d:\documents\visual studio 2017\Projects\Code_Editor\Code_Editor\bin\Debug\WebSocket4Net.dll
 d:\documents\visual studio 2017\Projects\Code_Editor\Code_Editor\bin\Debug\ICSharpCode.AvalonEdit.pdb
 d:\documents\visual studio 2017\Projects\Code_Editor\Code_Editor\bin\Debug\ICSharpCode.AvalonEdit.xml
-d:\documents\visual studio 2017\Projects\Code_Editor\Code_Editor\bin\Debug\Newtonsoft.Json.pdb
 d:\documents\visual studio 2017\Projects\Code_Editor\Code_Editor\bin\Debug\Newtonsoft.Json.xml
 d:\documents\visual studio 2017\Projects\Code_Editor\Code_Editor\bin\Debug\SocketIOClient.pdb
 d:\documents\visual studio 2017\Projects\Code_Editor\Code_Editor\bin\Debug\SocketIOClient.xml
-d:\documents\visual studio 2017\Projects\Code_Editor\Code_Editor\bin\Debug\WebSocket4Net.pdb
+d:\documents\visual studio 2017\Projects\Code_Editor\Code_Editor\bin\Debug\EngineIoClientDotNet.dll
+d:\documents\visual studio 2017\Projects\Code_Editor\Code_Editor\bin\Debug\SocketIoClientDotNet.dll
+d:\documents\visual studio 2017\Projects\Code_Editor\Code_Editor\obj\Debug\SplashScreen.g.cs
+d:\documents\visual studio 2017\Projects\Code_Editor\Code_Editor\obj\Debug\SplashScreen.baml

@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using SocketIOClient;
 using Microsoft.Win32;
+using Quobject.SocketIoClientDotNet.Client;
 
 namespace Code_Editor
 {
@@ -24,12 +25,21 @@ namespace Code_Editor
     public partial class MainWindow : Window
     {
         public SaveFileDialog sd = new SaveFileDialog();
-        Client Socket;   
+        Socket socket;   
         public MainWindow()
         {
             InitializeComponent();
             sd.Filter = "C# File|*.cs|Python File|*.py|HTML File|*.html|CSS File|*.css|JS File|*.js|C File|*.c|C++ File|*.cpp|Header File|*.h|Text File|*.txt";
             sd.Title = "저장";
+            socket = IO.Socket("http://iwin247.net:8080");
+            socket.Connect();
+            Console.WriteLine("Socket Connected");
+            socket.On("message", (data) =>
+            {
+                socket.Emit(SendTXT.Text);
+                Console.WriteLine(SendTXT.Text);
+            });
+            Console.WriteLine("Message Send");
         }
 
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
@@ -51,12 +61,17 @@ namespace Code_Editor
         private void TextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if((e.Key == Key.LeftShift || e.Key == Key.RightShift) && (e.Key == Key.Enter))
+
             {
                 SendTXT.Text += "\r\n";
             }
             else if(e.Key == Key.Enter)
             {
-
+                socket.On("message", (data) =>
+                {
+                    socket.Emit(SendTXT.Text);
+                    Console.WriteLine(SendTXT.Text);
+                });
             }
         }
 
@@ -64,6 +79,11 @@ namespace Code_Editor
         {
             
 
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            socket.Disconnect();
         }
     }
 }
