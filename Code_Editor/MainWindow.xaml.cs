@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using SocketIOClient;
+using Microsoft.Win32;
 
 namespace Code_Editor
 {
@@ -22,18 +23,13 @@ namespace Code_Editor
     /// </summary>
     public partial class MainWindow : Window
     {
+        public SaveFileDialog sd = new SaveFileDialog();
         Client Socket;   
         public MainWindow()
         {
             InitializeComponent();
-            try
-            {
-                Socket = new Client("http://iwin247.net:8080");
-            }
-            catch (Exception)
-            {
-                Socket = null;
-            }
+            sd.Filter = "C# File|*.cs|Python File|*.py|HTML File|*.html|CSS File|*.css|JS File|*.js|C File|*.c|C++ File|*.cpp|Header File|*.h|Text File|*.txt";
+            sd.Title = "저장";
         }
 
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
@@ -62,6 +58,12 @@ namespace Code_Editor
             {
 
             }
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            
+
         }
     }
 }
