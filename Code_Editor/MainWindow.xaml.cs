@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using SocketIOClient;
 using Microsoft.Win32;
 using Quobject.SocketIoClientDotNet.Client;
+using System.Timers;
 
 namespace Code_Editor
 {
@@ -25,21 +26,29 @@ namespace Code_Editor
     public partial class MainWindow : Window
     {
         public SaveFileDialog sd = new SaveFileDialog();
-        Socket socket;   
+        string recTXT;
+        Timer timer;
+        Socket socket = IO.Socket("http://iwin247.net:8080/");
+        //Socket socket;   
         public MainWindow()
         {
+            
             InitializeComponent();
             sd.Filter = "C# File|*.cs|Python File|*.py|HTML File|*.html|CSS File|*.css|JS File|*.js|C File|*.c|C++ File|*.cpp|Header File|*.h|Text File|*.txt";
             sd.Title = "저장";
-            socket = IO.Socket("http://iwin247.net:8080");
-            socket.Connect();
-            Console.WriteLine("Socket Connected");
-            socket.On("message", (data) =>
-            {
-                socket.Emit(SendTXT.Text);
-                Console.WriteLine(SendTXT.Text);
+            socket.On(Socket.EVENT_CONNECT, () => {
+
             });
-            Console.WriteLine("Message Send");
+            socket.On("message", (msg) => {
+                Console.WriteLine(msg);
+            });
+            socket.Connect();
+            //Console.WriteLine("Message Send");
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+
         }
 
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
@@ -60,18 +69,12 @@ namespace Code_Editor
 
         private void TextBox_KeyDown(object sender, KeyEventArgs e)
         {
-            if((e.Key == Key.LeftShift || e.Key == Key.RightShift) && (e.Key == Key.Enter))
-
+            if(e.Key == Key.Enter)
             {
-                SendTXT.Text += "\r\n";
-            }
-            else if(e.Key == Key.Enter)
-            {
-                socket.On("message", (data) =>
-                {
-                    socket.Emit(SendTXT.Text);
-                    Console.WriteLine(SendTXT.Text);
-                });
+                //var socket = IO.Socket("http://iwin247.net:8080/");
+                //socket.On("message", (msg) => { socket.Emit("Test"); Console.WriteLine("send"); });
+                socket.Emit("message", SendTXT.Text);
+                SendTXT.Text = "";
             }
         }
 
@@ -83,7 +86,7 @@ namespace Code_Editor
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            socket.Disconnect();
+            //socket.Disconnect();
         }
     }
 }

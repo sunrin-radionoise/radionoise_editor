@@ -41,7 +41,7 @@
                 </TabItem.Background>
                 <Grid Background="#FF3F3F46">
                     <TextBox x:Name="SendTXT" TextWrapping="Wrap" Text="Send Messages" Height="23" VerticalAlignment="Bottom" Background="#FF252526" BorderBrush="#FF252526" Foreground="White" KeyDown="TextBox_KeyDown"/>
-                    <TextBox x:Name="Message" TextWrapping="Wrap" Text="Messages" Margin="0,0,0,23" Background="#FF252526" BorderBrush="#FF252526" Foreground="White"/>
+                    <TextBox x:Name="Message" TextWrapping="Wrap" Text="" Margin="0,0,0,23" Background="#FF252526" BorderBrush="#FF252526" Foreground="White"/>
                 </Grid>
             </TabItem>
         </TabControl>
