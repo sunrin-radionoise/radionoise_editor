@@ -15,7 +15,8 @@ using System.Windows.Shapes;
 using SocketIOClient;
 using Microsoft.Win32;
 using Quobject.SocketIoClientDotNet.Client;
-using System.Timers;
+using System.Threading;
+using System.Windows.Threading;
 
 namespace Code_Editor
 {
@@ -27,13 +28,17 @@ namespace Code_Editor
     {
         public SaveFileDialog sd = new SaveFileDialog();
         string recTXT;
-        Timer timer;
+        DispatcherTimer timer = new DispatcherTimer();
         Socket socket = IO.Socket("http://iwin247.net:8080/");
         //Socket socket;   
         public MainWindow()
         {
             
             InitializeComponent();
+            timer.Interval = TimeSpan.FromSeconds(0.1f);
+
+            timer.Tick += new EventHandler(Timer_Tick);
+            timer.Start();
             sd.Filter = "C# File|*.cs|Python File|*.py|HTML File|*.html|CSS File|*.css|JS File|*.js|C File|*.c|C++ File|*.cpp|Header File|*.h|Text File|*.txt";
             sd.Title = "저장";
             socket.On(Socket.EVENT_CONNECT, () => {
@@ -41,6 +46,7 @@ namespace Code_Editor
             });
             socket.On("message", (msg) => {
                 Console.WriteLine(msg);
+                recTXT += (msg + "\r\n");
             });
             socket.Connect();
             //Console.WriteLine("Message Send");
@@ -48,7 +54,7 @@ namespace Code_Editor
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-
+            Message.Text = recTXT;
         }
 
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
@@ -71,10 +77,9 @@ namespace Code_Editor
         {
             if(e.Key == Key.Enter)
             {
-                //var socket = IO.Socket("http://iwin247.net:8080/");
-                //socket.On("message", (msg) => { socket.Emit("Test"); Console.WriteLine("send"); });
-                socket.Emit("message", SendTXT.Text);
-                SendTXT.Text = "";
+                recTXT += ("me : \r\n");
+                socket.Emit("message", SendTXT.Text); //Socket으로 메세지를 보낸다.
+                SendTXT.Text = ""; //메세지를 보냈으니 초기화
             }
         }
 
@@ -87,6 +92,19 @@ namespace Code_Editor
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             //socket.Disconnect();
+        }
+
+        private void CodeEditor_KeyDown(object sender, KeyEventArgs e)
+        {
+            /*
+             * Key가 '{'이고 그 다음 Enter가 눌린다면 Tab을 추가해줘야 한다?
+             * '}'가 나오면 Tab을 하나 줄여줘야 한다? 
+             */
+        }
+
+        private void oppoCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

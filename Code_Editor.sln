@@ -5,9 +5,7 @@ VisualStudioVersion = 15.0.26014.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Code_Editor", "Code_Editor\Code_Editor.csproj", "{8E00CAE2-EB40-4945-8FE1-9EEF4E7E1487}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wpfeditor", "..\wpfeditor\wpfeditor\wpfeditor.csproj", "{54FEB91B-545E-42CE-8481-430707F6A604}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICSharpCode.AvalonEdit", "..\..\..\..\Desktop\AvalonEdit_4.3.1_Source\ICSharpCode.AvalonEdit\ICSharpCode.AvalonEdit.csproj", "{6C55B776-26D4-4DB3-A6AB-87E783B2F3D1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICSharpCode.AvalonEdit", "ICSharpCode.AvalonEdit\ICSharpCode.AvalonEdit.csproj", "{6C55B776-26D4-4DB3-A6AB-87E783B2F3D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +17,6 @@ Global
 		{8E00CAE2-EB40-4945-8FE1-9EEF4E7E1487}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E00CAE2-EB40-4945-8FE1-9EEF4E7E1487}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E00CAE2-EB40-4945-8FE1-9EEF4E7E1487}.Release|Any CPU.Build.0 = Release|Any CPU
-		{54FEB91B-545E-42CE-8481-430707F6A604}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{54FEB91B-545E-42CE-8481-430707F6A604}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{54FEB91B-545E-42CE-8481-430707F6A604}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{54FEB91B-545E-42CE-8481-430707F6A604}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6C55B776-26D4-4DB3-A6AB-87E783B2F3D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6C55B776-26D4-4DB3-A6AB-87E783B2F3D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C55B776-26D4-4DB3-A6AB-87E783B2F3D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
