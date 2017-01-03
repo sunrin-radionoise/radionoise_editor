@@ -159,10 +159,8 @@ namespace ICSharpCode.AvalonEdit
 		/// </summary>
 		protected virtual void OnOptionChanged(PropertyChangedEventArgs e)
 		{
-			if (OptionChanged != null) {
-				OptionChanged(this, e);
-			}
-		}
+            OptionChanged?.Invoke(this, e);
+        }
 		
 		static void OnOptionsChanged(DependencyObject dp, DependencyPropertyChangedEventArgs e)
 		{
@@ -733,20 +731,16 @@ namespace ICSharpCode.AvalonEdit
 		public bool CanUndo {
 			get { return CanExecute(ApplicationCommands.Undo); }
 		}
-		
-		/// <summary>
-		/// Gets the vertical size of the document.
-		/// </summary>
-		public double ExtentHeight {
-			get {
-				return scrollViewer != null ? scrollViewer.ExtentHeight : 0;
-			}
-		}
-		
-		/// <summary>
-		/// Gets the horizontal size of the current document region.
-		/// </summary>
-		public double ExtentWidth {
+
+        /// <summary>
+        /// Gets the vertical size of the document.
+        /// </summary>
+        public double ExtentHeight => scrollViewer != null ? scrollViewer.ExtentHeight : 0;
+
+        /// <summary>
+        /// Gets the horizontal size of the current document region.
+        /// </summary>
+        public double ExtentWidth {
 			get {
 				return scrollViewer != null ? scrollViewer.ExtentWidth : 0;
 			}

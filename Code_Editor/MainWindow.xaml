@@ -4,9 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Code_Editor"
-        xmlns:wpfeditor="clr-namespace:wpfeditor;assembly=wpfeditor" xmlns:avalonedit="http://icsharpcode.net/sharpdevelop/avalonedit" x:Class="Code_Editor.MainWindow"
+        xmlns:avalonedit="http://icsharpcode.net/sharpdevelop/avalonedit" x:Class="Code_Editor.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="364.833" Width="788" SizeChanged="Window_SizeChanged" Closing="Window_Closing">
+        Title="MainWindow" Height="384.478" Width="680.421" SizeChanged="Window_SizeChanged" Closing="Window_Closing">
     <Window.Resources>
         <Style TargetType="{x:Type Paragraph}">
             <Setter Property="Margin" Value="0"/>
@@ -47,7 +47,7 @@
                             <RowDefinition Height="27"/>
                         </Grid.RowDefinitions>
                         <ComboBox x:Name="oppoCombo" Grid.RowSpan="1" Background="#FF252526" BorderBrush="#FF252526" SelectionChanged="oppoCombo_SelectionChanged">
-                            
+
                         </ComboBox>
                         <TextBox Grid.RowSpan="2" x:Name="Message" TextWrapping="Wrap" Text="" Background="#FF252526" BorderBrush="#FF252526" Foreground="White" Grid.Row="1"/>
                         <TextBox Grid.RowSpan="3" x:Name="SendTXT" TextWrapping="Wrap" Text="Send Messages" Background="#FF252526" BorderBrush="#FF252526" Foreground="White" KeyDown="TextBox_KeyDown" Margin="0,4,0,0" Grid.Row="2"/>
