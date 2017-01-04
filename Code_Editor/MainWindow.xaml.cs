@@ -26,6 +26,7 @@ namespace Code_Editor
     /// </summary>
     public partial class MainWindow : Window
     {
+        OpponentManager _OpponentManager = new OpponentManager();
         public SaveFileDialog sd = new SaveFileDialog();
         string recTXT;
         DispatcherTimer timer = new DispatcherTimer();
@@ -33,17 +34,14 @@ namespace Code_Editor
         //Socket socket;   
         public MainWindow()
         {
-            
             InitializeComponent();
+            _OpponentManager.Init_Oppo();
             timer.Interval = TimeSpan.FromSeconds(0.1f);
-
             timer.Tick += new EventHandler(Timer_Tick);
             timer.Start();
             sd.Filter = "C# File|*.cs|Python File|*.py|HTML File|*.html|CSS File|*.css|JS File|*.js|C File|*.c|C++ File|*.cpp|Header File|*.h|Text File|*.txt";
             sd.Title = "저장";
-            socket.On(Socket.EVENT_CONNECT, () => {
-
-            });
+            socket.On(Socket.EVENT_CONNECT, () => {});
             socket.On("message", (msg) => {
                 Console.WriteLine(msg);
                 recTXT += (msg + "\r\n");
@@ -92,6 +90,7 @@ namespace Code_Editor
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             //socket.Disconnect();
+            _OpponentManager.Save_Oppo();
         }
 
         private void CodeEditor_KeyDown(object sender, KeyEventArgs e)
