@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Code_Editor
 {
@@ -72,6 +75,21 @@ namespace Code_Editor
             catch(Exception)
             {
                 return false;
+            }
+        }
+
+        public void Init_Oppo()
+        {
+            //현재 프로세스가 실행되는 폴더(프로그램 실행폴더)의 경로를 가져온다.
+            string oppo_path = System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\Chat.settings";
+            string content;
+            string[] temp_oppo;
+            var sr = new StreamReader(oppo_path);
+            content = sr.ReadToEnd();
+            temp_oppo = content.Split(new string[] { "\n", "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+            foreach(string tmp in temp_oppo)
+            {
+                Opponent.Add(tmp);
             }
         }
     }
