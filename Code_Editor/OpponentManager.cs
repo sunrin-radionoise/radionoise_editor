@@ -16,6 +16,7 @@ namespace Code_Editor
         /// Chatting Opponent를 담은 List입니다.
         /// </summary>
         public static List<string> Opponent;
+        private static string oppo_path = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\Chat.settings";
         /// <summary>
         /// 대화 상대를 추가합니다.
         /// </summary>
@@ -77,20 +78,35 @@ namespace Code_Editor
                 return false;
             }
         }
-
+        /// <summary>
+        /// Opponent 초기화 작업. Opponent 사용하고싶으면 먼저 호출해주어야 한다.
+        /// </summary>
         public void Init_Oppo()
         {
             //현재 프로세스가 실행되는 폴더(프로그램 실행폴더)의 경로를 가져온다.
-            string oppo_path = System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\Chat.settings";
             string content;
             string[] temp_oppo;
             var sr = new StreamReader(oppo_path);
             content = sr.ReadToEnd();
+            sr.Close();
             temp_oppo = content.Split(new string[] { "\n", "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
             foreach(string tmp in temp_oppo)
             {
                 Opponent.Add(tmp);
             }
+        }
+        /// <summary>
+        /// Opponent를 Chat.settings에 저장한다.
+        /// 종료할 때 호출해 주어야 한다.
+        /// </summary>
+        public void Save_Oppo()
+        {
+            var sw = new StreamWriter(oppo_path);
+            foreach(string tmp in Opponent)
+            {
+                sw.WriteLine(tmp);
+            }
+            sw.Close();
         }
     }
 }
