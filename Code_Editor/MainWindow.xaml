@@ -13,7 +13,7 @@
         </Style>
     </Window.Resources>
 
-    <Grid Margin="0,0,0,0" Background="#FF252526">
+    <Grid Margin="0,0,0,0" Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="18"/>
             <RowDefinition/>
@@ -72,10 +72,13 @@
                     <MenuItem Header="_Undo" />
                     <MenuItem Header="_Redo" />
                 </MenuItem>
+                <MenuItem Header="_Tools">
+                    <MenuItem Header="_Settings"></MenuItem>
+                </MenuItem>
             </Menu>
         </Grid>
 
-        <avalonedit:TextEditor ShowLineNumbers="True" SyntaxHighlighting="C#" Name="CodeEditor" FontFamily="Consolas" Padding="2,0,0,0" Grid.Column="1" Grid.Row="1" Background="#FF252526" Foreground="White" KeyDown="CodeEditor_KeyDown" TextInput="CodeEditor_TextInput" PreviewTextInput="CodeEditor_PreviewTextInput"/>
+        <avalonedit:TextEditor ShowLineNumbers="True" SyntaxHighlighting="C#" Name="CodeEditor" FontFamily="Consolas" Padding="2,0,0,0" Grid.Column="1" Grid.Row="1" Background="Transparent" Foreground="White" KeyDown="CodeEditor_KeyDown" TextInput="CodeEditor_TextInput" PreviewTextInput="CodeEditor_PreviewTextInput"/>
 
     </Grid>
 </Window>

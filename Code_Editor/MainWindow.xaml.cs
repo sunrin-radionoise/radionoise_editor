@@ -38,6 +38,7 @@ namespace Code_Editor
             _OpponentManager.Init_Oppo();
             _Opponent = _OpponentManager.Get_Oppo();
             oppoCombo.ItemsSource = _Opponent;
+            oppoCombo.Items.Add("New Opponent");
             timer.Interval = TimeSpan.FromSeconds(0.1f);
             timer.Tick += new EventHandler(Timer_Tick);
             timer.Start();
