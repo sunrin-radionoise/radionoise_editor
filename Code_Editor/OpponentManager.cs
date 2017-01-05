@@ -15,7 +15,7 @@ namespace Code_Editor
         /// <summary>
         /// Chatting Opponent를 담은 List입니다.
         /// </summary>
-        public static List<string> Opponent;
+        public static List<string> Opponent = new List<string> { "",};
         private static string oppo_path = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\Chat.settings";
         /// <summary>
         /// 대화 상대를 추가합니다.

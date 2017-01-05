@@ -31,11 +31,13 @@ namespace Code_Editor
         string recTXT;
         DispatcherTimer timer = new DispatcherTimer();
         Socket socket = IO.Socket("http://iwin247.net:8080/");
-        //Socket socket;   
+        List<string> _Opponent;
         public MainWindow()
         {
             InitializeComponent();
             _OpponentManager.Init_Oppo();
+            _Opponent = _OpponentManager.Get_Oppo();
+            oppoCombo.ItemsSource = _Opponent;
             timer.Interval = TimeSpan.FromSeconds(0.1f);
             timer.Tick += new EventHandler(Timer_Tick);
             timer.Start();
@@ -81,9 +83,9 @@ namespace Code_Editor
             }
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        private void NewItem_Click(object sender, RoutedEventArgs e)
         {
-            
+
 
         }
 
@@ -99,10 +101,26 @@ namespace Code_Editor
              * Key가 '{'이고 그 다음 Enter가 눌린다면 Tab을 추가해줘야 한다?
              * '}'가 나오면 Tab을 하나 줄여줘야 한다? 
              */
+
         }
 
         private void oppoCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+
+        }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CodeEditor_TextInput(object sender, TextCompositionEventArgs e)
+        {
+            
+        }
+
+        private void CodeEditor_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        { 
 
         }
     }

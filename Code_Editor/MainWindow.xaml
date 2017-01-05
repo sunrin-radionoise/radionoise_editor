@@ -59,7 +59,7 @@
         <Grid Grid.ColumnSpan="2" Background="#FF3F3F46">
             <Menu DockPanel.Dock="Top">
                 <MenuItem Header="_File">
-                    <MenuItem Header="_New" Click="MenuItem_Click" />
+                    <MenuItem Header="_New" Click="NewItem_Click" />
                     <MenuItem Header="_Open" />
                     <MenuItem Header="_Save" />
                     <Separator />
@@ -75,7 +75,7 @@
             </Menu>
         </Grid>
 
-        <avalonedit:TextEditor ShowLineNumbers="True" SyntaxHighlighting="C#" Name="CodeEditor" FontFamily="Consolas" Padding="2,0,0,0" Grid.Column="1" Grid.Row="1" Background="#FF252526" Foreground="White" KeyDown="CodeEditor_KeyDown"/>
+        <avalonedit:TextEditor ShowLineNumbers="True" SyntaxHighlighting="C#" Name="CodeEditor" FontFamily="Consolas" Padding="2,0,0,0" Grid.Column="1" Grid.Row="1" Background="#FF252526" Foreground="White" KeyDown="CodeEditor_KeyDown" TextInput="CodeEditor_TextInput" PreviewTextInput="CodeEditor_PreviewTextInput"/>
 
     </Grid>
 </Window>
