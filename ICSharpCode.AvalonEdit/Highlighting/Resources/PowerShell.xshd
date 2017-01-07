@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0"?>
 <SyntaxDefinition name="PowerShell" extensions=".ps1;.psm1;.psd1" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
 	<Color name="Comment" foreground="Green" exampleText="// comment" />
-	<Color name="String" foreground="#FF569CD6" exampleText="string text = &quot;Hello, World!&quot;"/>
+	<Color name="String" foreground="Brown" exampleText="string text = &quot;Hello, World!&quot;"/>
 	<Color name="Char" foreground="Magenta" exampleText="char linefeed = '\n';"/>
 	<Color name="Punctuation" exampleText="a(b.c);" />
 	<Color name="NumberLiteral" foreground="#FF569CD6" exampleText="3.1415f"/>

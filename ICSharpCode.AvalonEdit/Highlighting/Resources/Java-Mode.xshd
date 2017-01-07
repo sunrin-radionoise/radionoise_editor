@@ -16,12 +16,12 @@
   <Color name="ValueTypes" foreground="Red" fontWeight="bold" />
   <Color name="ReferenceTypes" foreground="#FF569CD6" />
   <Color name="Void" foreground="#FF569CD6" />
-  <Color name="JumpStatements" foreground="Navy" />
+  <Color name="JumpStatements" foreground="#FF569CD6" />
   <Color name="Modifiers" foreground="Brown" />
   <Color name="AccessModifiers" foreground="#FF569CD6" fontWeight="bold" />
   <Color name="Package" foreground="Green" fontWeight="bold" />
   <Color name="Literals" foreground="#FFFFFFFF" fontWeight="bold" />
-  <Color name="CommentTags" foreground="Red" fontWeight="bold" fontStyle="italic" />
+  <Color name="CommentTags" foreground="#FF569CD6" fontWeight="bold" fontStyle="italic" />
   <Color name="JavaDocTags" foreground="#FFCCCCCC" fontWeight="bold" fontStyle="italic" />
   <RuleSet ignoreCase="false">
     <Rule color="Punctuation">
