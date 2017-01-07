@@ -3,7 +3,7 @@
 
 <SyntaxDefinition name = "TeX" extensions = ".tex">
 	
-	<Digits   name = "Digits" bold = "false" italic = "false" color = "Black"/>
+	<Digits   name = "Digits" bold = "false" italic = "false" color = "White"/>
 	
 	<RuleSets>
 		<RuleSet ignorecase = "false">
@@ -13,7 +13,7 @@
 				<Begin>%</Begin>
 			</Span>
 			
-			<Span name = "MathMode" rule = "MathMode" bold = "false" italic = "false" color = "Black" stopateol = "false">
+			<Span name = "MathMode" rule = "MathMode" bold = "false" italic = "false" color = "White" stopateol = "false">
 				<Begin>$$</Begin>
 				<End>$$</End>
 			</Span>

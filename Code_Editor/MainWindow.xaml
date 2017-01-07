@@ -22,7 +22,7 @@
             <ColumnDefinition Width="107*"/>
             <ColumnDefinition Width="410*"/>
         </Grid.ColumnDefinitions>
-        <Image Grid.Column="1" Grid.Row="1" Source="Resources/pre_back.png" Stretch="Fill"/>
+       <!-- <Image Grid.Column="1" Grid.Row="1" Source="Resources/pre_back.png" Stretch="Fill"/> -->
 
         <TabControl TabStripPlacement="Bottom" Grid.Row="2" Background="#FF3E3E40" BorderBrush="#FF3F3F46">
             <TabItem Header="Proj" Margin="0,0,-17,0" HorizontalAlignment="Left" Width="50" BorderBrush="#FF3F3F46" Foreground="White">

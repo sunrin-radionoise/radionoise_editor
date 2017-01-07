@@ -2,7 +2,7 @@
 <!-- syntaxdefinition for JavaScript 2.0 by Svante Lidman -->
 <!-- converted to AvalonEdit format by Siegfried Pammer in 2010 -->
 <SyntaxDefinition name="JavaScript" extensions=".js" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
-	<Color name="Digits" foreground="DarkBlue" />
+	<Color name="Digits" foreground="Blue" />
 	<Color name="Comment" foreground="Green" />
 	<Color name="String" foreground="Sienna" />
 	<Color name="Character" foreground="Sienna" />
