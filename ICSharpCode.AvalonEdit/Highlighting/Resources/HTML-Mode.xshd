@@ -9,13 +9,13 @@
 	<Color name="JScriptTag" foreground="#FFD89333" exampleText="&lt;script lang=&quot;JScript&quot;&gt;Response.Write(&quot;Hello World!&quot;);&lt;/script&gt;" />
 	<Color name="VBScriptTag" foreground="#FFD89333" exampleText="&lt;script lang=&quot;VBScript&quot;&gt;Response.Write(&quot;Hello World!&quot;)&lt;/script&gt;" />
 	<Color name="UnknownScriptTag" foreground="#FFD89333" exampleText="&lt;script la&gt;alert('Hello World!');&lt;/script&gt;" />
-	<Color name="HtmlTag" foreground="#FF118CFF" exampleText="&lt;html&gt;Hello World!/html&gt;" />
-	<Color name="Tags" foreground="#FF118CFF" exampleText="&lt;html&gt;Hello World! &lt;test /&gt;&lt;/html&gt;" />
+	<Color name="HtmlTag" foreground="#FF569CD6" exampleText="&lt;html&gt;Hello World!/html&gt;" />
+	<Color name="Tags" foreground="#FF569CD6" exampleText="&lt;html&gt;Hello World! &lt;test /&gt;&lt;/html&gt;" />
 	<Color name="Attributes" foreground="#FF85A333" exampleText="&lt;html background='green'&gt;Hello World! &lt;test /&gt;&lt;/html&gt;" />
-	<Color name="Slash" foreground="DarkMagenta" exampleText="&lt;html background='green'&gt;Hello World! &lt;test /&gt;&lt;/html&gt;" />
+	<Color name="Slash" foreground="#FF569CD6" exampleText="&lt;html background='green'&gt;Hello World! &lt;test /&gt;&lt;/html&gt;" />
 	<Color name="Assignment" foreground="Blue" exampleText="&lt;html background='green'&gt;Hello World! &lt;test /&gt;&lt;/html&gt;" />
-	<Color name="String" foreground="#FFD89333" exampleText="&lt;html background='green'&gt;Hello World! &lt;test /&gt;&lt;/html&gt;" />
-	<Color name="EntityReference" foreground="Blue" exampleText="&lt;html background='green'&gt;Hello&amp;nbsp;World! &lt;test /&gt;&lt;/html&gt;" />
+	<Color name="String" foreground="Brown" exampleText="&lt;html background='green'&gt;Hello World! &lt;test /&gt;&lt;/html&gt;" />
+	<Color name="EntityReference" foreground="#FF569CD6" exampleText="&lt;html background='green'&gt;Hello&amp;nbsp;World! &lt;test /&gt;&lt;/html&gt;" />
 	<Color name="Entities" foreground="#FFFF0080" exampleText="&lt;html background='green'&gt;Hello&amp;nbsp;World! &lt;test /&gt;&lt;/html&gt;" />
 	<Color name="UnknownAttribute" foreground="#FF85A333" exampleText="&lt;html foo='bar' background='green'&gt;Hello&amp;nbsp;World! &lt;test /&gt;&lt;/html&gt;" />
 	<RuleSet ignoreCase="true">

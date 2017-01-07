@@ -4,24 +4,24 @@
 <SyntaxDefinition name="C++" extensions=".c;.h;.cc;.cpp;.hpp" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
 	<Color name="Comment" foreground="Green" />
 	<Color name="Character" foreground="Fuchsia" />
-	<Color name="String" foreground="Fuchsia" />
+	<Color name="String" foreground="Brown" />
 	<Color name="Preprocessor" foreground="Green" />
 	<Color name="Punctuation" foreground="#FF009900" />
 	<Color name="MethodName" foreground="MidnightBlue" fontWeight="bold" />
-	<Color name="Digits" foreground="Blue" />
-	<Color name="CompoundKeywords" foreground="#FFFFFFFF" fontWeight="bold" />
-	<Color name="This" foreground="#FFADD8E6" fontWeight="bold" />
+	<Color name="Digits" foreground="#FF569CD6" />
+	<Color name="CompoundKeywords" foreground="#FF569CD6" fontWeight="bold" />
+	<Color name="This" foreground="#FF569CD6" fontWeight="bold" />
 	<Color name="Operators" foreground="#FF00CECE" fontWeight="bold" />
-	<Color name="Namespace" foreground="#FF008000" fontWeight="bold" />
+	<Color name="Namespace" foreground="#FF569CD6" fontWeight="bold" />
 	<Color name="Friend" foreground="#FFFC1616" />
-	<Color name="Modifiers" foreground="#FF0000FF" fontWeight="bold" />
-	<Color name="TypeKeywords" foreground="#FFFF0000" />
-	<Color name="BooleanConstants" foreground="#FFFFFFFF" fontWeight="bold" />
-	<Color name="Keywords" foreground="#FF0000FF" fontWeight="bold" />
-	<Color name="LoopKeywords" foreground="#FF0000FF" fontWeight="bold" />
-	<Color name="JumpKeywords" foreground="#FF000080" />
-	<Color name="ExceptionHandling" foreground="#FF008080" fontWeight="bold" />
-	<Color name="ControlFlow" foreground="#FF0000FF" fontWeight="bold" />
+	<Color name="Modifiers" foreground="#FF569CD6" fontWeight="bold" />
+	<Color name="TypeKeywords" foreground="#FF569CD6" />
+	<Color name="BooleanConstants" foreground="#FF569CD6" fontWeight="bold" />
+	<Color name="Keywords" foreground="#FF569CD6" fontWeight="bold" />
+	<Color name="LoopKeywords" foreground="#FF569CD6" fontWeight="bold" />
+	<Color name="JumpKeywords" foreground="#FF569CD6" />
+	<Color name="ExceptionHandling" foreground="#FF569CD6" fontWeight="bold" />
+	<Color name="ControlFlow" foreground="#FF569CD6" fontWeight="bold" />
 	<RuleSet ignoreCase="false">
 		<Rule color="Punctuation">
 		[?,.;()\[\]{}+\-/%*&lt;&gt;^=~!&amp;]+

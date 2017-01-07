@@ -78,7 +78,7 @@
             </Menu>
         </Grid>
 
-        <avalonedit:TextEditor ShowLineNumbers="True" SyntaxHighlighting="C++" x:Name="CodeEditor" FontFamily="Consolas" Padding="2,0,0,0" Grid.Column="1" Grid.Row="1" Foreground="White" KeyDown="CodeEditor_KeyDown" TextInput="CodeEditor_TextInput" PreviewTextInput="CodeEditor_PreviewTextInput">
+        <avalonedit:TextEditor ShowLineNumbers="True" SyntaxHighlighting="HTML" x:Name="CodeEditor" FontFamily="Consolas" Padding="2,0,0,0" Grid.Column="1" Grid.Row="1" Foreground="White" KeyDown="CodeEditor_KeyDown" TextInput="CodeEditor_TextInput" PreviewTextInput="CodeEditor_PreviewTextInput">
             <avalonedit:TextEditor.Background>
                 <ImageBrush/>
             </avalonedit:TextEditor.Background>

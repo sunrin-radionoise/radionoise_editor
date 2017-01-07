@@ -1,11 +1,11 @@
 <SyntaxDefinition name="XML" extensions=".xml;.xsl;.xslt;.xsd;.manifest;.config;.addin;.xshd;.wxs;.wxi;.wxl;.proj;.csproj;.vbproj;.ilproj;.booproj;.build;.xfrm;.targets;.xaml;.xpt;.xft;.map;.wsdl;.disco;.ps1xml;.nuspec" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
 	<Color foreground="Green" name="Comment" exampleText="&lt;!-- comment --&gt;" />
-	<Color foreground="Blue" name="CData" exampleText="&lt;![CDATA[data]]&gt;" />
+	<Color foreground="#FF569CD6" name="CData" exampleText="&lt;![CDATA[data]]&gt;" />
 	<Color foreground="White" name="DocType" exampleText="&lt;!DOCTYPE rootElement&gt;" />
-	<Color foreground="Blue" name="XmlDeclaration" exampleText='&lt;?xml version="1.0"?&gt;' />
+	<Color foreground="#FF569CD6" name="XmlDeclaration" exampleText='&lt;?xml version="1.0"?&gt;' />
 	<Color foreground="Magenta" name="XmlTag" exampleText='&lt;tag attribute="value" /&gt;' />
 	<Color foreground="Red" name="AttributeName" exampleText='&lt;tag attribute="value" /&gt;' />
-	<Color foreground="Blue" name="AttributeValue" exampleText='&lt;tag attribute="value" /&gt;' />
+	<Color foreground="#FF569CD6" name="AttributeValue" exampleText='&lt;tag attribute="value" /&gt;' />
 	<Color foreground="Green" name="Entity" exampleText="index.aspx?a=1&amp;amp;b=2" />
 	<Color foreground="Olive" name="BrokenEntity" exampleText="index.aspx?a=1&amp;b=2" />
 	
