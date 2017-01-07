@@ -37,8 +37,9 @@ namespace Code_Editor
             InitializeComponent();
             _OpponentManager.Init_Oppo();
             _Opponent = _OpponentManager.Get_Oppo();
+            _Opponent.Add("New Opponent");
             oppoCombo.ItemsSource = _Opponent;
-            oppoCombo.Items.Add("New Opponent");
+            
             timer.Interval = TimeSpan.FromSeconds(0.1f);
             timer.Tick += new EventHandler(Timer_Tick);
             timer.Start();
@@ -107,7 +108,14 @@ namespace Code_Editor
 
         private void oppoCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if(oppoCombo.SelectedValue.ToString() == "New Opponent") //새 대화상대 추가 요청시
+            {
 
+            }
+            else //아닐 경우 소켓을 열어줘야 한다.
+            {
+
+            }
         }
 
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
