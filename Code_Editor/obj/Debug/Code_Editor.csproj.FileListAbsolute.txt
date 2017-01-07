@@ -56,3 +56,32 @@ D:\Documents\Visual Studio 2017\Projects\radionoise_editor\Code_Editor\obj\Debug
 D:\Documents\Visual Studio 2017\Projects\radionoise_editor\Code_Editor\obj\Debug\Code_Editor.pdb
 D:\Documents\Visual Studio 2017\Projects\radionoise_editor\Code_Editor\obj\Debug\Settings.g.cs
 D:\Documents\Visual Studio 2017\Projects\radionoise_editor\Code_Editor\obj\Debug\Settings.baml
+C:\Users\Administrator\Desktop\개발파일\Radionoise_Editor\radionoise_editor\Code_Editor\bin\Debug\Code_Editor.exe.config
+C:\Users\Administrator\Desktop\개발파일\Radionoise_Editor\radionoise_editor\Code_Editor\obj\Debug\Code_Editor.exe
+C:\Users\Administrator\Desktop\개발파일\Radionoise_Editor\radionoise_editor\Code_Editor\obj\Debug\Code_Editor.pdb
+C:\Users\Administrator\Desktop\개발파일\Radionoise_Editor\radionoise_editor\Code_Editor\bin\Debug\Code_Editor.exe
+C:\Users\Administrator\Desktop\개발파일\Radionoise_Editor\radionoise_editor\Code_Editor\bin\Debug\Code_Editor.pdb
+C:\Users\Administrator\Desktop\개발파일\Radionoise_Editor\radionoise_editor\Code_Editor\bin\Debug\EngineIoClientDotNet.dll
+C:\Users\Administrator\Desktop\개발파일\Radionoise_Editor\radionoise_editor\Code_Editor\bin\Debug\ICSharpCode.AvalonEdit.dll
+C:\Users\Administrator\Desktop\개발파일\Radionoise_Editor\radionoise_editor\Code_Editor\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Administrator\Desktop\개발파일\Radionoise_Editor\radionoise_editor\Code_Editor\bin\Debug\SocketIOClient.dll
+C:\Users\Administrator\Desktop\개발파일\Radionoise_Editor\radionoise_editor\Code_Editor\bin\Debug\SocketIoClientDotNet.dll
+C:\Users\Administrator\Desktop\개발파일\Radionoise_Editor\radionoise_editor\Code_Editor\bin\Debug\WebSocket4Net.dll
+C:\Users\Administrator\Desktop\개발파일\Radionoise_Editor\radionoise_editor\Code_Editor\bin\Debug\ICSharpCode.AvalonEdit.pdb
+C:\Users\Administrator\Desktop\개발파일\Radionoise_Editor\radionoise_editor\Code_Editor\bin\Debug\ICSharpCode.AvalonEdit.xml
+C:\Users\Administrator\Desktop\개발파일\Radionoise_Editor\radionoise_editor\Code_Editor\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Administrator\Desktop\개발파일\Radionoise_Editor\radionoise_editor\Code_Editor\bin\Debug\SocketIOClient.pdb
+C:\Users\Administrator\Desktop\개발파일\Radionoise_Editor\radionoise_editor\Code_Editor\bin\Debug\SocketIOClient.xml
+C:\Users\Administrator\Desktop\개발파일\Radionoise_Editor\radionoise_editor\Code_Editor\obj\Debug\Code_Editor.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\개발파일\Radionoise_Editor\radionoise_editor\Code_Editor\obj\Debug\MainWindow.g.cs
+C:\Users\Administrator\Desktop\개발파일\Radionoise_Editor\radionoise_editor\Code_Editor\obj\Debug\Settings.g.cs
+C:\Users\Administrator\Desktop\개발파일\Radionoise_Editor\radionoise_editor\Code_Editor\obj\Debug\SplashScreen.g.cs
+C:\Users\Administrator\Desktop\개발파일\Radionoise_Editor\radionoise_editor\Code_Editor\obj\Debug\App.g.cs
+C:\Users\Administrator\Desktop\개발파일\Radionoise_Editor\radionoise_editor\Code_Editor\obj\Debug\Code_Editor_MarkupCompile.cache
+C:\Users\Administrator\Desktop\개발파일\Radionoise_Editor\radionoise_editor\Code_Editor\obj\Debug\Code_Editor_MarkupCompile.lref
+C:\Users\Administrator\Desktop\개발파일\Radionoise_Editor\radionoise_editor\Code_Editor\obj\Debug\MainWindow.baml
+C:\Users\Administrator\Desktop\개발파일\Radionoise_Editor\radionoise_editor\Code_Editor\obj\Debug\Settings.baml
+C:\Users\Administrator\Desktop\개발파일\Radionoise_Editor\radionoise_editor\Code_Editor\obj\Debug\SplashScreen.baml
+C:\Users\Administrator\Desktop\개발파일\Radionoise_Editor\radionoise_editor\Code_Editor\obj\Debug\Code_Editor.g.resources
+C:\Users\Administrator\Desktop\개발파일\Radionoise_Editor\radionoise_editor\Code_Editor\obj\Debug\Code_Editor.Properties.Resources.resources
+C:\Users\Administrator\Desktop\개발파일\Radionoise_Editor\radionoise_editor\Code_Editor\obj\Debug\Code_Editor.csproj.GenerateResource.Cache

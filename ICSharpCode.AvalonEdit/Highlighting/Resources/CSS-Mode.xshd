@@ -6,8 +6,8 @@
 	<Color name="Property" foreground="Red"/>
 	<Color name="Value" foreground="Blue" />
 	<Color name="Default" foreground="Pink" />
-	<Color name="CurlyBraces" foreground="#FFFFFF" />
-	<Color name="Colon" foreground="#FFFFFF" />
+	<Color name="CurlyBraces" foreground="#FFFFFFFF" />
+	<Color name="Colon" foreground="#FFFFFFFF" />
 	<RuleSet ignoreCase="true">
 		<Span color="Comment" multiline="true">
 			<Begin>/\*</Begin>

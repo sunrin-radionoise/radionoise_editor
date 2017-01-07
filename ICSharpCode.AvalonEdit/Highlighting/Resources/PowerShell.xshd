@@ -6,7 +6,7 @@
 	<Color name="Punctuation" exampleText="a(b.c);" />
 	<Color name="NumberLiteral" foreground="Blue" exampleText="3.1415f"/>
 	<Color name="Keywords" fontWeight="bold" foreground="Blue" exampleText="if (a)"/>
-	<Color name="Variable" foreground="red" exampleText="$param = 1" />
+	<Color name="Variable" foreground="Red" exampleText="$param = 1" />
 	<Color name="ExceptionKeywords" fontWeight="bold" foreground="Teal" />
 	<Color name="GotoKeywords" foreground="Blue" />
 	<Color name="ReferenceTypes" foreground="Red" />

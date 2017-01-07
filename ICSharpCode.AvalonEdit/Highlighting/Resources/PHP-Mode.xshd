@@ -3,7 +3,7 @@
 <!-- converted to AvalonEdit format by Siegfried Pammer in 2010 -->
 <SyntaxDefinition name ="PHP" extensions = ".php" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
 	<Color name="Comment" foreground="Green" exampleText="// comment" />
-	<Color name="String" foreground="#FF8B00" exampleText="$text = &quot;Hello, World!&quot;" />
+	<Color name="String" foreground="#FFFF8B00" exampleText="$text = &quot;Hello, World!&quot;" />
 	<Color name="NumberLiteral" foreground="Blue" exampleText="3.1415" />
 	<Color name="Punctuation" foreground="Green" exampleText="a(b + c)" />
 	<Color name="FunctionCall" foreground="MidnightBlue" fontWeight="bold" exampleText="abs(num);"/>

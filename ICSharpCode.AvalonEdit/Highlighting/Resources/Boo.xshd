@@ -1,6 +1,6 @@
 ﻿<SyntaxDefinition name="Boo" extensions=".boo" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
-	<Color name="Comment" foreground="Green" />
-	<Color name="String" foreground="Blue" />
+	<Color name="Comment" foreground="#FF0000FF" />
+	<Color name="String" foreground="#FF0000FF" />
 	<Color name="Regex" foreground="#FFFF6600" />
 	<RuleSet>
 		<Span color="Comment" multiline="true">
@@ -45,11 +45,11 @@
 			<Begin>/\S+/</Begin>
 			<End></End> <!-- end immediately after Begin -->
 		</Span>
-		<Keywords foreground="Black" fontWeight="bold">
+		<Keywords foreground="White" fontWeight="bold">
 			<Word>self</Word>
 			<Word>super</Word>
 		</Keywords>
-		<Keywords foreground="DarkCyan" fontWeight="bold">
+		<Keywords foreground="Cyan" fontWeight="bold">
 			<Word>is</Word>
 			<Word>isa</Word>
 			<Word>and</Word>
@@ -130,7 +130,7 @@
 			<Word>private</Word>
 			<Word>internal</Word>
 		</Keywords>
-		<Keywords foreground="Green" fontWeight="bold">
+		<Keywords foreground="#FF0000FF" fontWeight="bold">
 			<Word>namespace</Word>
 			<Word>import</Word>
 			<Word>from</Word>
@@ -139,7 +139,7 @@
 			<Word>get</Word>
 			<Word>set</Word>
 		</Keywords>
-		<Keywords foreground="Black" fontWeight="bold">
+		<Keywords foreground="White" fontWeight="bold">
 			<Word>null</Word>
 			<Word>value</Word>
 			<Word>true</Word>
@@ -197,7 +197,7 @@
 		<Rule foreground="DarkBlue">\b0[xX][0-9a-fA-F]+|(\b\d+(\.[0-9]+)?|\.[0-9]+)([eE][+-]?[0-9]+)?</Rule>
 	</RuleSet>
 	<RuleSet name="comments set">
-		<!-- allows nested /**/ comments, coloring them Green/Teal alternately -->
+		<!-- allows nested /**/ comments, coloring them #FF0000FF/Teal alternately -->
 		<Span foreground="Teal" multiline="true">
 			<Begin>/\*</Begin>
 			<End>\*/</End>
