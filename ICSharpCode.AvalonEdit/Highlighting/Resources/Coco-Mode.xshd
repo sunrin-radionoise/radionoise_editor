@@ -4,7 +4,7 @@
 <SyntaxDefinition name="Coco" extensions=".atg" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
 	<Color name="Comment" foreground="Green" fontStyle="italic" />
 	<Color name="Punctuation" foreground="#FFFFFFFF" fontWeight="bold" />
-	<Color name="Keywords" foreground="#FF0000FF" fontWeight="bold" />
+	<Color name="Keywords" foreground="#FF569CD6" fontWeight="bold" />
 	<Color name="String" foreground="#FFFF8C00" />
 	<RuleSet ignoreCase="false">
 		<Rule color="Punctuation">

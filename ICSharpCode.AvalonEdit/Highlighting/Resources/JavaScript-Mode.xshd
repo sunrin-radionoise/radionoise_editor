@@ -4,13 +4,13 @@
 <SyntaxDefinition name="JavaScript" extensions=".js" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
 	<Color name="Digits" foreground="Blue" />
 	<Color name="Comment" foreground="Green" />
-	<Color name="String" foreground="Sienna" />
+	<Color name="String" foreground="Brown" />
 	<Color name="Character" foreground="Sienna" />
 	<Color name="Regex" foreground="Sienna" />
-	<Color name="JavaScriptKeyWords" foreground="Blue" />
-	<Color name="JavaScriptIntrinsics" foreground="Blue" />
-	<Color name="JavaScriptLiterals" foreground="Blue" />
-	<Color name="JavaScriptGlobalFunctions" foreground="Blue" />
+	<Color name="JavaScriptKeyWords" foreground="#FF569CD6" />
+	<Color name="JavaScriptIntrinsics" foreground="#FF569CD6" />
+	<Color name="JavaScriptLiterals" foreground="#FF569CD6" />
+	<Color name="JavaScriptGlobalFunctions" foreground="#FF569CD6" />
 	<RuleSet ignoreCase="false">
 		<Keywords color="JavaScriptKeyWords">
 			<Word>break</Word>

@@ -5,7 +5,7 @@
 	<Color name="StrongEmphasis" fontWeight="bold" exampleText="**this** is more important!" />
 	<Color name="Code" exampleText="this is `int.GetHashCode()`" />
 	<Color name="BlockQuote" foreground="DarkBlue" exampleText="&gt; This is a\r\n&gt; quote." />
-	<Color name="Link" foreground="Blue" exampleText="[text](http://example.com)" />
+	<Color name="Link" foreground="#FF569CD6" exampleText="[text](http://example.com)" />
 	<Color name="Image" foreground="Green" exampleText="[text][http://example.com/test.png]" />
 	<Color name="LineBreak" background="LightGray" exampleText="end of line      \r\n2nd line   " />
 	
