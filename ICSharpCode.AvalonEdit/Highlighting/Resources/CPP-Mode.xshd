@@ -4,7 +4,7 @@
 <SyntaxDefinition name="C++" extensions=".c;.h;.cc;.cpp;.hpp" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
 	<Color name="Comment" foreground="Green" />
 	<Color name="Character" foreground="Fuchsia" />
-	<Color name="String" foreground="Fuchsia" />
+	<Color name="String" foreground="Brown" />
 	<Color name="Preprocessor" foreground="Green" />
 	<Color name="Punctuation" foreground="#FF009900" />
 	<Color name="MethodName" foreground="MidnightBlue" fontWeight="bold" />
