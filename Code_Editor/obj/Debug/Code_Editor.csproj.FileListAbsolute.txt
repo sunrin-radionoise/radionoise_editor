@@ -85,3 +85,5 @@ C:\Users\Administrator\Desktop\개발파일\Radionoise_Editor\radionoise_editor\
 C:\Users\Administrator\Desktop\개발파일\Radionoise_Editor\radionoise_editor\Code_Editor\obj\Debug\Code_Editor.g.resources
 C:\Users\Administrator\Desktop\개발파일\Radionoise_Editor\radionoise_editor\Code_Editor\obj\Debug\Code_Editor.Properties.Resources.resources
 C:\Users\Administrator\Desktop\개발파일\Radionoise_Editor\radionoise_editor\Code_Editor\obj\Debug\Code_Editor.csproj.GenerateResource.Cache
+D:\Documents\Visual Studio 2017\Projects\radionoise_editor\Code_Editor\obj\Debug\LoginWindow.g.cs
+D:\Documents\Visual Studio 2017\Projects\radionoise_editor\Code_Editor\obj\Debug\LoginWindow.baml

@@ -1,0 +1,20 @@
+﻿<Window x:Class="Code_Editor.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Code_Editor"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        Title="LoginWindow" Height="450" Width="800" ResizeMode="NoResize">
+    <Window.Resources>
+        
+    </Window.Resources>
+    <Grid>
+        <TextBox HorizontalAlignment="Center" Height="23" Margin="340,167,340,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Center" Height="23" Margin="340,195,340,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Login" HorizontalAlignment="Center" Margin="210,122,210,104" VerticalAlignment="Center" Width="120" Height="22"/>
+        <Button Content="Register" HorizontalAlignment="Center" Margin="210,150,210,76" VerticalAlignment="Center" Width="120" Height="22"/>
+
+    </Grid>
+</Window>
