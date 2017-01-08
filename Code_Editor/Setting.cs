@@ -11,9 +11,10 @@ namespace Code_Editor
         /* TODO : Add Setting Field
          * Font
          * Background Image
-         * Background Color
          * Account
-         * 
          */
+        public static string Font { get; set; }
+        public static string BackImage { get; set; }
+        public static string Account { get; set; }
     }
 }
