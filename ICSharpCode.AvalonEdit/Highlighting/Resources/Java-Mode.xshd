@@ -2,27 +2,27 @@
 <!-- syntaxdefinition for Java 2001 by Jonathan Pierce & Mike Krueger -->
 <!-- converted to AvalonEdit format by Siegfried Pammer in 2010 -->
 <SyntaxDefinition name="Java" extensions=".java" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
-  <Color name="MethodName" foreground="Blue" />
-  <Color name="Digits" foreground="Blue" fontStyle="italic" />
-  <Color name="String" foreground="Magenta"  />
+  <Color name="MethodName" foreground="#FF569CD6" />
+  <Color name="Digits" foreground="#FF569CD6" fontStyle="italic" />
+  <Color name="String" foreground="Brown"  />
   <Color name="Character" foreground="Magenta"  />
   <Color name="Comment" foreground="Green" />
-  <Color name="Punctuation" foreground="#49FF49" />
-  <Color name="AccessKeywords" foreground="#FFFFFF" fontWeight="bold" />
+  <Color name="Punctuation" foreground="#FF49FF49" />
+  <Color name="AccessKeywords" foreground="#FFFFFFFF" fontWeight="bold" />
   <Color name="OperatorKeywords" foreground="Cyan" fontWeight="bold" />
-  <Color name="SelectionStatements" foreground="Blue" fontWeight="bold" />
-  <Color name="IterationStatements" foreground="Blue" fontWeight="bold" />
+  <Color name="SelectionStatements" foreground="#FF569CD6" fontWeight="bold" />
+  <Color name="IterationStatements" foreground="#FF569CD6" fontWeight="bold" />
   <Color name="ExceptionHandlingStatements" foreground="Teal" fontWeight="bold" />
   <Color name="ValueTypes" foreground="Red" fontWeight="bold" />
-  <Color name="ReferenceTypes" foreground="Red" />
-  <Color name="Void" foreground="Red" />
-  <Color name="JumpStatements" foreground="Navy" />
+  <Color name="ReferenceTypes" foreground="#FF569CD6" />
+  <Color name="Void" foreground="#FF569CD6" />
+  <Color name="JumpStatements" foreground="#FF569CD6" />
   <Color name="Modifiers" foreground="Brown" />
-  <Color name="AccessModifiers" foreground="Blue" fontWeight="bold" />
+  <Color name="AccessModifiers" foreground="#FF569CD6" fontWeight="bold" />
   <Color name="Package" foreground="Green" fontWeight="bold" />
-  <Color name="Literals" foreground="#FFFFFF" fontWeight="bold" />
-  <Color name="CommentTags" foreground="Red" fontWeight="bold" fontStyle="italic" />
-  <Color name="JavaDocTags" foreground="#cccccc" fontWeight="bold" fontStyle="italic" />
+  <Color name="Literals" foreground="#FFFFFFFF" fontWeight="bold" />
+  <Color name="CommentTags" foreground="#FF569CD6" fontWeight="bold" fontStyle="italic" />
+  <Color name="JavaDocTags" foreground="#FFCCCCCC" fontWeight="bold" fontStyle="italic" />
   <RuleSet ignoreCase="false">
     <Rule color="Punctuation">
       [?,.()\[\]{}+\-/%*&lt;&gt;^!|]+

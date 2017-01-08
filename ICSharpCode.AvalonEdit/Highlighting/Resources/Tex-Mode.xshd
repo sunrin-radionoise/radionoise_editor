@@ -17,7 +17,7 @@
 				<Begin>$$</Begin>
 				<End>$$</End>
 			</Span>
-			<Span name = "LatexMathMode" rule = "MathMode" bold = "false" italic = "false" color = "Black" stopateol = "false">
+			<Span name = "LatexMathMode" rule = "MathMode" bold = "false" italic = "false" color = "White" stopateol = "false">
 				<Begin>\[</Begin>
 				<End>\]</End>
 			</Span>

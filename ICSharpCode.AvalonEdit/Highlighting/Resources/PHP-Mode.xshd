@@ -3,18 +3,18 @@
 <!-- converted to AvalonEdit format by Siegfried Pammer in 2010 -->
 <SyntaxDefinition name ="PHP" extensions = ".php" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
 	<Color name="Comment" foreground="Green" exampleText="// comment" />
-	<Color name="String" foreground="#FF8B00" exampleText="$text = &quot;Hello, World!&quot;" />
-	<Color name="NumberLiteral" foreground="Blue" exampleText="3.1415" />
+	<Color name="String" foreground="Brown" exampleText="$text = &quot;Hello, World!&quot;" />
+	<Color name="NumberLiteral" foreground="#FF569CD6" exampleText="3.1415" />
 	<Color name="Punctuation" foreground="Green" exampleText="a(b + c)" />
 	<Color name="FunctionCall" foreground="MidnightBlue" fontWeight="bold" exampleText="abs(num);"/>
-	<Color name="AccessKeywords" foreground="Black" fontWeight="bold" exampleText="global $database;" />
-	<Color name="OperatorKeywords" foreground="Cyan" fontWeight="bold" exampleText="if (x === false and y === false) { }" />
-	<Color name="SelectionStatements" foreground="Blue" fontWeight="bold" exampleText="if (true) { } else { }" />
-	<Color name="IterationStatements" foreground="Blue" fontWeight="bold" exampleText="while (true) { }" />
-	<Color name="JumpStatements" foreground="Navy" fontWeight="bold" exampleText="if (x == 5) continue;" />
+	<Color name="AccessKeywords" foreground="#FF569CD6" fontWeight="bold" exampleText="global $database;" />
+	<Color name="OperatorKeywords" foreground="#FF569CD6" fontWeight="bold" exampleText="if (x === false and y === false) { }" />
+	<Color name="SelectionStatements" foreground="#FF569CD6" fontWeight="bold" exampleText="if (true) { } else { }" />
+	<Color name="IterationStatements" foreground="#FF569CD6" fontWeight="bold" exampleText="while (true) { }" />
+	<Color name="JumpStatements" foreground="#FF569CD6" fontWeight="bold" exampleText="if (x == 5) continue;" />
 	<Color name="ControlStatements" foreground="Teal" fontWeight="bold" exampleText="include(&quot;test.php&quot;);" />
-	<Color name="ValueTypes" foreground="Red" fontWeight="bold" exampleText="int test = 5;" />
-	<Color name="OtherTypes" foreground="Red" exampleText="object test = null;" />
+	<Color name="ValueTypes" foreground="#FF569CD6" fontWeight="bold" exampleText="int test = 5;" />
+	<Color name="OtherTypes" foreground="#FF569CD6" exampleText="object test = null;" />
 	<Color name="AccessModifiers" foreground="Blue" fontWeight="bold" exampleText="public function test() {}" />
 	<RuleSet>
 		<Span color="Comment">

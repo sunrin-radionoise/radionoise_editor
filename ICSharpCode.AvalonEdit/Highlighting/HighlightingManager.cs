@@ -124,7 +124,13 @@ namespace ICSharpCode.AvalonEdit.Highlighting
 		/// Returns null if the definition is not found.
 		/// </summary>
 		public IHighlightingDefinition GetDefinition(string name)
-		{
+		{ //I think you have some problem. and i can solve it.
+            //you are currnetly running VS 2015. right?
+            //ya
+            //So, I'm using VS 2017, C# 7.0 -> You are using C# 6.0
+            //Revision needed.
+            //how to do it?
+            //just install VS 2017
 			lock (lockObj) {
                 if (highlightingsByName.TryGetValue(name, out var rh))
 					return rh;

@@ -9,14 +9,14 @@
 	<Color name="Comment" foreground="Green" exampleText="' comment" />
 	<Color name="String" exampleText="text = &quot;Hello, World!&quot;" />
 	
-	<Color name="DateLiteral" foreground="Blue" exampleText="endOfWorld = #2012-12-21#" />
+	<Color name="DateLiteral" foreground="#FF569CD6" exampleText="endOfWorld = #2012-12-21#" />
 	<Color name="Preprocessor" foreground="Red" exampleText="#Region &quot;Title&quot;" />
 	<Color name="DataTypes" foreground="#FFFF006b" exampleText="Dim b As Boolean = True" />
 	<Color name="Operators" foreground="#FF8515EA" exampleText="If a OrElse b Then"/>
-	<Color name="Constants" foreground="Blue" exampleText="b = False" />
-	<Color name="Keywords" foreground="Blue" exampleText="If a OrElse b Then" />
-	<Color name="FunctionKeywords" foreground="Blue" exampleText="CInt(a)" />
-	<Color name="ContextKeywords" foreground="Blue" exampleText="Declare Unicode Sub SomeMethod" />
+	<Color name="Constants" foreground="#FF569CD6" exampleText="b = False" />
+	<Color name="Keywords" foreground="#FF569CD6" exampleText="If a OrElse b Then" />
+	<Color name="FunctionKeywords" foreground="#FF569CD6" exampleText="CInt(a)" />
+	<Color name="ContextKeywords" foreground="#FF569CD6" exampleText="Declare Unicode Sub SomeMethod" />
 	
 	<Property name="DocCommentMarker" value="'''" />
 	

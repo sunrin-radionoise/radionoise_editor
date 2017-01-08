@@ -3,9 +3,9 @@
 <!-- converted to AvalonEdit format by Siegfried Pammer in 2010 -->
 <SyntaxDefinition name="Coco" extensions=".atg" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
 	<Color name="Comment" foreground="Green" fontStyle="italic" />
-	<Color name="Punctuation" foreground="#FF000000" fontWeight="bold" />
-	<Color name="Keywords" foreground="#FF0000FF" fontWeight="bold" />
-	<Color name="String" foreground="#FFFF8c00" />
+	<Color name="Punctuation" foreground="#FFFFFFFF" fontWeight="bold" />
+	<Color name="Keywords" foreground="#FF569CD6" fontWeight="bold" />
+	<Color name="String" foreground="#FFFF8C00" />
 	<RuleSet ignoreCase="false">
 		<Rule color="Punctuation">
 			[{}\(\)\[\]|+\-=\.]+
@@ -38,7 +38,7 @@
 			<Begin>/\*</Begin>
 			<End>\*/</End>
 		</Span>
-		<Span foreground="Black" ruleSet="CSharp" multiline="true">
+		<Span foreground="White" ruleSet="CSharp" multiline="true">
 			<Begin color="Keywords">COMPILER</Begin>
 			<End color="Keywords">TOKENNAMES</End>
 		</Span>
@@ -50,9 +50,9 @@
 			<Begin>'</Begin>
 			<End>'</End>
 		</Span>
-		<Span foreground="#FF000000" ruleSet="ParamList">
-			<Begin foreground="#FF000000" fontWeight="bold">&lt;</Begin>
-			<End foreground="#FF000000" fontWeight="bold">&gt;</End>
+		<Span foreground="#FFFFFFFF" ruleSet="ParamList">
+			<Begin foreground="#FFFFFFFF" fontWeight="bold">&lt;</Begin>
+			<End foreground="#FFFFFFFF" fontWeight="bold">&gt;</End>
 		</Span>
 		<Span foreground="#FF2F4F4F" fontWeight="normal" fontStyle="normal" ruleSet="CSharp" multiline="true">
 			<Begin foreground="#FF008000" fontWeight="bold" fontStyle="italic">\(\.</Begin>
