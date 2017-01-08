@@ -13,7 +13,7 @@
         </Style>
     </Window.Resources>
 
-    <Grid Margin="0,0,0,0" Background="White">
+    <Grid Margin="0,0,0,0" Background="#FF3F3F46">
         <Grid.RowDefinitions>
             <RowDefinition Height="18"/>
             <RowDefinition/>
@@ -22,7 +22,7 @@
             <ColumnDefinition Width="107*"/>
             <ColumnDefinition Width="410*"/>
         </Grid.ColumnDefinitions>
-       <Image Grid.Column="1" Grid.Row="1" Source="Resources/pre_back.png" Stretch="Fill"/> 
+       
 
         <TabControl TabStripPlacement="Bottom" Grid.Row="2" Background="#FF3E3E40" BorderBrush="#FF3F3F46">
             <TabItem Header="Proj" Margin="0,0,-17,0" HorizontalAlignment="Left" Width="50" BorderBrush="#FF3F3F46" Foreground="White">
@@ -57,30 +57,28 @@
         </TabControl>
 
         <Grid Grid.ColumnSpan="2" Background="#FF3F3F46">
-            <Menu DockPanel.Dock="Top">
-                <MenuItem Header="_File">
-                    <MenuItem Header="_New" Click="NewItem_Click" />
-                    <MenuItem Header="_Open" />
-                    <MenuItem Header="_Save" />
-                    <Separator />
-                    <MenuItem Header="_Exit" />
+            <Menu DockPanel.Dock="Top" Background="#FF252526">
+                <MenuItem Header="_File" Foreground="White" Background="#FF252526" BorderBrush="#FF252526">
+                    <MenuItem x:Name="New" Header="_New" Click="NewItem_Click" Background="#FF252526" BorderBrush="#FF252526" />
+                    <MenuItem x:Name="Open" Header="_Open" Background="#FF252526" BorderBrush="#FF252526"/>
+                    <MenuItem x:Name="Save" Header="_Save" Background="#FF252526" BorderBrush="#FF252526"/>
+                    <MenuItem x:Name="Exit" Header="_Exit" Background="#FF252526" BorderBrush="#FF252526"/>
                 </MenuItem>
-                <MenuItem Header="_Edit">
-                    <MenuItem Header="_Cut" />
-                    <MenuItem Header="_Paste" />
-                    <Separator />
-                    <MenuItem Header="_Undo" />
-                    <MenuItem Header="_Redo" />
+                <MenuItem Header="_Edit" Foreground="White" Background="#FF252526">
+                    <MenuItem x:Name="Cut" Header="_Cut" Background="#FF252526" BorderBrush="#FF252526" />
+                    <MenuItem x:Name="Paste" Header="_Paste" Background="#FF252526" BorderBrush="#FF252526" />
+                    <MenuItem x:Name="Undo" Header="_Undo" Background="#FF252526"  BorderBrush="#FF252526"/>
+                    <MenuItem x:Name="Redo" Header="_Redo" Background="#FF252526" BorderBrush="#FF252526" />
                 </MenuItem>
-                <MenuItem Header="_Tools">
-                    <MenuItem Header="_Settings"/>
+                <MenuItem Header="_Tools" Foreground="White">
+                    <MenuItem x:Name="Settings" Header="_Settings" Background="#FF252526" BorderBrush="#FF252526" />
                 </MenuItem>
             </Menu>
         </Grid>
 
         <avalonedit:TextEditor ShowLineNumbers="True" SyntaxHighlighting="HTML" x:Name="CodeEditor" FontFamily="Consolas" Padding="2,0,0,0" Grid.Column="1" Grid.Row="1" Foreground="White" KeyDown="CodeEditor_KeyDown" TextInput="CodeEditor_TextInput" PreviewTextInput="CodeEditor_PreviewTextInput">
             <avalonedit:TextEditor.Background>
-                <ImageBrush/>
+                <ImageBrush ImageSource="Resources/pre_back.png"/>
             </avalonedit:TextEditor.Background>
         </avalonedit:TextEditor>
 

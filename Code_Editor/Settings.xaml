@@ -20,9 +20,11 @@
             </TabItem>
             <TabItem Header="Background">
                 <Grid Background="#FFE5E5E5">
-                    <Label Content="Select Image Source" Margin="10,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="137"/>
+                    <Label Content="Select Image Source" Margin="10,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="121"/>
                     <Label Content="Image Path" Margin="136,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="88"/>
                     <Button Content="Select" Margin="0,13,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75"/>
+                    <ComboBox HorizontalAlignment="Left" Margin="136,38,0,0" VerticalAlignment="Top" Width="238"/>
+                    <Label Content="Image Stretch" Margin="10,36,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="121"/>
                 </Grid>
             </TabItem>
         </TabControl>
