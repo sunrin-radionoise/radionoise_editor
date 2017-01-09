@@ -131,11 +131,12 @@ namespace Code_Editor
         {
             Settings set = new Settings();
             set.ShowDialog();
-
+            _SettingManager.Save_Setting();
             //Setter
             if (Setting.Color)
             {
-
+                var colorBrush = new SolidColorBrush(Color.FromArgb(255, 37, 37, 38));
+                CodeEditor.Background = colorBrush;
             }
             else
             {
@@ -150,10 +151,11 @@ namespace Code_Editor
 
         private void digFont_Click(object sender, RoutedEventArgs e)
         {
-            var fontDig = new System.Windows.Forms.FontDialog();
-            fontDig.ShowColor = false;
-            fontDig.ShowEffects = false;
-
+            var fontDig = new System.Windows.Forms.FontDialog()
+            {
+                ShowColor = false,
+                ShowEffects = false
+            };
             System.Drawing.Font memFont;
             if (fontDig.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {

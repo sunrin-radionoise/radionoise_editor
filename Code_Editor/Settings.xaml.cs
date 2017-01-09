@@ -26,6 +26,7 @@ namespace Code_Editor
 
         private void SettingDialog_Loaded(object sender, RoutedEventArgs e)
         {
+            lblpath.Content = Setting.ImagePath;
             if (Setting.Color)
                 chkColor.IsChecked = true;
             else
@@ -37,6 +38,10 @@ namespace Code_Editor
             /*
              * 설정 동기화를 변경함. Setting.Sync 옵션을 변경해 줌.
              */
+            if (Setting.Sync)
+                Setting.Sync = false;
+            else
+                Setting.Sync = true;
         }
 
         private void chkColor_Checked(object sender, RoutedEventArgs e)
@@ -64,8 +69,14 @@ namespace Code_Editor
             if(digOpen.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 Setting.ImagePath = digOpen.FileName;
+                lblpath.Content = Setting.ImagePath;
                 Setting.Color = false;
             }
+        }
+
+        private void SettingDialog_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            
         }
     }
 }
