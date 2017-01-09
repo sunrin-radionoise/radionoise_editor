@@ -20,7 +20,7 @@ using System.Windows.Threading;
 
 namespace Code_Editor
 {
-    
+
     /// <summary>
     /// MainWindow.xaml에 대한 상호 작용 논리
     /// </summary>
@@ -47,8 +47,9 @@ namespace Code_Editor
             timer.Start();
             sd.Filter = "C# File|*.cs|Python File|*.py|HTML File|*.html|CSS File|*.css|JS File|*.js|C File|*.c|C++ File|*.cpp|Header File|*.h|Text File|*.txt";
             sd.Title = "저장";
-            socket.On(Socket.EVENT_CONNECT, () => {});
-            socket.On("message", (msg) => {
+            socket.On(Socket.EVENT_CONNECT, () => { });
+            socket.On("message", (msg) =>
+            {
                 Console.WriteLine(msg);
                 recTXT += (msg + "\r\n");
             });
@@ -68,7 +69,7 @@ namespace Code_Editor
 
         private void TextBox_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.Key == Key.Enter)
+            if (e.Key == Key.Enter)
             {
                 recTXT += ("me : \r\n");
                 socket.Emit("message", SendTXT.Text); //Socket으로 메세지를 보낸다.
@@ -106,7 +107,7 @@ namespace Code_Editor
 
         private void oppoCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if(oppoCombo.SelectedValue.ToString() == "New Opponent") //새 대화상대 추가 요청시
+            if (oppoCombo.SelectedValue.ToString() == "New Opponent") //새 대화상대 추가 요청시
             {
 
             }
@@ -118,11 +119,11 @@ namespace Code_Editor
 
         private void CodeEditor_TextInput(object sender, TextCompositionEventArgs e)
         {
-            
+
         }
 
         private void CodeEditor_PreviewTextInput(object sender, TextCompositionEventArgs e)
-        { 
+        {
 
         }
 
@@ -130,7 +131,21 @@ namespace Code_Editor
         {
             Settings set = new Settings();
             set.ShowDialog();
-            
+
+            //Setter
+            if (Setting.Color)
+            {
+
+            }
+            else
+            {
+                var imgBrush = new ImageBrush()
+                {
+                    ImageSource = new BitmapImage(new Uri(Setting.ImagePath, UriKind.RelativeOrAbsolute))
+                };
+                CodeEditor.Background = imgBrush;
+            }
+
         }
 
         private void digFont_Click(object sender, RoutedEventArgs e)
@@ -140,7 +155,7 @@ namespace Code_Editor
             fontDig.ShowEffects = false;
 
             System.Drawing.Font memFont;
-            if(fontDig.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (fontDig.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 memFont = fontDig.Font;
                 CodeEditor.FontFamily = new FontFamily(memFont.Name);

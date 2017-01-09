@@ -26,7 +26,10 @@ namespace Code_Editor
 
         private void SettingDialog_Loaded(object sender, RoutedEventArgs e)
         {
-            
+            if (Setting.Color)
+                chkColor.IsChecked = true;
+            else
+                chkColor.IsChecked = false;
         }
 
         private void btnSync_Click(object sender, RoutedEventArgs e)
@@ -41,6 +44,10 @@ namespace Code_Editor
             /*
              * 체크되면 Color를 사용한다는 거니까 MainWindow의 CodeEditor에 반영되도록 Setting.Color를 True로 설정해준다.
              */
+            if (Convert.ToBoolean(chkColor.IsChecked))
+                Setting.Color = true;
+            else
+                Setting.Color = false;
         }
 
         private void btnImage_Click(object sender, RoutedEventArgs e)
@@ -57,6 +64,7 @@ namespace Code_Editor
             if(digOpen.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 Setting.ImagePath = digOpen.FileName;
+                Setting.Color = false;
             }
         }
     }
