@@ -27,6 +27,7 @@ namespace Code_Editor
     public partial class MainWindow : Window
     {
         OpponentManager _OpponentManager = new OpponentManager();
+        SettingManager _SettingManager = new SettingManager();
         public SaveFileDialog sd = new SaveFileDialog();
         string recTXT;
         DispatcherTimer timer = new DispatcherTimer();
@@ -47,7 +48,7 @@ namespace Code_Editor
             _Opponent = _OpponentManager.Get_Oppo();
             _Opponent.Add("New Opponent");
             oppoCombo.ItemsSource = _Opponent;
-            
+            _SettingManager.Load_Setting();
             timer.Interval = TimeSpan.FromSeconds(0.1f);
             timer.Tick += new EventHandler(Timer_Tick);
             timer.Start();
@@ -158,6 +159,7 @@ namespace Code_Editor
                 memFont = fontDig.Font;
                 CodeEditor.FontFamily = new FontFamily(memFont.Name);
                 Setting.Font = memFont.Name;
+                Setting.FontSize = Convert.ToInt32(memFont.Size);
                 CodeEditor.FontSize = memFont.Size;
             }
         }

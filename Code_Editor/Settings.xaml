@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Code_Editor"
         mc:Ignorable="d"
-        Title="Settings" Height="286.569" Width="446.69" ResizeMode="NoResize" Loaded="SettingDialog_Loaded">
+        Title="Settings" Height="242.314" Width="422.749" ResizeMode="NoResize" Loaded="SettingDialog_Loaded">
     <Grid>
         <TabControl TabStripPlacement="Left">
             <TabItem Header="General">
@@ -13,12 +13,13 @@
                     <Label Content="연결된 계정 : " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
                     <Label x:Name="account" Content="Log On" HorizontalAlignment="Left" Margin="100,10,0,0" VerticalAlignment="Top"/>
                     <Label Content="설정 동기화 : " HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
-                    <Label Content="꺼짐" HorizontalAlignment="Left" Margin="100,41,0,0" VerticalAlignment="Top"/>
-                    <Button x:Name="change" Content="변경" Margin="0,44,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75"/>
+                    <Label x:Name="lblSync" Content="꺼짐" HorizontalAlignment="Left" Margin="100,41,0,0" VerticalAlignment="Top"/>
+                    <Button x:Name="btnSync" Content="변경" Margin="0,44,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Background">
                 <Grid Background="#FFE5E5E5">
+                    <CheckBox x:Name="chkColor" Content="Use Color Background" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
                     <Label Content="Select Image Source" Margin="10,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="121"/>
                     <Label x:Name="lblpath" Content="Image Path" Margin="136,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="88"/>
                     <Button Content="Select" Margin="0,13,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75"/>
