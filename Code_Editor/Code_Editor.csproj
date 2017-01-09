@@ -144,5 +144,79 @@
   <ItemGroup>
     <Resource Include="Resources\pre_back.png" />
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\Back\D\1.jpg" />
+    <Resource Include="Resources\Back\D\10.jpg" />
+    <Resource Include="Resources\Back\D\11.jpg" />
+    <Resource Include="Resources\Back\D\12.jpg" />
+    <Resource Include="Resources\Back\D\13.jpg" />
+    <Resource Include="Resources\Back\D\14.jpg" />
+    <Resource Include="Resources\Back\D\15.jpg" />
+    <Resource Include="Resources\Back\D\16.jpg" />
+    <Resource Include="Resources\Back\D\17.jpg" />
+    <Resource Include="Resources\Back\D\18.jpg" />
+    <Resource Include="Resources\Back\D\19.jpg" />
+    <Resource Include="Resources\Back\D\2.jpg" />
+    <Resource Include="Resources\Back\D\20.jpg" />
+    <Resource Include="Resources\Back\D\21.jpg" />
+    <Resource Include="Resources\Back\D\22.jpg" />
+    <Resource Include="Resources\Back\D\23.jpg" />
+    <Resource Include="Resources\Back\D\3.jpg" />
+    <Resource Include="Resources\Back\D\4.jpg" />
+    <Resource Include="Resources\Back\D\5.jpg" />
+    <Resource Include="Resources\Back\D\6.jpg" />
+    <Resource Include="Resources\Back\D\7.jpg" />
+    <Resource Include="Resources\Back\D\8.jpg" />
+    <Resource Include="Resources\Back\D\9.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Back\N\1.jpg" />
+    <Resource Include="Resources\Back\N\10.jpg" />
+    <Resource Include="Resources\Back\N\11.jpg" />
+    <Resource Include="Resources\Back\N\12.jpg" />
+    <Resource Include="Resources\Back\N\13.jpg" />
+    <Resource Include="Resources\Back\N\14.jpg" />
+    <Resource Include="Resources\Back\N\15.jpg" />
+    <Resource Include="Resources\Back\N\16.jpg" />
+    <Resource Include="Resources\Back\N\17.jpg" />
+    <Resource Include="Resources\Back\N\18.jpg" />
+    <Resource Include="Resources\Back\N\19.jpg" />
+    <Resource Include="Resources\Back\N\2.jpg" />
+    <Resource Include="Resources\Back\N\20.jpg" />
+    <Resource Include="Resources\Back\N\3.jpg" />
+    <Resource Include="Resources\Back\N\4.jpg" />
+    <Resource Include="Resources\Back\N\5.jpg" />
+    <Resource Include="Resources\Back\N\6.jpg" />
+    <Resource Include="Resources\Back\N\7.jpg" />
+    <Resource Include="Resources\Back\N\8.jpg" />
+    <Resource Include="Resources\Back\N\9.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Back\S\1.jpg" />
+    <Resource Include="Resources\Back\S\10.jpg" />
+    <Resource Include="Resources\Back\S\11.jpg" />
+    <Resource Include="Resources\Back\S\12.jpg" />
+    <Resource Include="Resources\Back\S\13.jpg" />
+    <Resource Include="Resources\Back\S\14.jpg" />
+    <Resource Include="Resources\Back\S\15.jpg" />
+    <Resource Include="Resources\Back\S\16.jpg" />
+    <Resource Include="Resources\Back\S\17.jpg" />
+    <Resource Include="Resources\Back\S\18.jpg" />
+    <Resource Include="Resources\Back\S\19.jpg" />
+    <Resource Include="Resources\Back\S\2.jpg" />
+    <Resource Include="Resources\Back\S\20.jpg" />
+    <Resource Include="Resources\Back\S\21.jpg" />
+    <Resource Include="Resources\Back\S\22.jpg" />
+    <Resource Include="Resources\Back\S\23.jpg" />
+    <Resource Include="Resources\Back\S\24.jpg" />
+    <Resource Include="Resources\Back\S\3.jpg" />
+    <Resource Include="Resources\Back\S\4.jpg" />
+    <Resource Include="Resources\Back\S\5.jpg" />
+    <Resource Include="Resources\Back\S\6.jpg" />
+    <Resource Include="Resources\Back\S\7.jpg" />
+    <Resource Include="Resources\Back\S\8.jpg" />
+    <Resource Include="Resources\Back\S\9.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

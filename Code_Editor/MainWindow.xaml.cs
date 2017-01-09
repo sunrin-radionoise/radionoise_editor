@@ -33,16 +33,8 @@ namespace Code_Editor
         DispatcherTimer timer = new DispatcherTimer();
         Socket socket = IO.Socket("http://iwin247.net:8080/");
         List<string> _Opponent;
-        public static void SettingRefresh() 
-        {
-            /*
-             * ToDo: ImageBrush Set, Font Set, ImageStretchType Set
-             */
-             
-        }
         public MainWindow()
         {
-            
             InitializeComponent();
             _OpponentManager.Init_Oppo();
             _Opponent = _OpponentManager.Get_Oppo();
@@ -69,17 +61,6 @@ namespace Code_Editor
         }
 
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
-        {
-
-        }
-
-        private void Code_Editor_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            //string Text = new TextRange(CodeEdtior.Document.ContentStart, CodeEdtior.Document.ContentEnd).Text;
-            //MessageBox.Show(Text);
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
@@ -127,11 +108,6 @@ namespace Code_Editor
             }
         }
 
-        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void CodeEditor_TextInput(object sender, TextCompositionEventArgs e)
         {
             
@@ -153,6 +129,8 @@ namespace Code_Editor
         {
             var fontDig = new System.Windows.Forms.FontDialog();
             fontDig.ShowColor = false;
+            fontDig.ShowEffects = false;
+
             System.Drawing.Font memFont;
             if(fontDig.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
