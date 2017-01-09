@@ -32,6 +32,13 @@ namespace Code_Editor
         DispatcherTimer timer = new DispatcherTimer();
         Socket socket = IO.Socket("http://iwin247.net:8080/");
         List<string> _Opponent;
+        public static void SettingRefresh() 
+        {
+            /*
+             * ToDo: ImageBrush Set, Font Set, ImageStretchType Set
+             */
+
+        }
         public MainWindow()
         {
             InitializeComponent();
@@ -131,6 +138,12 @@ namespace Code_Editor
         private void CodeEditor_PreviewTextInput(object sender, TextCompositionEventArgs e)
         { 
 
+        }
+
+        private void Settings_Click(object sender, RoutedEventArgs e)
+        {
+            Settings set = new Settings();
+            set.Show();
         }
     }
 }

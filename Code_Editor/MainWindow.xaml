@@ -97,7 +97,7 @@
                     <MenuItem x:Name="Redo" Header="_Redo" Background="#FF252526" BorderBrush="#FF252526" />
                 </MenuItem>
                 <MenuItem Header="_Tools" Foreground="White">
-                    <MenuItem x:Name="Settings" Header="_Settings" Background="#FF252526" BorderBrush="#FF252526" />
+                    <MenuItem x:Name="Sett" Header="_Settings" Background="#FF252526" BorderBrush="#FF252526" Click="Settings_Click" />
                 </MenuItem>
             </Menu>
         </Grid>
