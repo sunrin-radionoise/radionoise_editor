@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Code_Editor"
         mc:Ignorable="d"
-        Title="Settings" Height="286.569" Width="446.69" ResizeMode="NoResize">
+        Title="Settings" Height="286.569" Width="446.69" ResizeMode="NoResize" Loaded="SettingDialog_Loaded">
     <Grid>
         <TabControl TabStripPlacement="Left">
             <TabItem Header="General">
@@ -17,20 +17,13 @@
                     <Button x:Name="change" Content="변경" Margin="0,44,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Text">
-                <Grid Background="#FFE5E5E5">
-                    <Label Content="Select Text Font" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-                    <Label Content="맑은 고딕" HorizontalAlignment="Left" Margin="112,10,0,0" VerticalAlignment="Top"/>
-                    <Button Content="Select" Margin="299,13,10,209"/>
-                </Grid>
-            </TabItem>
             <TabItem Header="Background">
                 <Grid Background="#FFE5E5E5">
                     <Label Content="Select Image Source" Margin="10,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="121"/>
-                    <Label Content="Image Path" Margin="136,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="88"/>
+                    <Label x:Name="lblpath" Content="Image Path" Margin="136,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="88"/>
                     <Button Content="Select" Margin="0,13,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75"/>
-                    <ComboBox HorizontalAlignment="Left" Margin="136,38,0,0" VerticalAlignment="Top" Width="238"/>
-                    <Label Content="Image Stretch" Margin="10,36,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="121"/>
+                    <Button Content="Default" Margin="0,38,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75"/>
+
                 </Grid>
             </TabItem>
         </TabControl>

@@ -37,10 +37,11 @@ namespace Code_Editor
             /*
              * ToDo: ImageBrush Set, Font Set, ImageStretchType Set
              */
-
+             
         }
         public MainWindow()
         {
+            
             InitializeComponent();
             _OpponentManager.Init_Oppo();
             _Opponent = _OpponentManager.Get_Oppo();
@@ -143,7 +144,22 @@ namespace Code_Editor
         private void Settings_Click(object sender, RoutedEventArgs e)
         {
             Settings set = new Settings();
-            set.Show();
+            set.ShowDialog();
+            
+        }
+
+        private void digFont_Click(object sender, RoutedEventArgs e)
+        {
+            var fontDig = new System.Windows.Forms.FontDialog();
+            fontDig.ShowColor = false;
+            System.Drawing.Font memFont;
+            if(fontDig.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                memFont = fontDig.Font;
+                CodeEditor.FontFamily = new FontFamily(memFont.Name);
+                Setting.Font = memFont.Name;
+                CodeEditor.FontSize = memFont.Size;
+            }
         }
     }
 }

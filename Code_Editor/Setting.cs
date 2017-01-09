@@ -12,37 +12,28 @@ namespace Code_Editor
 {
     class Setting
     {
-        /* TODO : Add Setting Field
-         * Font
-         * Background Image
-         * Account
+        /* INI FIELD CONFIG TEMPLATE
+         * Setting.ini
+         * [Font]
+         * Font=Consolas
+         * FontSize=13
+         * [Background]
+         * Color=false
+         * ImagePath=C:\blah\blah.png
+         * [Account]
+         * ID=ayh0729
+         * PW=asdf1234
+         * Sync=false
          */
+        #region Setting_Field
         public static string Font { get; set; }
-        public static string BackImage { get; set; }
-        public static string StretchType { get; set; }
-        public static string Account { get; set; }
-        private static string setting_path = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\Settings.xml";
-        public void Init_Setting()
-        {
-            //Load File & Apply Settings
-            StreamReader sr = new StreamReader(setting_path);
-            string str = sr.ReadToEnd();
-            string[] split = str.Split(new string[] { "\n", "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
-            //각각 첫줄부터 Font, Path, Stretch Type
-            Font = split[0];
-            BackImage = split[1];
-            StretchType = split[2];
-        }
-        public void Sync_Setting(bool Get)
-        {
-            if(Get) //Sync를 받아오는 부분 -> Server에서 받아온다.
-            {
-                
-            }
-            else //Sync를 보내는 부분 -> Server에 저장한다.
-            {
-
-            }
-        }
+        public static int FontSize { get; set; }
+        public static bool Color { get; set; }
+        public static string ImagePath { get; set; }
+        public static string ID { get; set; }
+        public static string PW { get; set; }
+        public static bool Sync { get; set; }
+        #endregion
+        public static string setting_path = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\Settings.Settings";
     }
 }

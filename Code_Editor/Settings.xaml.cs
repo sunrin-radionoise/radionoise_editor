@@ -23,5 +23,10 @@ namespace Code_Editor
         {
             InitializeComponent();
         }
+
+        private void SettingDialog_Loaded(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }
