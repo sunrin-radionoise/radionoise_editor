@@ -45,17 +45,38 @@ namespace Code_Editor
         private static extern long WritePrivateProfileString(string section, string key, string val, string filePath);
         [DllImport("kernel32")]
         private static extern int GetPrivateProfileString(string section, string key, string def, StringBuilder retVal, int size, string filePath);
-
-        public void Load_Setting()
+        private string Read_ini(string section, string key)
         {
             StringBuilder temp = new StringBuilder(255);
-            int ret = GetPrivateProfileString("Font", "Font", "", temp, 255, Setting.setting_path);
-            MessageBox.Show(temp.ToString());
+            int ret = GetPrivateProfileString(section, key, "", temp, 255, Setting.setting_path);
+            return temp.ToString();
+        }
+        private void Write_ini(string Section, string Key, string Value)
+        {
+            WritePrivateProfileString(Section, Key, Value, Setting.setting_path);
+        }
+        public void Load_Setting()
+        {
+            //Setting에 Load한다.
+            Setting.Font = Read_ini("Font", "Font");
+            Setting.FontSize = Convert.ToInt32(Read_ini("Font","FontSize"));
+            Setting.Color = Convert.ToBoolean(Read_ini("Background", "Color"));
+            Setting.ImagePath = Read_ini("Background","ImagePath");
+            Setting.ID = Read_ini("Account","ID");
+            Setting.PW = Read_ini("Account", "PW");
+            Setting.Sync = Convert.ToBoolean(Read_ini("Account", "Sync"));
         }
 
         public void Save_Setting()
         {
-
+            //Setting.ini에 저장한다.
+            Write_ini("Font", "Font", Setting.Font);
+            Write_ini("Font", "FontSize", Setting.FontSize.ToString());
+            Write_ini("Background", "Color", Setting.Color.ToString());
+            Write_ini("Background", "ImagePath", Setting.ImagePath);
+            Write_ini("Account", "ID", Setting.ID);
+            Write_ini("Account", "PW", Setting.PW);
+            Write_ini("Account", "Sync", Setting.Sync.ToString());
         }
     }
 }
