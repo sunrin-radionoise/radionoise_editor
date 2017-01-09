@@ -86,15 +86,15 @@
             <Menu DockPanel.Dock="Top" Background="#FF252526" >
                 <MenuItem Header="_File" Foreground="White" Background="#FF252526" BorderBrush="#FF252526" >
                     <MenuItem x:Name="New" Header="_New" Click="NewItem_Click" Background="#FF252526" BorderBrush="#FF252526" />
-                    <MenuItem x:Name="Open" Header="_Open" Background="#FF252526" BorderBrush="#FF252526"/>
-                    <MenuItem x:Name="Save" Header="_Save" Background="#FF252526" BorderBrush="#FF252526"/>
-                    <MenuItem x:Name="Exit" Header="_Exit" Background="#FF252526" BorderBrush="#FF252526"/>
+                    <MenuItem x:Name="Open" Header="_Open" Background="#FF252526" BorderBrush="#FF252526" Click="Open_Click"/>
+                    <MenuItem x:Name="Save" Header="_Save" Background="#FF252526" BorderBrush="#FF252526" Click="Save_Click"/>
+                    <MenuItem x:Name="Exit" Header="_Exit" Background="#FF252526" BorderBrush="#FF252526" Click="Exit_Click"/>
                 </MenuItem>
                 <MenuItem Header="_Edit" Foreground="White" Background="#FF252526">
-                    <MenuItem x:Name="Cut" Header="_Cut" Background="#FF252526" BorderBrush="#FF252526" />
-                    <MenuItem x:Name="Paste" Header="_Paste" Background="#FF252526" BorderBrush="#FF252526" />
-                    <MenuItem x:Name="Undo" Header="_Undo" Background="#FF252526"  BorderBrush="#FF252526"/>
-                    <MenuItem x:Name="Redo" Header="_Redo" Background="#FF252526" BorderBrush="#FF252526" />
+                    <MenuItem x:Name="Cut" Header="_Cut" Background="#FF252526" BorderBrush="#FF252526" Click="Cut_Click" />
+                    <MenuItem x:Name="Paste" Header="_Paste" Background="#FF252526" BorderBrush="#FF252526" Click="Paste_Click" />
+                    <MenuItem x:Name="Undo" Header="_Undo" Background="#FF252526"  BorderBrush="#FF252526" Click="Undo_Click"/>
+                    <MenuItem x:Name="Redo" Header="_Redo" Background="#FF252526" BorderBrush="#FF252526" Click="Redo_Click" />
                 </MenuItem>
                 <MenuItem Header="_Tools" Foreground="White">
                     <MenuItem x:Name="Sett" Header="_Settings" Background="#FF252526" BorderBrush="#FF252526" Click="Settings_Click" />

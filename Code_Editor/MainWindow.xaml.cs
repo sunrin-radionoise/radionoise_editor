@@ -41,6 +41,7 @@ namespace Code_Editor
             _Opponent.Add("New Opponent");
             oppoCombo.ItemsSource = _Opponent;
             _SettingManager.Load_Setting();
+            //MessageBox.Show(Setting.Font + Setting.FontSize.ToString() + Setting.Color.ToString() + Setting.ImagePath + Setting.ID + Setting.PW);
             timer.Interval = TimeSpan.FromSeconds(0.1f);
             timer.Tick += new EventHandler(Timer_Tick);
             timer.Start();
@@ -77,7 +78,14 @@ namespace Code_Editor
 
         private void NewItem_Click(object sender, RoutedEventArgs e)
         {
-
+            //New File Dialog
+            /*
+             * SaveFileDialog로 File저장하게 하고 할 것인지
+             * 아니면 Listview로 VS 스타일로 갈 것인지 결정
+             * 
+             * 그 다음 Create File모드로 해서 간다.
+             * 
+             */
 
         }
 
@@ -140,6 +148,48 @@ namespace Code_Editor
                 Setting.FontSize = Convert.ToInt32(memFont.Size);
                 CodeEditor.FontSize = memFont.Size;
             }
+        }
+
+        private void Cut_Click(object sender, RoutedEventArgs e)
+        {
+            CodeEditor.Cut();
+        }
+
+        private void Paste_Click(object sender, RoutedEventArgs e)
+        {
+            CodeEditor.Paste();
+        }
+
+        private void Undo_Click(object sender, RoutedEventArgs e)
+        {
+            CodeEditor.Undo();
+        }
+
+        private void Redo_Click(object sender, RoutedEventArgs e)
+        {
+            CodeEditor.Redo();
+        }
+
+        private void Open_Click(object sender, RoutedEventArgs e)
+        {
+            /*
+             * openFileDialog 한다음 확장자만 가져와서 SyntaxHighlighting을 설정해 준다.
+             */
+        }
+
+        private void Save_Click(object sender, RoutedEventArgs e)
+        {
+            /*
+             * 만약 Save가 되어있었다면(원래 있던파일이라면) 바로 저장해 준다.
+             * 안 되어 있었다면 저장해 준다. 근데 만들때 문법강조를 사용하려면 미리 확장자를 지정해 줘야 하는데
+             * 상관 없지 않을까
+             * 
+             */
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

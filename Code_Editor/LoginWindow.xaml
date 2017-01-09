@@ -13,7 +13,7 @@
     <Grid>
         <TextBox HorizontalAlignment="Center" Height="23" Margin="340,167,340,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" Width="120"/>
         <TextBox HorizontalAlignment="Center" Height="23" Margin="340,195,340,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Login" HorizontalAlignment="Center" Margin="210,122,210,104" VerticalAlignment="Center" Width="120" Height="22"/>
+        <Button x:Name="btnLogin" Content="Login" HorizontalAlignment="Center" Margin="210,122,210,104" VerticalAlignment="Center" Width="120" Height="22" Click="btnLogin_Click"/>
         <Button Content="Register" HorizontalAlignment="Center" Margin="210,150,210,76" VerticalAlignment="Center" Width="120" Height="22"/>
 
     </Grid>
