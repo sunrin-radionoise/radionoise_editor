@@ -48,6 +48,16 @@ namespace Code_Editor
             /*
              * Image Select Button : openFileDialog 이용한다. Setting.ImagePath와 연결된다.
              */
+            MessageBox.Show("1024*768 이상의 해상도의 이미지를 추천합니다.","안내",MessageBoxButton.OK,MessageBoxImage.Information);
+            var digOpen = new System.Windows.Forms.OpenFileDialog()
+            {
+                Filter = "*.jpg|*.jpg|*.png|*.png|*.bmp|*.bmp",
+                Title = "Select Image File"
+            };
+            if(digOpen.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                Setting.ImagePath = digOpen.FileName;
+            }
         }
     }
 }
