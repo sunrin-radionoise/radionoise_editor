@@ -36,10 +36,12 @@ namespace Code_Editor
         public MainWindow()
         {
             InitializeComponent();
+            #region Initialize
             _OpponentManager.Init_Oppo();
-            _Opponent = _OpponentManager.Get_Oppo();
-            _Opponent.Add("New Opponent");
-            oppoCombo.ItemsSource = _Opponent;
+            foreach(string o in Opponent.OppoList)
+            {
+                oppoCombo.Items.Add(o);
+            }
             _SettingManager.Load_Setting();
             //MessageBox.Show(Setting.Font + Setting.FontSize.ToString() + Setting.Color.ToString() + Setting.ImagePath + Setting.ID + Setting.PW);
             timer.Interval = TimeSpan.FromSeconds(0.1f);
@@ -54,9 +56,15 @@ namespace Code_Editor
                 recTXT += (msg + "\r\n");
             });
             socket.Connect();
+            #endregion
             //Console.WriteLine("Message Send");
         }
-
+        private void Update_Oppo()
+        {
+            _Opponent = Opponent.OppoList;
+            //_Opponent.Add("New Opponent");
+            
+        }
         private void Timer_Tick(object sender, EventArgs e)
         {
             Message.Text = recTXT;
@@ -85,7 +93,6 @@ namespace Code_Editor
              * 아니면 Listview로 VS 스타일로 갈 것인지 결정
              * 
              * 그 다음 Create File모드로 해서 간다.
-             * 
              */
 
         }
@@ -107,14 +114,7 @@ namespace Code_Editor
 
         private void oppoCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (oppoCombo.SelectedValue.ToString() == "New Opponent") //새 대화상대 추가 요청시
-            {
-
-            }
-            else //아닐 경우 소켓을 열어줘야 한다.
-            {
-
-            }
+            //소켓을 열어주자
         }
 
         private void CodeEditor_TextInput(object sender, TextCompositionEventArgs e)
@@ -207,6 +207,17 @@ namespace Code_Editor
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void addop_Click(object sender, RoutedEventArgs e)
+        {
+            AddOpponent a = new AddOpponent();
+            a.ShowDialog();
+            oppoCombo.Items.Clear();
+            foreach(string o in Opponent.OppoList)
+            {
+                oppoCombo.Items.Add(o);
+            }
         }
     }
 }

@@ -10,12 +10,21 @@ using System.Windows;
 
 namespace Code_Editor
 {
-    class OpponentManager
+    /// <summary>
+    /// Chating Opponent를 담는 class입니다.
+    /// </summary>
+    class Opponent
     {
         /// <summary>
         /// Chatting Opponent를 담은 List입니다.
         /// </summary>
-        public static List<string> Opponent = new List<string> { "",};
+        public static List<string> OppoList = new List<string> { "", };
+    }
+    /// <summary>
+    /// 
+    /// </summary>
+    class OpponentManager
+    {
         private static string oppo_path = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\Chat.settings";
         /// <summary>
         /// 대화 상대를 추가합니다.
@@ -26,21 +35,13 @@ namespace Code_Editor
         {
             try
             {
-                Opponent.Add(oppoName);
+                Opponent.OppoList.Add(oppoName);
                 return true;
             }
-            catch(Exception)
+            catch (Exception)
             {
                 return false;
             }
-        }
-        /// <summary>
-        /// 대화 상대 List를 가져옵니다.
-        /// </summary>
-        /// <returns>대화 상대가 추가되어있는 Opponent List를 가져옵니다.</returns>
-        public List<string> Get_Oppo()
-        {
-            return Opponent;
         }
         /// <summary>
         /// 대화 상대를 제거합니다.
@@ -51,7 +52,7 @@ namespace Code_Editor
         {
             try
             {
-                Opponent.Remove(oppoName);
+                Opponent.OppoList.Remove(oppoName);
                 return true;
             }
             catch(Exception)
@@ -69,8 +70,8 @@ namespace Code_Editor
         {
             try
             {
-                Opponent.Remove(orgOppo);
-                Opponent.Add(changeOppo);
+                Opponent.OppoList.Remove(orgOppo);
+                Opponent.OppoList.Add(changeOppo);
                 return true;
             }
             catch(Exception)
@@ -92,7 +93,7 @@ namespace Code_Editor
             temp_oppo = content.Split(new string[] { "\n", "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
             foreach(string tmp in temp_oppo)
             {
-                Opponent.Add(tmp);
+                Opponent.OppoList.Add(tmp);
             }
         }
         /// <summary>
@@ -102,7 +103,7 @@ namespace Code_Editor
         public void Save_Oppo()
         {
             var sw = new StreamWriter(oppo_path);
-            foreach(string tmp in Opponent)
+            foreach(string tmp in Opponent.OppoList)
             {
                 sw.WriteLine(tmp);
             }
