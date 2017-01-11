@@ -17,6 +17,7 @@ using Microsoft.Win32;
 using Quobject.SocketIoClientDotNet.Client;
 using System.Threading;
 using System.Windows.Threading;
+using System.IO;
 
 namespace Code_Editor
 {
@@ -33,12 +34,13 @@ namespace Code_Editor
         DispatcherTimer timer = new DispatcherTimer();
         Socket socket = IO.Socket("http://iwin247.net:8080/");
         List<string> _Opponent;
+        private string Current_File_Path = "";
         public MainWindow()
         {
             InitializeComponent();
             #region Initialize
             _OpponentManager.Init_Oppo();
-            foreach(string o in Opponent.OppoList)
+            foreach (string o in Opponent.OppoList)
             {
                 oppoCombo.Items.Add(o);
             }
@@ -63,7 +65,7 @@ namespace Code_Editor
         {
             _Opponent = Opponent.OppoList;
             //_Opponent.Add("New Opponent");
-            
+
         }
         private void Timer_Tick(object sender, EventArgs e)
         {
@@ -196,7 +198,16 @@ namespace Code_Editor
             {
                 Title = "Open File"
             };
-            
+            if (digOpen.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                Current_File_Path = digOpen.FileName;
+                var open = new StreamReader(digOpen.FileName);
+                CodeEditor.Clear();
+                CodeEditor.Text = open.ReadToEnd();
+                CodeEditor.IsEnabled = true;
+                open.Close();
+            }
+
         }
 
         private void Save_Click(object sender, RoutedEventArgs e)
@@ -205,8 +216,13 @@ namespace Code_Editor
              * 만약 Save가 되어있었다면(원래 있던파일이라면) 바로 저장해 준다.
              * 안 되어 있었다면 저장해 준다. 근데 만들때 문법강조를 사용하려면 미리 확장자를 지정해 줘야 하는데
              * 상관 없지 않을까
-             * 
              */
+            if (Current_File_Path != "")
+            {
+                StreamWriter sw = new StreamWriter(Current_File_Path);
+                sw.Write(CodeEditor.Text);
+                sw.Close();
+            }
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)
@@ -219,7 +235,7 @@ namespace Code_Editor
             AddOpponent a = new AddOpponent();
             a.ShowDialog();
             oppoCombo.Items.Clear();
-            foreach(string o in Opponent.OppoList)
+            foreach (string o in Opponent.OppoList)
             {
                 oppoCombo.Items.Add(o);
             }
