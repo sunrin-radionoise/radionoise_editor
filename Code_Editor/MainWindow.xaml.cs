@@ -27,7 +27,7 @@ namespace Code_Editor
     /// </summary>
     public partial class MainWindow : Window
     {
-        static string Extenseions = "ASPX|*.aspx|Boo|*.boo|C# File|*.cs|C++ File|*.cpp|C++ File|*.h|C++ File|*.hpp|C++ File|*.cxx|CSS|*.css|COCO|*.casm|HTML|*.html|HTML|*.htm|Java|*.java|JavaScript|*.js|PHP|*.php|Tex|*.dvi|VBNET|*.vb|XML|*.xml|XML|*.xaml|XML|*.xshd|XMLDOC|*.xml";
+        static string Extensions = "ASPX|*.aspx|Boo|*.boo|C# File|*.cs|C++ File|*.cpp|C++ File|*.h|C++ File|*.hpp|C++ File|*.cxx|CSS|*.css|COCO|*.casm|HTML|*.html|HTML|*.htm|Java|*.java|JavaScript|*.js|PHP|*.php|Tex|*.dvi|VBNET|*.vb|XML|*.xml|XML|*.xaml|XML|*.xshd|XMLDOC|*.xml";
         OpponentManager _OpponentManager = new OpponentManager();
         SettingManager _SettingManager = new SettingManager();
         public SaveFileDialog sd = new SaveFileDialog();
@@ -36,6 +36,11 @@ namespace Code_Editor
         Socket socket = IO.Socket("http://iwin247.net:8080/");
         List<string> _Opponent;
         private string Current_File_Path = "";
+        System.Windows.Forms.SaveFileDialog digSave = new System.Windows.Forms.SaveFileDialog()
+        {
+            Filter=Extensions,
+            Title="File"
+        };
         public MainWindow()
         {
             InitializeComponent();
@@ -97,7 +102,10 @@ namespace Code_Editor
              * 
              * 그 다음 Create File모드로 해서 간다.
              */
-
+            if(digSave.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                File.Create(digSave.FileName, 1, FileOptions.None);
+            }
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
