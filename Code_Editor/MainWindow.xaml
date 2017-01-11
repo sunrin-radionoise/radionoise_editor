@@ -75,7 +75,7 @@
                             <RowDefinition Height="27"/>
                         </Grid.RowDefinitions>
                         <ComboBox x:Name="oppoCombo" Grid.RowSpan="1" Background="#FF252526" BorderBrush="#FF252526" SelectionChanged="oppoCombo_SelectionChanged"/>
-                        <TextBox Grid.RowSpan="2" x:Name="Message" TextWrapping="Wrap" Text="" Background="#FF252526" BorderBrush="#FF252526" Foreground="White" Grid.Row="1"/>
+                        <TextBox Grid.RowSpan="2" x:Name="Message" TextWrapping="Wrap" Text="" Background="#FF252526" BorderBrush="#FF252526" Foreground="White" Grid.Row="1" IsEnabled="False"/>
                         <TextBox Grid.RowSpan="3" x:Name="SendTXT" TextWrapping="Wrap" Text="Send Messages" Background="#FF252526" BorderBrush="#FF252526" Foreground="White" KeyDown="TextBox_KeyDown" Margin="0,4,0,0" Grid.Row="2"/>
                     </Grid>
                 </Grid>
@@ -104,7 +104,7 @@
             </Menu>
         </Grid>
 
-        <avalonedit:TextEditor ShowLineNumbers="True" SyntaxHighlighting="HTML" x:Name="CodeEditor" FontFamily="Consolas" Padding="2,0,0,0" Grid.Column="1" Grid.Row="1" Foreground="White" KeyDown="CodeEditor_KeyDown" TextInput="CodeEditor_TextInput" PreviewTextInput="CodeEditor_PreviewTextInput">
+        <avalonedit:TextEditor ShowLineNumbers="True" SyntaxHighlighting="HTML" x:Name="CodeEditor" FontFamily="Consolas" Padding="2,0,0,0" Grid.Column="1" Grid.Row="1" Foreground="White" KeyDown="CodeEditor_KeyDown" TextInput="CodeEditor_TextInput" PreviewTextInput="CodeEditor_PreviewTextInput" IsEnabled="False">
             <avalonedit:TextEditor.Background>
                 <ImageBrush ImageSource="Resources/pre_back.png"/>
             </avalonedit:TextEditor.Background>

@@ -192,6 +192,11 @@ namespace Code_Editor
             /*
              * openFileDialog 한다음 확장자만 가져와서 SyntaxHighlighting을 설정해 준다.
              */
+            var digOpen = new System.Windows.Forms.OpenFileDialog()
+            {
+                Title = "Open File"
+            };
+            
         }
 
         private void Save_Click(object sender, RoutedEventArgs e)
