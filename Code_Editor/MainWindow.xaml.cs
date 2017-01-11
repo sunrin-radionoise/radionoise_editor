@@ -27,6 +27,7 @@ namespace Code_Editor
     /// </summary>
     public partial class MainWindow : Window
     {
+        static string Extenseions = "ASPX|*.aspx|Boo|*.boo|C# File|*.cs|C++ File|*.cpp|C++ File|*.h|C++ File|*.hpp|C++ File|*.cxx|CSS|*.css|COCO|*.casm|HTML|*.html|HTML|*.htm|Java|*.java|JavaScript|*.js|PHP|*.php|Tex|*.dvi|VBNET|*.vb|XML|*.xml|XML|*.xaml|XML|*.xshd|XMLDOC|*.xml";
         OpponentManager _OpponentManager = new OpponentManager();
         SettingManager _SettingManager = new SettingManager();
         public SaveFileDialog sd = new SaveFileDialog();
