@@ -4,7 +4,7 @@
 library
 C#
 .cs
-C:\Users\Administrator\Desktop\개발파일\Radionoise_Editor\radionoise_editor\ICSharpCode.AvalonEdit\obj\Debug\
+D:\Documents\Visual Studio 2017\Projects\radionoise_editor\ICSharpCode.AvalonEdit\obj\Debug\
 ICSharpCode.AvalonEdit
 none
 false
@@ -12,9 +12,9 @@ DEBUG;TRACE;DOTNET4
 
 6-1436255252
 
-2241583777622
+2242019299607
 15-1618032058
 CodeCompletion\CompletionList.xaml;CodeCompletion\InsightWindow.xaml;Search\SearchPanel.xaml;Search\DropDownButton.xaml;TextEditor.xaml;themes\generic.xaml;
 
-False
+True
 

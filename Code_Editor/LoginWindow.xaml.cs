@@ -19,6 +19,7 @@ namespace Code_Editor
     /// </summary>
     public partial class LoginWindow : Window
     {
+        private static bool isReg = false;
         public LoginWindow()
         {
             InitializeComponent();
@@ -30,6 +31,22 @@ namespace Code_Editor
              * Server POST : Login
              * Login 완료되면 Setting.ID에 로그인 성공한 ID를 입력해야 한다.
              */
+        }
+
+        private void btnRegister_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Media.Animation.Storyboard storyBoard = (System.Windows.Media.Animation.Storyboard)FindResource("Register");
+            System.Windows.Media.Animation.Storyboard storyBoard_Rev = (System.Windows.Media.Animation.Storyboard)FindResource("Register_Rev");
+            if (!isReg)
+            {
+                BeginStoryboard(storyBoard);
+                isReg = true;
+            }
+            else
+            {
+                BeginStoryboard(storyBoard_Rev);
+                isReg = false;
+            }
         }
     }
 }
