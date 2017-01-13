@@ -12,3 +12,11 @@
 >Setting.ini File Sync(Upload/Download)
 
 >Automatic Update Check & Download
+
+#####Slave
+
+>Find Auto-Complete Keywords
+
+>More Detailed Settings. (Like Movable Backgrounds, etc..)
+
+>Multi-Edit Text Edit Working Routine
