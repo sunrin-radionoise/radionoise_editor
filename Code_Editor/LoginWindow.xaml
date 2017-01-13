@@ -135,13 +135,13 @@
         <Storyboard x:Key="Opacity_Lower">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(Brush.Opacity)" Storyboard.TargetName="grid1">
                 <SplineDoubleKeyFrame KeyTime="0" Value="1"/>
-                <SplineDoubleKeyFrame KeyTime="0:0:1" Value="0.2"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:2" Value="0.2"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
         <Storyboard x:Key="Opacity_Upper">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(Brush.Opacity)" Storyboard.TargetName="grid1">
                 <SplineDoubleKeyFrame KeyTime="0" Value="0.2"/>
-                <SplineDoubleKeyFrame KeyTime="0:0:1" Value="1"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:2" Value="1"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
 

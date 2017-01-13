@@ -57,7 +57,7 @@ namespace Code_Editor
                 };
             }
             grid1.Background = imgB;
-            _Timer.Interval = 20000; //20sec당 1Tick
+            _Timer.Interval = 10000; //20sec당 1Tick
             _Timer.Tick += new EventHandler(Timer_Tick);
             _Timer.Start();
         }
@@ -111,6 +111,10 @@ namespace Code_Editor
              * Server POST : Login
              * Login 완료되면 Setting.ID에 로그인 성공한 ID를 입력해야 한다.
              */
+            if(txtID.Text == "ayh0729" && txtPass.Password == "asdf1234")
+            {
+                //Login Success
+            }
         }
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)
@@ -124,6 +128,8 @@ namespace Code_Editor
             }
             else
             {
+                //Register 처리해주기
+                
                 BeginStoryboard(storyBoard_Rev);
                 isReg = false;
             }

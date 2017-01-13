@@ -82,6 +82,7 @@
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="NetworkInterface.cs" />
     <Compile Include="OpponentManager.cs" />
     <Compile Include="Setting.cs" />
     <Compile Include="Settings.xaml.cs">
