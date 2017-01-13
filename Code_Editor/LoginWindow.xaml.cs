@@ -57,7 +57,7 @@ namespace Code_Editor
                 };
             }
             grid1.Background = imgB;
-            _Timer.Interval = 10000; //20sec당 1Tick
+            _Timer.Interval = 20000; //20sec당 1Tick
             _Timer.Tick += new EventHandler(Timer_Tick);
             _Timer.Start();
         }
