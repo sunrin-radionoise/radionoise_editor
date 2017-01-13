@@ -10,5 +10,25 @@ namespace Code_Editor
     class NetworkInterface
     {
         static string BaseURL = "http://iwin247.net:8080"; //BaseURL
+        public void Auth()
+        {
+
+        }
+        public void SignUp()
+        {
+
+        }
+        public void GetVer()
+        {
+
+        }
+        public void GetSetting()
+        {
+
+        }
+        public void GetUpdateFile()
+        {
+
+        }
     }
 }
