@@ -157,7 +157,9 @@
   <ItemGroup>
     <Resource Include="Resources\pre_back.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="RadioNoise_Splash.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Back\D\1.jpg" />
     <Resource Include="Resources\Back\D\10.jpg" />
@@ -230,6 +232,12 @@
     <Resource Include="Resources\Back\S\7.jpg" />
     <Resource Include="Resources\Back\S\8.jpg" />
     <Resource Include="Resources\Back\S\9.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\splash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\title.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -87,3 +87,5 @@ D:\Documents\Visual Studio 2017\Projects\radionoise_editor\Code_Editor\obj\Debug
 D:\Documents\Visual Studio 2017\Projects\radionoise_editor\Code_Editor\obj\Debug\LoginWindow.baml
 D:\Documents\Visual Studio 2017\Projects\radionoise_editor\Code_Editor\obj\Debug\AddOpponent.g.cs
 D:\Documents\Visual Studio 2017\Projects\radionoise_editor\Code_Editor\obj\Debug\AddOpponent.baml
+D:\Documents\Visual Studio 2017\Projects\radionoise_editor\Code_Editor\obj\Debug\Splash.g.cs
+D:\Documents\Visual Studio 2017\Projects\radionoise_editor\Code_Editor\obj\Debug\Splash.baml

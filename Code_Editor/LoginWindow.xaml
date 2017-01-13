@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Code_Editor"
         mc:Ignorable="d"
         WindowStyle="None"
-        Title="LoginWindow" Height="450" Width="800" ResizeMode="NoResize" MouseLeftButtonDown="WindowMouseLeftButtonDown">
+        Title="LoginWindow" Height="450" Width="800" ResizeMode="NoResize" MouseLeftButtonDown="WindowMouseLeftButtonDown" Background="Black">
     <x:Code>
         <![CDATA[            
         private void WindowMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -132,16 +132,29 @@
                 <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0.501"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
+        <Storyboard x:Key="Opacity_Lower">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(Brush.Opacity)" Storyboard.TargetName="grid1">
+                <SplineDoubleKeyFrame KeyTime="0" Value="1"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1" Value="0.2"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="Opacity_Upper">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(Brush.Opacity)" Storyboard.TargetName="grid1">
+                <SplineDoubleKeyFrame KeyTime="0" Value="0.2"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
 
 
 
     </Window.Resources>
+    
 
-    <Grid>
+    <Grid x:Name="grid1">
         <Grid.Background>
             <ImageBrush ImageSource="Resources/Back/D/1.jpg"/>
         </Grid.Background>
-        <Grid x:Name="grid" HorizontalAlignment="Center" Height="193" Margin="0,0,0,0" VerticalAlignment="Center" Width="276" Background="#66000000" RenderTransformOrigin="0.5,0.5">
+        <Grid x:Name="grid" HorizontalAlignment="Center" Height="193" Margin="0,0,0,0" VerticalAlignment="Center" Width="276" Background="#99000000" RenderTransformOrigin="0.5,0.5">
             <Grid.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -150,7 +163,7 @@
                     <TranslateTransform/>
                 </TransformGroup>
             </Grid.RenderTransform>
-            <TextBox x:Name="txtID" HorizontalAlignment="Center" Height="23" Margin="80,42,76,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" Width="120" Background="#19FFFFFF" RenderTransformOrigin="0.5,0.5">
+            <TextBox x:Name="txtID" HorizontalAlignment="Center" Height="23" Margin="80,42,76,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Background="#190E0E0E" RenderTransformOrigin="0.5,0.5" Foreground="White">
                 <TextBox.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -160,17 +173,17 @@
                     </TransformGroup>
                 </TextBox.RenderTransform>
             </TextBox>
-            <TextBox x:Name="txtPass" HorizontalAlignment="Center" Height="23" Margin="80,70,76,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="120" Background="#19FFFFFF" RenderTransformOrigin="0.5,0.5">
-                <TextBox.RenderTransform>
+            <PasswordBox x:Name="txtPass" HorizontalAlignment="Center" Height="23" Margin="80,70,76,0"  VerticalAlignment="Top" Width="120" Background="#19000000" RenderTransformOrigin="0.5,0.5" Foreground="White">
+                <PasswordBox.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
                         <SkewTransform/>
                         <RotateTransform/>
                         <TranslateTransform/>
                     </TransformGroup>
-                </TextBox.RenderTransform>
-            </TextBox>
-            <TextBox x:Name="txtName" HorizontalAlignment="Center" Height="23" Margin="80,70,76,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="120" Background="#19FFFFFF" RenderTransformOrigin="0.5,0.5" Visibility="Hidden">
+                </PasswordBox.RenderTransform>
+            </PasswordBox>
+            <TextBox x:Name="txtName" HorizontalAlignment="Center" Height="23" Margin="80,70,76,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="120" Background="#19FFFFFF" RenderTransformOrigin="0.5,0.5" Visibility="Hidden" Foreground="White">
                 <TextBox.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
