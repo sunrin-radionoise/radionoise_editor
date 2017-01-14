@@ -111,9 +111,17 @@ namespace Code_Editor
              * Server POST : Login
              * Login 완료되면 Setting.ID에 로그인 성공한 ID를 입력해야 한다.
              */
-            if(txtID.Text == "ayh0729" && txtPass.Password == "asdf1234")
+            if(NetworkInterface.Login(txtID.Text,txtPass.Password))
             {
                 //Login Success
+                Setting.ID = txtID.Text;
+                MainWindow m = new MainWindow();
+                m.Show();
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Login Failed","Error",MessageBoxButton.OK,MessageBoxImage.Information);
             }
         }
 
