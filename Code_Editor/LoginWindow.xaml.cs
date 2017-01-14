@@ -129,9 +129,18 @@ namespace Code_Editor
             else
             {
                 //Register 처리해주기
-                NetworkInterface.SignUp(txtID.Text,txtPass.Password,txtName.Text);
-                BeginStoryboard(storyBoard_Rev);
-                isReg = false;
+                if(NetworkInterface.SignUp(txtID.Text,txtPass.Password,txtName.Text))
+                {
+                    //Register 성공하면 로그인하라고 해야함
+                    BeginStoryboard(storyBoard_Rev);
+                    isReg = false;
+                }
+                else
+                {
+                    //실패하면 다시 하라고 해줘여함
+                    MessageBox.Show("이미 있는 계정입니다. 다시 시도해 주세요","오류",MessageBoxButton.OK,MessageBoxImage.Information);
+                }
+                
             }
         }
     }
