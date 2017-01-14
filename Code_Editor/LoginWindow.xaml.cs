@@ -129,7 +129,7 @@ namespace Code_Editor
             else
             {
                 //Register 처리해주기
-                
+                NetworkInterface.SignUp(txtID.Text,txtPass.Password,txtName.Text);
                 BeginStoryboard(storyBoard_Rev);
                 isReg = false;
             }
