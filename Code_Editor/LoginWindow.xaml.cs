@@ -68,10 +68,6 @@ namespace Code_Editor
             System.Windows.Media.Animation.Storyboard stbLow = (System.Windows.Media.Animation.Storyboard)FindResource("Opacity_Lower");
             System.Windows.Media.Animation.Storyboard stbUp = (System.Windows.Media.Animation.Storyboard)FindResource("Opacity_Upper");
             ImageBrush imgB;
-            //투명도 낮춰준다.
-            //이미지 바꾼다.
-            //투명도 올려준다.
-            //cnt가 20이 되면 1로 바꿔준다.
             BeginStoryboard(stbLow);
             if (curTime > 4 && curTime < 17) //5~16시
             {
@@ -107,10 +103,7 @@ namespace Code_Editor
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            /*
-             * Server POST : Login
-             * Login 완료되면 Setting.ID에 로그인 성공한 ID를 입력해야 한다.
-             */
+
             if(NetworkInterface.Login(txtID.Text,txtPass.Password))
             {
                 //Login Success

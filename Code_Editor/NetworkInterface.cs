@@ -14,7 +14,7 @@ namespace Code_Editor
         /// <summary>
         /// Base URL입니다.
         /// </summary>
-        static string BaseURL = "http://iwin247.net:8080"; //BaseURL
+        static string BaseURL = "http://iwin247.net:8080";
         /// <summary>
         /// 로그인
         /// </summary>
@@ -93,6 +93,25 @@ namespace Code_Editor
         public void GetUpdateFile()
         {
             HttpWebRequest req;
+        }
+
+        public static bool Server_Current() //GET으로 서버가 값을 반환하는지를 판단한다.
+        {
+            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(BaseURL);
+            Console.WriteLine(req.Address);
+            req.Method = "GET";
+            req.ContentType = "application/x-www-form-urlencoded";
+            try
+            {
+                var response = (HttpWebResponse)req.GetResponse();
+                var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+                Console.WriteLine(responseString);
+                return true;
+            }
+            catch (Exception) //Cannot GET
+            {
+                return false;
+            }
         }
     }
 }
