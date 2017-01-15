@@ -22,7 +22,7 @@ namespace Code_Editor
         /// <param name="passwd">로그인할 PW</param>
         public static bool Login(string id, string passwd)
         {
-            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(BaseURL + "/auth");
+            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(BaseURL + "/auth/signin");
             Console.WriteLine(req.Address);
             var postData = "id=" + id;
             postData += "&passwd=" + passwd;
