@@ -27,6 +27,7 @@ namespace Code_Editor
          * ID=ayh0729
          * PW=asdf1234
          * Sync=false
+         * AutoLogin=False;
          */
         #region Setting_Field
         public static string Font { get; set; }
@@ -36,6 +37,7 @@ namespace Code_Editor
         public static string ID { get; set; }
         public static string PW { get; set; }
         public static bool Sync { get; set; }
+        public static bool AutoLogin { get; set; }
         #endregion
         public static string setting_path = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\Setting.ini";
     }
@@ -65,6 +67,7 @@ namespace Code_Editor
             Setting.ID = Read_ini("Account","ID");
             Setting.PW = Read_ini("Account", "PW");
             Setting.Sync = Convert.ToBoolean(Read_ini("Account", "Sync"));
+            Setting.AutoLogin = Convert.ToBoolean(Read_ini("Account", "autoLogin"));
         }
 
         public void Save_Setting()
@@ -77,6 +80,7 @@ namespace Code_Editor
             Write_ini("Account", "ID", Setting.ID);
             Write_ini("Account", "PW", Setting.PW);
             Write_ini("Account", "Sync", Setting.Sync.ToString());
+            Write_ini("Account", "AutoLogin", Setting.AutoLogin.ToString());
         }
     }
 }

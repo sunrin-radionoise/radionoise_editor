@@ -68,10 +68,6 @@ namespace Code_Editor
             System.Windows.Media.Animation.Storyboard stbLow = (System.Windows.Media.Animation.Storyboard)FindResource("Opacity_Lower");
             System.Windows.Media.Animation.Storyboard stbUp = (System.Windows.Media.Animation.Storyboard)FindResource("Opacity_Upper");
             ImageBrush imgB;
-            //투명도 낮춰준다.
-            //이미지 바꾼다.
-            //투명도 올려준다.
-            //cnt가 20이 되면 1로 바꿔준다.
             BeginStoryboard(stbLow);
             if (curTime > 4 && curTime < 17) //5~16시
             {
@@ -107,13 +103,18 @@ namespace Code_Editor
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            /*
-             * Server POST : Login
-             * Login 완료되면 Setting.ID에 로그인 성공한 ID를 입력해야 한다.
-             */
-            if(txtID.Text == "ayh0729" && txtPass.Password == "asdf1234")
+
+            if(NetworkInterface.Login(txtID.Text,txtPass.Password))
             {
                 //Login Success
+                Setting.ID = txtID.Text;
+                MainWindow m = new MainWindow();
+                m.Show();
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Login Failed","Error",MessageBoxButton.OK,MessageBoxImage.Information);
             }
         }
 
@@ -129,10 +130,30 @@ namespace Code_Editor
             else
             {
                 //Register 처리해주기
-                
+                if(NetworkInterface.SignUp(txtID.Text,txtPass.Password,txtName.Text))
+                {
+                    //Register 성공하면 로그인하라고 해야함
+                    MessageBox.Show("등록 성공하였습니다.", "성공", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                }
+                else
+                {
+                    //실패하면 다시 하라고 해줘여함
+                    MessageBox.Show("이미 있는 계정입니다. 다시 시도해 주세요","오류",MessageBoxButton.OK,MessageBoxImage.Information);
+                }
                 BeginStoryboard(storyBoard_Rev);
                 isReg = false;
             }
+        }
+
+        private void lblClose_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void lblClose_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Close();
         }
     }
 }
