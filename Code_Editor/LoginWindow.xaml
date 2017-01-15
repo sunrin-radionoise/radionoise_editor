@@ -258,6 +258,7 @@
                 </CheckBox.RenderTransform>
             </CheckBox>
         </Grid>
+        <Label x:Name="lblClose" Content="X" HorizontalAlignment="Left" Margin="773,10,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Tahoma" FontSize="16" MouseLeftButtonUp="lblClose_MouseLeftButtonUp" MouseDown="lblClose_MouseDown"/>
 
     </Grid>
 </Window>

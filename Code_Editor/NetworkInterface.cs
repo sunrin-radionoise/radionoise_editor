@@ -95,7 +95,7 @@ namespace Code_Editor
             HttpWebRequest req;
         }
 
-        public static bool Server_Current() //GET으로 서버가 값을 반환하는지를 판단한다.
+        public static bool Server_Status() //GET으로 서버가 값을 반환하는지를 판단한다.
         {
             HttpWebRequest req = (HttpWebRequest)WebRequest.Create(BaseURL);
             Console.WriteLine(req.Address);
@@ -106,11 +106,11 @@ namespace Code_Editor
                 var response = (HttpWebResponse)req.GetResponse();
                 var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
                 Console.WriteLine(responseString);
-                return true;
+                return true; //Working
             }
             catch (Exception) //Cannot GET
             {
-                return false;
+                return false; //Not Working
             }
         }
     }
