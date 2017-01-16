@@ -97,7 +97,7 @@ namespace Code_Editor
 
         public static bool Server_Status() //GET으로 서버가 값을 반환하는지를 판단한다.
         {
-            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(BaseURL);
+            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(BaseURL + "/version");
             Console.WriteLine(req.Address);
             req.Method = "GET";
             req.ContentType = "application/x-www-form-urlencoded";

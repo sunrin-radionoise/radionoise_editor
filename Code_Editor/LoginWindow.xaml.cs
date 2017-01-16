@@ -31,6 +31,7 @@ namespace Code_Editor
             InitializeComponent();
             Random rnd = new Random();
             ImageBrush imgB;
+            NetworkInterface.Server_Status();
             picCnt = rnd.Next(1, 20);
             if (curTime > 4 && curTime < 17) //5~16시
             {

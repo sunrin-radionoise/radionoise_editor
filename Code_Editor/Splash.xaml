@@ -13,7 +13,11 @@
         <ImageBrush ImageSource="Resources/splash.png"/>
     </Window.Background>
 
-    <Grid>
-        <Image HorizontalAlignment="Left" Height="53" Margin="410,184,0,0" VerticalAlignment="Top" Width="344" Source="Resources/title.png" Stretch="Fill"/>
+    <Grid x:Name="SplashScreen">
+        <Label Content="Radionoise" HorizontalAlignment="Left" Margin="378,74,0,0" VerticalAlignment="Top" Height="79" Width="404" Foreground="White" FontFamily="Consolas" FontSize="68"/>
+        <Label Content="CodeName Tree Diagram" HorizontalAlignment="Left" Margin="378,153,0,0" VerticalAlignment="Top" Foreground="White" FontSize="22"/>
+        <Label x:Name="lblVersion" Content="Version 1.0.1234.1234" HorizontalAlignment="Left" Margin="378,197,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
+        <Label Content="Copyright ⓒ 2017 Project Radionoise" HorizontalAlignment="Left" Margin="378,236,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
+        <Label x:Name="lblWorking" Content="Current Working" HorizontalAlignment="Left" Margin="378,354,0,0" VerticalAlignment="Top" Foreground="White" FontSize="22"/>
     </Grid>
 </Window>

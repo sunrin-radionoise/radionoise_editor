@@ -38,6 +38,7 @@ namespace Code_Editor
         public static string PW { get; set; }
         public static bool Sync { get; set; }
         public static bool AutoLogin { get; set; }
+        public static bool OnlineMode { get; set; }
         #endregion
         public static string setting_path = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\Setting.ini";
     }
