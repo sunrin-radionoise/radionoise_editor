@@ -46,7 +46,7 @@ namespace Code_Editor
             InitializeComponent();
             #region Initialize
             _OpponentManager.Init_Oppo();
-            foreach (string o in Opponent.OppoList)
+            foreach (string o in Setting.OppoList)
             {
                 oppoCombo.Items.Add(o);
             }
@@ -69,7 +69,7 @@ namespace Code_Editor
         }
         private void Update_Oppo()
         {
-            _Opponent = Opponent.OppoList;
+            _Opponent = Setting.OppoList;
             //_Opponent.Add("New Opponent");
 
         }
@@ -105,6 +105,8 @@ namespace Code_Editor
             if(digSave.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 File.Create(digSave.FileName, 1, FileOptions.None);
+                Current_File_Path = digSave.FileName;
+                CodeEditor.IsEnabled = true;
             }
         }
 
@@ -244,7 +246,7 @@ namespace Code_Editor
             AddOpponent a = new AddOpponent();
             a.ShowDialog();
             oppoCombo.Items.Clear();
-            foreach (string o in Opponent.OppoList)
+            foreach (string o in Setting.OppoList)
             {
                 oppoCombo.Items.Add(o);
             }

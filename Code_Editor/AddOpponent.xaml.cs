@@ -26,7 +26,7 @@ namespace Code_Editor
 
         private void btnok_Click(object sender, RoutedEventArgs e)
         {
-            Opponent.OppoList.Add(txtOppo.Text);
+            Setting.OppoList.Add(txtOppo.Text);
             Close();
         }
     }

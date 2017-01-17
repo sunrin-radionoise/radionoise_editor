@@ -19,6 +19,7 @@ namespace Code_Editor
     /// </summary>
     public partial class Settings : Window
     {
+        
         public Settings()
         {
             InitializeComponent();
@@ -77,6 +78,11 @@ namespace Code_Editor
         private void SettingDialog_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             
+        }
+
+        private void Opacity_slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+
         }
     }
 }

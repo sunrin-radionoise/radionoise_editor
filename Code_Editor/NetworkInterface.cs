@@ -82,9 +82,23 @@ namespace Code_Editor
                 return false;
             }
         }
-        public void GetVer()
+        public static bool GetVer()
         {
-            HttpWebRequest req;
+            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(BaseURL + "/version");
+            Console.WriteLine(req.Address);
+            req.Method = "GET";
+            req.ContentType = "application/x-www-form-urlencoded";
+            try
+            {
+                var response = (HttpWebResponse)req.GetResponse();
+                var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+                Console.WriteLine(responseString);
+                return true; //Working
+            }
+            catch (Exception) //Cannot GET
+            {
+                return false; //Not Working
+            }
         }
         public void GetSetting()
         {

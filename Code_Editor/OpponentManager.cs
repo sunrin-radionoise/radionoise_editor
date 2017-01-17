@@ -18,7 +18,7 @@ namespace Code_Editor
         /// <summary>
         /// Chatting Opponent를 담은 List입니다.
         /// </summary>
-        public static List<string> OppoList = new List<string> { "", };
+        
     }
     /// <summary>
     /// 
@@ -35,7 +35,7 @@ namespace Code_Editor
         {
             try
             {
-                Opponent.OppoList.Add(oppoName);
+                Setting.OppoList.Add(oppoName);
                 return true;
             }
             catch (Exception)
@@ -52,7 +52,7 @@ namespace Code_Editor
         {
             try
             {
-                Opponent.OppoList.Remove(oppoName);
+                Setting.OppoList.Remove(oppoName);
                 return true;
             }
             catch(Exception)
@@ -70,8 +70,8 @@ namespace Code_Editor
         {
             try
             {
-                Opponent.OppoList.Remove(orgOppo);
-                Opponent.OppoList.Add(changeOppo);
+                Setting.OppoList.Remove(orgOppo);
+                Setting.OppoList.Add(changeOppo);
                 return true;
             }
             catch(Exception)
@@ -93,7 +93,7 @@ namespace Code_Editor
             temp_oppo = content.Split(new string[] { "\n", "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
             foreach(string tmp in temp_oppo)
             {
-                Opponent.OppoList.Add(tmp);
+                Setting.OppoList.Add(tmp);
             }
         }
         /// <summary>
@@ -103,7 +103,7 @@ namespace Code_Editor
         public void Save_Oppo()
         {
             var sw = new StreamWriter(oppo_path);
-            foreach(string tmp in Opponent.OppoList)
+            foreach(string tmp in Setting.OppoList)
             {
                 sw.WriteLine(tmp);
             }

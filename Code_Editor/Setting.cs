@@ -30,20 +30,24 @@ namespace Code_Editor
          * AutoLogin=False;
          */
         #region Setting_Field
+        public static List<string> OppoList = new List<string> { "", };
         public static string Font { get; set; }
         public static int FontSize { get; set; }
         public static bool Color { get; set; }
         public static string ImagePath { get; set; }
+        public static int BackOpacity { get; set; }
         public static string ID { get; set; }
         public static string PW { get; set; }
         public static bool Sync { get; set; }
         public static bool AutoLogin { get; set; }
         public static bool OnlineMode { get; set; }
+        public static List<string> Colors { get; set; }
         #endregion
         public static string setting_path = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\Setting.ini";
     }
     class SettingManager
     {
+#region INI_APIS
         [DllImport("kernel32")]
         private static extern long WritePrivateProfileString(string section, string key, string val, string filePath);
         [DllImport("kernel32")]
@@ -58,6 +62,7 @@ namespace Code_Editor
         {
             WritePrivateProfileString(Section, Key, Value, Setting.setting_path);
         }
+#endregion
         public void Load_Setting()
         {
             //Setting에 Load한다.
@@ -65,6 +70,7 @@ namespace Code_Editor
             Setting.FontSize = Convert.ToInt32(Read_ini("Font","FontSize"));
             Setting.Color = Convert.ToBoolean(Read_ini("Background", "Color"));
             Setting.ImagePath = Read_ini("Background","ImagePath");
+            Setting.BackOpacity = Convert.ToInt32(Read_ini("Background","Opacity"));
             Setting.ID = Read_ini("Account","ID");
             Setting.PW = Read_ini("Account", "PW");
             Setting.Sync = Convert.ToBoolean(Read_ini("Account", "Sync"));

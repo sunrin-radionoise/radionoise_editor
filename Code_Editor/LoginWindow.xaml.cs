@@ -31,7 +31,14 @@ namespace Code_Editor
             InitializeComponent();
             Random rnd = new Random();
             ImageBrush imgB;
-            NetworkInterface.Server_Status();
+            if (!Setting.OnlineMode)
+            {
+                //Offline Mode
+                MainWindow m = new MainWindow();
+                m.Show();
+                Close();
+                
+            }
             picCnt = rnd.Next(1, 20);
             if (curTime > 4 && curTime < 17) //5~16시
             {
