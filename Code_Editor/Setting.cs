@@ -32,6 +32,8 @@ namespace Code_Editor
          * AutoLogin=False
          * //Token=asdfasdfasdfasdf
          * Social=Facebook/Twitter/Github/Google?
+         * [File]
+         * AutoSave=1/5/10
          */
         #region Setting_Field
         public static List<string> OppoList = new List<string> { "", };
@@ -46,6 +48,7 @@ namespace Code_Editor
         public static bool Sync { get; set; }
         public static bool AutoLogin { get; set; }
         public static bool OnlineMode { get; set; }
+        public static int SaveTime { get; set; }
         public static List<string> Colors;
         #endregion
         public static readonly string setting_path = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\Setting.ini";
@@ -81,6 +84,7 @@ namespace Code_Editor
             Setting.PW = Read_ini("Account", "PW");
             Setting.Sync = Convert.ToBoolean(Read_ini("Account", "Sync"));
             Setting.AutoLogin = Convert.ToBoolean(Read_ini("Account", "autoLogin"));
+            Setting.SaveTime = Convert.ToInt32(Read_ini("File", "AutoSave"));
         }
 
         public void Save_Setting()
@@ -95,6 +99,7 @@ namespace Code_Editor
             Write_ini("Account", "PW", Setting.PW);
             Write_ini("Account", "Sync", Setting.Sync.ToString());
             Write_ini("Account", "AutoLogin", Setting.AutoLogin.ToString());
+            Write_ini("File", "AutoSave", Setting.SaveTime.ToString());
         }
     }
 }

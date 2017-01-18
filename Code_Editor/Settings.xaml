@@ -15,6 +15,12 @@
                     <Label Content="설정 동기화 : " HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
                     <Label x:Name="lblSync" Content="꺼짐" HorizontalAlignment="Left" Margin="100,41,0,0" VerticalAlignment="Top"/>
                     <Button x:Name="btnSync" Content="변경" Margin="0,44,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75" Click="btnSync_Click"/>
+                    <Label Content="자동 저장 간격 : " HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top"/>
+                    <ComboBox HorizontalAlignment="Left" Margin="284,76,0,0" VerticalAlignment="Top" Width="120">
+                        <ComboBoxItem Content="1분" />
+                        <ComboBoxItem Content="5분" />
+                        <ComboBoxItem Content="10분" />
+                    </ComboBox>
                 </Grid>
             </TabItem>
             <TabItem Header="Background">
