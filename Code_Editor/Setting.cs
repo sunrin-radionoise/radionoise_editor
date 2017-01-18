@@ -23,11 +23,15 @@ namespace Code_Editor
          * [Background]
          * Color=false
          * ImagePath=C:\blah\blah.png
+         * BackOpacity=100
+         * ColorID=Black
          * [Account]
          * ID=ayh0729
          * PW=asdf1234
          * Sync=false
-         * AutoLogin=False;
+         * AutoLogin=False
+         * //Token=asdfasdfasdfasdf
+         * Social=Facebook/Twitter/Github/Google?
          */
         #region Setting_Field
         public static List<string> OppoList = new List<string> { "", };
@@ -36,14 +40,15 @@ namespace Code_Editor
         public static bool Color { get; set; }
         public static string ImagePath { get; set; }
         public static int BackOpacity { get; set; }
+        public static string ColorID { get; set; }
         public static string ID { get; set; }
         public static string PW { get; set; }
         public static bool Sync { get; set; }
         public static bool AutoLogin { get; set; }
         public static bool OnlineMode { get; set; }
-        public static List<string> Colors { get; set; }
+        public static List<string> Colors;
         #endregion
-        public static string setting_path = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\Setting.ini";
+        public static readonly string setting_path = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\Setting.ini";
     }
     class SettingManager
     {
@@ -71,6 +76,7 @@ namespace Code_Editor
             Setting.Color = Convert.ToBoolean(Read_ini("Background", "Color"));
             Setting.ImagePath = Read_ini("Background","ImagePath");
             Setting.BackOpacity = Convert.ToInt32(Read_ini("Background","Opacity"));
+            Setting.ColorID = Read_ini("Background", "ColorID");
             Setting.ID = Read_ini("Account","ID");
             Setting.PW = Read_ini("Account", "PW");
             Setting.Sync = Convert.ToBoolean(Read_ini("Account", "Sync"));
@@ -84,6 +90,7 @@ namespace Code_Editor
             Write_ini("Font", "FontSize", Setting.FontSize.ToString());
             Write_ini("Background", "Color", Setting.Color.ToString());
             Write_ini("Background", "ImagePath", Setting.ImagePath);
+            Write_ini("Bakcground", "ColorID", Setting.ColorID);
             Write_ini("Account", "ID", Setting.ID);
             Write_ini("Account", "PW", Setting.PW);
             Write_ini("Account", "Sync", Setting.Sync.ToString());
