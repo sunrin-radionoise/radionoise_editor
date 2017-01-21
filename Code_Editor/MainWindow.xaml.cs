@@ -27,6 +27,7 @@ namespace Code_Editor
     /// </summary>
     public partial class MainWindow : Window
     {
+        #region Variables
         static string Extensions = "ASPX|*.aspx|Boo|*.boo|C# File|*.cs|C++ File|*.cpp|C++ File|*.h|C++ File|*.hpp|C++ File|*.cxx|CSS|*.css|COCO|*.casm|HTML|*.html|HTML|*.htm|Java|*.java|JavaScript|*.js|PHP|*.php|Tex|*.dvi|VBNET|*.vb|XML|*.xml|XML|*.xaml|XML|*.xshd|XMLDOC|*.xml";
         OpponentManager _OpponentManager = new OpponentManager();
         SettingManager _SettingManager = new SettingManager();
@@ -36,11 +37,17 @@ namespace Code_Editor
         Socket socket = IO.Socket("http://iwin247.net:8080/");
         List<string> _Opponent;
         private string Current_File_Path = "";
+        private string folder_path = "";
         System.Windows.Forms.SaveFileDialog digSave = new System.Windows.Forms.SaveFileDialog()
         {
-            Filter=Extensions,
-            Title="File"
+            Filter = Extensions,
+            Title = "File"
         };
+        System.Windows.Forms.FolderBrowserDialog digFolder = new System.Windows.Forms.FolderBrowserDialog()
+        {
+            ShowNewFolderButton = true
+        };
+        #endregion
         public MainWindow()
         {
             InitializeComponent();
@@ -67,6 +74,7 @@ namespace Code_Editor
             #endregion
             //Console.WriteLine("Message Send");
         }
+        #region EventHandler
         private void Update_Oppo()
         {
             _Opponent = Setting.OppoList;
@@ -102,7 +110,7 @@ namespace Code_Editor
              * 
              * 그 다음 Create File모드로 해서 간다.
              */
-            if(digSave.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (digSave.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 File.Create(digSave.FileName, 1, FileOptions.None);
                 Current_File_Path = digSave.FileName;
@@ -114,15 +122,6 @@ namespace Code_Editor
         {
             //socket.Disconnect();
             _OpponentManager.Save_Oppo();
-        }
-
-        private void CodeEditor_KeyDown(object sender, KeyEventArgs e)
-        {
-            /*
-             * Key가 '{'이고 그 다음 Enter가 눌린다면 Tab을 추가해줘야 한다?
-             * '}'가 나오면 Tab을 하나 줄여줘야 한다? 
-             */
-
         }
 
         private void oppoCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -251,5 +250,29 @@ namespace Code_Editor
                 oppoCombo.Items.Add(o);
             }
         }
+
+        private void OpenFolder_Click(object sender, RoutedEventArgs e)
+        {
+            if (digFolder.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                folder_path = digFolder.SelectedPath;
+            }
+        }
+        private void Folder_Add(string folderpath)
+        {
+            lstFolder.Items.Clear();
+            string[] files = Directory.GetFiles(folderpath);
+            foreach(string file in files)
+            {
+                string filename = System.IO.Path.GetFileNameWithoutExtension(file);
+                ListViewItem item = new ListViewItem()
+                {
+                    Content=filename,
+                    Tag=file
+                };
+                lstFolder.Items.Add(item);
+            }
+        }
+        #endregion
     }
 }

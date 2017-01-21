@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Code_Editor"
         xmlns:avalonedit="http://icsharpcode.net/sharpdevelop/avalonedit" x:Class="Code_Editor.MainWindow"
         mc:Ignorable="d"
-        Title="Radionoise Editor" Height="384.478" Width="680.421" SizeChanged="Window_SizeChanged" Closing="Window_Closing">
+        Title="Radionoise Editor" Height="399.478" Width="699.421" SizeChanged="Window_SizeChanged" Closing="Window_Closing">
     <Window.Resources>
         <Style TargetType="{x:Type Paragraph}">
             <Setter Property="Margin" Value="0"/>
@@ -48,7 +48,7 @@
             <ColumnDefinition Width="107*"/>
             <ColumnDefinition Width="410*"/>
         </Grid.ColumnDefinitions>
-       
+
 
         <TabControl TabStripPlacement="Bottom" Grid.Row="2" Background="#FF3E3E40" BorderBrush="#FF3F3F46">
             <TabItem Header="Proj" Margin="0,0,-17,0" HorizontalAlignment="Left" Width="50" BorderBrush="#FF3F3F46" Foreground="White">
@@ -58,7 +58,15 @@
                         <GradientStop Color="#FF252526"/>
                     </LinearGradientBrush>
                 </TabItem.Background>
-                <Grid Background="#FF252526"/>
+                <Grid Background="#FF252526">
+                    <ListView x:Name="lstFolder" Background="#FF252526" Foreground="White" BorderBrush="#FF252526">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
             </TabItem>
             <TabItem Header="Chat" Margin="2,0,-15,0" Height="20" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.45" Foreground="White">
                 <TabItem.Background>
@@ -87,6 +95,7 @@
                 <MenuItem Header="_File" Foreground="White" Background="#FF252526" BorderBrush="#FF252526" >
                     <MenuItem x:Name="New" Header="_New" Click="NewItem_Click" Background="#FF252526" BorderBrush="#FF252526" />
                     <MenuItem x:Name="Open" Header="_Open" Background="#FF252526" BorderBrush="#FF252526" Click="Open_Click"/>
+                    <MenuItem x:Name="OpenFolder" Header="_Open Folder" Background="#FF252526" BorderBrush="#FF252526" Click="OpenFolder_Click" />
                     <MenuItem x:Name="Save" Header="_Save" Background="#FF252526" BorderBrush="#FF252526" Click="Save_Click"/>
                     <MenuItem x:Name="Exit" Header="_Exit" Background="#FF252526" BorderBrush="#FF252526" Click="Exit_Click"/>
                 </MenuItem>
@@ -104,11 +113,7 @@
             </Menu>
         </Grid>
 
-        <avalonedit:TextEditor ShowLineNumbers="True" SyntaxHighlighting="HTML" x:Name="CodeEditor" FontFamily="Consolas" Padding="2,0,0,0" Grid.Column="1" Grid.Row="1" Foreground="White" KeyDown="CodeEditor_KeyDown" TextInput="CodeEditor_TextInput" PreviewTextInput="CodeEditor_PreviewTextInput" IsEnabled="False">
-            <avalonedit:TextEditor.Background>
-                <ImageBrush ImageSource="Resources/pre_back.png"/>
-            </avalonedit:TextEditor.Background>
-        </avalonedit:TextEditor>
+        <avalonedit:TextEditor ShowLineNumbers="True" SyntaxHighlighting="HTML" x:Name="CodeEditor" FontFamily="Consolas" Padding="2,0,0,0" Grid.Column="1" Grid.Row="1" Foreground="White" KeyDown="CodeEditor_KeyDown" TextInput="CodeEditor_TextInput" PreviewTextInput="CodeEditor_PreviewTextInput" IsEnabled="False" Background="#FF252526"/>
 
     </Grid>
 </Window>
