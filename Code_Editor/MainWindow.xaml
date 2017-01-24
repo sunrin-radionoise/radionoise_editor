@@ -113,7 +113,7 @@
             </Menu>
         </Grid>
 
-        <avalonedit:TextEditor ShowLineNumbers="True" SyntaxHighlighting="HTML" x:Name="CodeEditor" FontFamily="Consolas" Padding="2,0,0,0" Grid.Column="1" Grid.Row="1" Foreground="White" KeyDown="CodeEditor_KeyDown" TextInput="CodeEditor_TextInput" PreviewTextInput="CodeEditor_PreviewTextInput" IsEnabled="False" Background="#FF252526"/>
+        <avalonedit:TextEditor ShowLineNumbers="True" SyntaxHighlighting="HTML" x:Name="CodeEditor" FontFamily="Consolas" Padding="2,0,0,0" Grid.Column="1" Grid.Row="1" Foreground="White" TextInput="CodeEditor_TextInput" PreviewTextInput="CodeEditor_PreviewTextInput" IsEnabled="False" Background="#FF252526"/>
 
     </Grid>
 </Window>

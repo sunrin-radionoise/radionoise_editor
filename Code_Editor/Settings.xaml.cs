@@ -28,6 +28,8 @@ namespace Code_Editor
         private void SettingDialog_Loaded(object sender, RoutedEventArgs e)
         {
             lblpath.Content = Setting.ImagePath;
+            ColorID.Text = Setting.ColorID;
+            Opacity_slider.Value = Setting.BackOpacity;
             if (Setting.Color)
                 chkColor.IsChecked = true;
             else
@@ -82,7 +84,12 @@ namespace Code_Editor
 
         private void Opacity_slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
+            Setting.BackOpacity = (int)Opacity_slider.Value;
+        }
 
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Setting.ColorID = ColorID.Text;
         }
     }
 }

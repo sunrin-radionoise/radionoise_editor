@@ -29,9 +29,9 @@
                     <Label Content="Image Source" Margin="10,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="85"/>
                     <Label x:Name="lblpath" Content="Image Path" Margin="100,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="142"/>
                     <Button x:Name="btnImage" Content="Select" Margin="0,13,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="116" Click="btnImage_Click"/>
-                    <ComboBox Margin="0,38,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="116"/>
                     <Slider x:Name="Opacity_slider" HorizontalAlignment="Left" Margin="10,92,0,0" VerticalAlignment="Top" Width="394" Height="22" Maximum="100" Value="101" ValueChanged="Opacity_slider_ValueChanged"/>
                     <Label Content="Opacity" Margin="10,61,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="85"/>
+                    <TextBox x:Name="ColorID" HorizontalAlignment="Left" Height="23" Margin="288,39,0,0" TextWrapping="Wrap" Text="FFFFFF" VerticalAlignment="Top" Width="116" TextChanged="TextBox_TextChanged"/>
 
                 </Grid>
             </TabItem>

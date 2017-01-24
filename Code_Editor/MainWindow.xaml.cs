@@ -8,7 +8,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
+
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -18,6 +18,7 @@ using Quobject.SocketIoClientDotNet.Client;
 using System.Threading;
 using System.Windows.Threading;
 using System.IO;
+using System.Windows.Media;
 
 namespace Code_Editor
 {
@@ -147,7 +148,8 @@ namespace Code_Editor
             //Setter
             if (Setting.Color)
             {
-                var colorBrush = new SolidColorBrush(Color.FromArgb(255, 37, 37, 38));
+                var colorBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF"+Setting.ColorID));
+                CodeEditor.Background.Opacity = Setting.BackOpacity;
                 CodeEditor.Background = colorBrush;
             }
             else

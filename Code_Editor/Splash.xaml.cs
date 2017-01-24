@@ -57,7 +57,14 @@ namespace Code_Editor
                     break;
                 case 7:
                     lblWorking.Content = "Server Connect";
-                    if (!Check_Server()) { Setting.OnlineMode = false; System.Windows.MessageBox.Show("서버는 현재 오프라인 상태입니다.", "오프라인 모드", MessageBoxButton.OK, MessageBoxImage.Information); }
+                    if (!Check_Server())
+                    {
+                        Setting.OnlineMode = false; System.Windows.MessageBox.Show("서버는 현재 오프라인 상태입니다.", "오프라인 모드", MessageBoxButton.OK, MessageBoxImage.Information);
+                        MainWindow m = new MainWindow();
+                        m.Show();
+                        Close();
+                        timer.Stop();
+                    }
                     else { Setting.OnlineMode = true; }
                     cnt++;
                     break;

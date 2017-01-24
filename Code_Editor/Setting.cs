@@ -23,7 +23,7 @@ namespace Code_Editor
          * [Background]
          * Color=false
          * ImagePath=C:\blah\blah.png
-         * BackOpacity=100
+         * Opacity=100
          * ColorID=Black
          * [Account]
          * ID=ayh0729
@@ -31,7 +31,7 @@ namespace Code_Editor
          * Sync=false
          * AutoLogin=False
          * //Token=asdfasdfasdfasdf
-         * Social=Facebook/Twitter/Github/Google?
+         * //Social=Facebook/Twitter/Github/Google?
          * [File]
          * AutoSave=1/5/10
          */
