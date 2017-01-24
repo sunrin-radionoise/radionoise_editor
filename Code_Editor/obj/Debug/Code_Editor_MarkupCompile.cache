@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-d:\documents\visual studio 2017\projects\radionoise_editor\code_editor\obj\Debug\
+d:\Documents\Visual Studio 2017\Projects\radionoise_editor\Code_Editor\obj\Debug\
 Code_Editor
 none
 false
 DEBUG;TRACE
-d:\documents\visual studio 2017\projects\radionoise_editor\code_editor\App.xaml
+d:\Documents\Visual Studio 2017\Projects\radionoise_editor\Code_Editor\App.xaml
 5456372672
 
 1326191074
-22-641677800
+221203201702
 AddOpponent.xaml;LoginWindow.xaml;MainWindow.xaml;Settings.xaml;Splash.xaml;
 
-True
+False
 
