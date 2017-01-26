@@ -276,5 +276,9 @@ namespace Code_Editor
             }
         }
         #endregion
+        private void UpdateText(bool IsEditing)
+        {
+
+        }
     }
 }

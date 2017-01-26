@@ -102,11 +102,11 @@ namespace Code_Editor
         }
         public void GetSetting()
         {
-            HttpWebRequest req;
+          
         }
         public void GetUpdateFile()
         {
-            HttpWebRequest req;
+           
         }
 
         public static bool Server_Status() //GET으로 서버가 값을 반환하는지를 판단한다.
@@ -125,6 +125,24 @@ namespace Code_Editor
             catch (Exception) //Cannot GET
             {
                 return false; //Not Working
+            }
+        }
+        public static string GetTextEditing(string Filename)
+        {
+            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(BaseURL + "/" + Filename);
+            Console.WriteLine(req.Address);
+            req.Method = "GET";
+            req.ContentType = "application/x-www-form-urlencoded";
+            try
+            {
+                var response = (HttpWebResponse)req.GetResponse();
+                var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+                Console.WriteLine(responseString);
+                return "a"; //Working
+            }
+            catch (Exception) //Cannot GET
+            {
+                return "b"; //Not Working
             }
         }
     }

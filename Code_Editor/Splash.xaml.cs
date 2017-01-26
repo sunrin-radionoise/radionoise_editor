@@ -26,7 +26,6 @@ namespace Code_Editor
         public Splash()
         {
             InitializeComponent();
-            
             lblVersion.Content = Assembly.GetExecutingAssembly().GetName().Version.ToString();
             timer.Interval = 500;
             timer.Tick += new EventHandler(Timer_Tick);
