@@ -59,7 +59,7 @@
                     </LinearGradientBrush>
                 </TabItem.Background>
                 <Grid Background="#FF252526">
-                    <ListView x:Name="lstFolder" Background="#FF252526" Foreground="White" BorderBrush="#FF252526">
+                    <ListView x:Name="lstFolder" Background="#FF252526" Foreground="White" BorderBrush="#FF252526" MouseDoubleClick="lstFolder_MouseDoubleClick">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn/>

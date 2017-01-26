@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Code_Editor"
         mc:Ignorable="d"
-        Title="Splash" Height="450" Width="800" WindowStyle="None" ResizeMode="NoResize" Cursor="Wait">
+        Title="Splash" Height="270" Width="480" WindowStyle="None" ResizeMode="NoResize" Cursor="Wait">
     <Window.Resources>
         <Storyboard x:Key="Loading"/>
     </Window.Resources>
@@ -14,10 +14,10 @@
     </Window.Background>
 
     <Grid x:Name="SplashScreen">
-        <Label Content="Radionoise" HorizontalAlignment="Left" Margin="378,74,0,0" VerticalAlignment="Top" Height="79" Width="404" Foreground="White" FontFamily="Consolas" FontSize="68"/>
-        <Label Content="CodeName Tree Diagram" HorizontalAlignment="Left" Margin="378,153,0,0" VerticalAlignment="Top" Foreground="White" FontSize="22"/>
-        <Label x:Name="lblVersion" Content="Version 1.0.1234.1234" HorizontalAlignment="Left" Margin="378,197,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
-        <Label Content="Copyright ⓒ 2017 Project Radionoise" HorizontalAlignment="Left" Margin="378,236,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
-        <Label x:Name="lblWorking" Content="Current Working" HorizontalAlignment="Left" Margin="378,354,0,0" VerticalAlignment="Top" Foreground="White" FontSize="22"/>
+        <Label Content="Radionoise" HorizontalAlignment="Left" Margin="230,10,0,0" VerticalAlignment="Top" Height="72" Width="216" Foreground="White" FontFamily="Consolas" FontSize="36"/>
+        <Label Content="CodeName Tree Diagram" HorizontalAlignment="Left" Margin="230,53,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16"/>
+        <Label x:Name="lblVersion" Content="Version 1.0.1234.1234" HorizontalAlignment="Left" Margin="230,82,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label Content="Copyright ⓒ 2017 Project Radionoise" HorizontalAlignment="Left" Margin="230,234,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label x:Name="lblWorking" Content="Current Working" HorizontalAlignment="Left" Margin="230,190,0,0" VerticalAlignment="Top" Foreground="White" FontSize="14" Height="39" Width="240"/>
     </Grid>
 </Window>

@@ -58,7 +58,7 @@ namespace Code_Editor
                     lblWorking.Content = "Server Connect";
                     if (!Check_Server())
                     {
-                        Setting.OnlineMode = false; System.Windows.MessageBox.Show("서버는 현재 오프라인 상태입니다.", "오프라인 모드", MessageBoxButton.OK, MessageBoxImage.Information);
+                        Setting.OnlineMode = false;
                         MainWindow m = new MainWindow();
                         m.Show();
                         Close();

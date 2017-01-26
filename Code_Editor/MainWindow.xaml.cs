@@ -51,6 +51,9 @@ namespace Code_Editor
         #endregion
         public MainWindow()
         {
+            if(!Setting.OnlineMode)
+                System.Windows.MessageBox.Show("서버는 현재 오프라인 상태입니다.", "오프라인 모드", MessageBoxButton.OK, MessageBoxImage.Information);
+
             InitializeComponent();
             #region Initialize
             _OpponentManager.Init_Oppo();
@@ -279,6 +282,11 @@ namespace Code_Editor
         private void UpdateText(bool IsEditing)
         {
 
+        }
+
+        private void lstFolder_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("DoubleClicked");
         }
     }
 }
