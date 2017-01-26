@@ -49,7 +49,7 @@ namespace Code_Editor
         public static bool AutoLogin { get; set; }
         public static bool OnlineMode { get; set; }
         public static int SaveTime { get; set; }
-        public static List<string> Colors;
+        //public static List<string> Colors;
         #endregion
         public static readonly string setting_path = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\Setting.ini";
     }

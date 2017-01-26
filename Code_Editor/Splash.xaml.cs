@@ -64,15 +64,18 @@ namespace Code_Editor
                         Close();
                         timer.Stop();
                     }
-                    else { Setting.OnlineMode = true; }
+                    else {
+                        Setting.OnlineMode = true;
+                        lblWorking.Content = "Completed";
+                        LoginWindow l = new LoginWindow();
+                        l.Show();
+                        Close();
+                        timer.Stop();
+                    }
                     cnt++;
                     break;
                 case 12:
-                    lblWorking.Content = "Completed";
-                    LoginWindow l = new LoginWindow();
-                    l.Show();
-                    Close();
-                    timer.Stop();
+                   
                     break;
                 default:
                     cnt++;

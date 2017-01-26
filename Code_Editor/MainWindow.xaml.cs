@@ -35,6 +35,7 @@ namespace Code_Editor
         public SaveFileDialog sd = new SaveFileDialog();
         string recTXT;
         DispatcherTimer timer = new DispatcherTimer();
+        DispatcherTimer saveTimer = new DispatcherTimer();
         Socket socket = IO.Socket("http://iwin247.net:8080/");
         List<string> _Opponent;
         private string Current_File_Path = "";
@@ -66,6 +67,9 @@ namespace Code_Editor
             timer.Interval = TimeSpan.FromSeconds(0.1f);
             timer.Tick += new EventHandler(Timer_Tick);
             timer.Start();
+            saveTimer.Interval = Setting.SaveTime * 60 * 1000;
+            saveTimer.Tick += new EventHandler(saveTimer_Tick);
+            saveTimer.Start();
             sd.Filter = "C# File|*.cs|Python File|*.py|HTML File|*.html|CSS File|*.css|JS File|*.js|C File|*.c|C++ File|*.cpp|Header File|*.h|Text File|*.txt";
             sd.Title = "저장";
             socket.On(Socket.EVENT_CONNECT, () => { });
@@ -85,6 +89,17 @@ namespace Code_Editor
             //_Opponent.Add("New Opponent");
 
         }
+
+        private void saveTimer_Tick(object sender,EventArgs e)
+        {
+            if (Current_File_Path != "")
+            {
+                StreamWriter sw = new StreamWriter(Current_File_Path);
+                sw.Write(CodeEditor.Text);
+                sw.Close();
+            }
+        }
+
         private void Timer_Tick(object sender, EventArgs e)
         {
             Message.Text = recTXT;
@@ -152,7 +167,7 @@ namespace Code_Editor
             if (Setting.Color)
             {
                 var colorBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF"+Setting.ColorID));
-                CodeEditor.Background.Opacity = Setting.BackOpacity;
+                
                 CodeEditor.Background = colorBrush;
             }
             else
@@ -163,7 +178,10 @@ namespace Code_Editor
                 };
                 CodeEditor.Background = imgBrush;
             }
-
+            CodeEditor.Background.Opacity = Setting.BackOpacity;
+            saveTimer.Stop();
+            saveTimer.Interval = Setting.SaveTime * 60 * 1000;
+            saveTimer.Start();
         }
 
         private void digFont_Click(object sender, RoutedEventArgs e)

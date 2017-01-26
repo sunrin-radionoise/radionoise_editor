@@ -91,5 +91,24 @@ namespace Code_Editor
         {
             Setting.ColorID = ColorID.Text;
         }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            switch(((ComboBoxItem)Combo_Auto.SelectedItem).Name.ToString())
+            {
+                case "꺼짐":
+                    MessageBox.Show("꺼짐");
+                    break;
+                case "1분":
+                    MessageBox.Show("꺼짐");
+                    break;
+                case "5분":
+                    MessageBox.Show("꺼짐");
+                    break;
+                case "10분":
+                    MessageBox.Show("꺼짐");
+                    break;
+            }
+        }
     }
 }
