@@ -67,7 +67,7 @@ namespace Code_Editor
             timer.Interval = TimeSpan.FromSeconds(0.1f);
             timer.Tick += new EventHandler(Timer_Tick);
             timer.Start();
-            saveTimer.Interval = Setting.SaveTime * 60 * 1000;
+            saveTimer.Interval = TimeSpan.FromMinutes(Setting.SaveTime);
             saveTimer.Tick += new EventHandler(saveTimer_Tick);
             saveTimer.Start();
             sd.Filter = "C# File|*.cs|Python File|*.py|HTML File|*.html|CSS File|*.css|JS File|*.js|C File|*.c|C++ File|*.cpp|Header File|*.h|Text File|*.txt";
@@ -180,7 +180,7 @@ namespace Code_Editor
             }
             CodeEditor.Background.Opacity = Setting.BackOpacity;
             saveTimer.Stop();
-            saveTimer.Interval = Setting.SaveTime * 60 * 1000;
+            saveTimer.Interval = TimeSpan.FromMinutes(Setting.SaveTime);
             saveTimer.Start();
         }
 
@@ -305,6 +305,11 @@ namespace Code_Editor
         private void lstFolder_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             MessageBox.Show("DoubleClicked");
+        }
+
+        private void Trans_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

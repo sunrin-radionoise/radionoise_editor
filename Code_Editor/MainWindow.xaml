@@ -110,6 +110,7 @@
                     <MenuItem x:Name="Sett" Header="_Settings" Background="#FF252526" BorderBrush="#FF252526" Click="Settings_Click" />
                     <MenuItem x:Name="digFont" Header="_Font" Background="#FF252526" BorderBrush="#FF252526" Click="digFont_Click" />
                     <MenuItem x:Name="addop" Header="_Add Opponent" Background="#FF252526" BorderBrush="#FF252526" Click="addop_Click" />
+                    <MenuItem x:Name="Trans" Header="_Translator" Background="#FF252526" BorderBrush="#FF252526" Click="Trans_Click" />
                 </MenuItem>
             </Menu>
         </Grid>

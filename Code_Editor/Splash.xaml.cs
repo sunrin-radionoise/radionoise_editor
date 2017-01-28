@@ -55,7 +55,8 @@ namespace Code_Editor
                     cnt++;
                     break;
                 case 7:
-                    lblWorking.Content = "Server Connect";
+                    cnt++;
+                    lblWorking.Content = "Try Server Connect";
                     if (!Check_Server())
                     {
                         Setting.OnlineMode = false;
@@ -72,10 +73,8 @@ namespace Code_Editor
                         Close();
                         timer.Stop();
                     }
-                    cnt++;
                     break;
                 case 12:
-                   
                     break;
                 default:
                     cnt++;

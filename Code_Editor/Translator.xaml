@@ -1,0 +1,63 @@
+﻿<Window x:Class="Code_Editor.Translator"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Code_Editor"
+        mc:Ignorable="d"
+        Title="Translator" Height="157.5" Width="272.5">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Color">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <GroupBox Header="RGB Color" Grid.Row="0">
+                        <Grid>
+                            <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="246"/>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="Hex Color" Grid.Row="1">
+                        <Grid>
+                            <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="246"/>
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="System">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="49*"/>
+                        <RowDefinition Height="50*"/>
+                    </Grid.RowDefinitions>
+                    <GroupBox Header="Target" Grid.Row="0" Grid.Column="0">
+                        <Grid>
+
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="Target" Grid.Row="0" Grid.Column="1">
+                        <Grid>
+
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="Content" Grid.Row="1" Grid.Column="0">
+                        <Grid>
+
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="Content" Grid.Row="1" Grid.Column="1">
+                        <Grid>
+
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
