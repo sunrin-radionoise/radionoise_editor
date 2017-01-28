@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Code_Editor"
         mc:Ignorable="d"
-        Title="Translator" Height="157.5" Width="272.5">
+        Title="Translator" Height="157.5" Width="272.5" ResizeMode="NoResize">
     <Grid>
         <TabControl>
             <TabItem Header="Color">
@@ -32,28 +32,24 @@
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="49*"/>
-                        <RowDefinition Height="50*"/>
-                    </Grid.RowDefinitions>
-                    <GroupBox Header="Target" Grid.Row="0" Grid.Column="0">
+                    <GroupBox Header="Base" Grid.Column="0">
                         <Grid>
-
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="38*"/>
+                                <RowDefinition Height="39*"/>
+                            </Grid.RowDefinitions>
+                            <ComboBox Margin="1,5,1,5" Grid.Row="0"></ComboBox>
+                            <TextBox Margin="1,5,1,5" Grid.Row="1"></TextBox>
                         </Grid>
                     </GroupBox>
-                    <GroupBox Header="Target" Grid.Row="0" Grid.Column="1">
+                    <GroupBox Header="Translated" Grid.Column="1">
                         <Grid>
-
-                        </Grid>
-                    </GroupBox>
-                    <GroupBox Header="Content" Grid.Row="1" Grid.Column="0">
-                        <Grid>
-
-                        </Grid>
-                    </GroupBox>
-                    <GroupBox Header="Content" Grid.Row="1" Grid.Column="1">
-                        <Grid>
-
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="38*"/>
+                                <RowDefinition Height="39*"/>
+                            </Grid.RowDefinitions>
+                            <ComboBox Margin="1,5,1,5" Grid.Row="0"></ComboBox>
+                            <TextBox Margin="1,5,1,5" Grid.Row="1"></TextBox>
                         </Grid>
                     </GroupBox>
                 </Grid>
