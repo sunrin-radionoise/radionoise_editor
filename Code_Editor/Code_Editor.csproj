@@ -94,6 +94,9 @@
     <Compile Include="Translator.xaml.cs">
       <DependentUpon>Translator.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TypePractice.xaml.cs">
+      <DependentUpon>TypePractice.xaml</DependentUpon>
+    </Compile>
     <Page Include="AddOpponent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -123,6 +126,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Translator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TypePractice.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

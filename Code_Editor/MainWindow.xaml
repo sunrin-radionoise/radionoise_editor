@@ -39,7 +39,10 @@
         </ControlTemplate>
     </Window.Resources>
 
-    <Grid Margin="0,0,0,0" Background="#FF3F3F46">
+    <Grid Margin="0,0,0,0">
+        <Grid.Background>
+            <ImageBrush ImageSource="Resources/Back/N/1.jpg"/>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="18"/>
             <RowDefinition/>
@@ -50,7 +53,7 @@
         </Grid.ColumnDefinitions>
 
 
-        <TabControl TabStripPlacement="Bottom" Grid.Row="2" Background="#FF3E3E40" BorderBrush="#FF3F3F46">
+        <TabControl TabStripPlacement="Bottom" Grid.Row="2" Background="{x:Null}" BorderBrush="#FF3F3F46">
             <TabItem Header="Proj" Margin="0,0,-17,0" HorizontalAlignment="Left" Width="50" BorderBrush="#FF3F3F46" Foreground="White">
                 <TabItem.Background>
                     <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
@@ -58,8 +61,8 @@
                         <GradientStop Color="#FF252526"/>
                     </LinearGradientBrush>
                 </TabItem.Background>
-                <Grid Background="#FF252526">
-                    <ListView x:Name="lstFolder" Background="#FF252526" Foreground="White" BorderBrush="#FF252526" MouseDoubleClick="lstFolder_MouseDoubleClick">
+                <Grid>
+                    <ListView x:Name="lstFolder" Background="{x:Null}" Foreground="White" BorderBrush="#FF252526" MouseDoubleClick="lstFolder_MouseDoubleClick">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn/>
@@ -75,7 +78,7 @@
                         <GradientStop Color="#FF252526"/>
                     </LinearGradientBrush>
                 </TabItem.Background>
-                <Grid Background="#FF3F3F46">
+                <Grid>
                     <Grid Margin="0,0,0,0">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="20"/>
@@ -83,8 +86,8 @@
                             <RowDefinition Height="27"/>
                         </Grid.RowDefinitions>
                         <ComboBox x:Name="oppoCombo" Grid.RowSpan="1" Background="#FF252526" BorderBrush="#FF252526" SelectionChanged="oppoCombo_SelectionChanged"/>
-                        <TextBox Grid.RowSpan="2" x:Name="Message" TextWrapping="Wrap" Text="" Background="#FF252526" BorderBrush="#FF252526" Foreground="White" Grid.Row="1" IsEnabled="False"/>
-                        <TextBox Grid.RowSpan="3" x:Name="SendTXT" TextWrapping="Wrap" Text="Send Messages" Background="#FF252526" BorderBrush="#FF252526" Foreground="White" KeyDown="TextBox_KeyDown" Margin="0,4,0,0" Grid.Row="2"/>
+                        <TextBox Grid.RowSpan="2" x:Name="Message" TextWrapping="Wrap" Text="" Background="{x:Null}" BorderBrush="#FF252526" Foreground="White" Grid.Row="1" IsEnabled="False"/>
+                        <TextBox Grid.RowSpan="3" x:Name="SendTXT" TextWrapping="Wrap" Text="Send Messages" Background="{x:Null}" BorderBrush="#FF252526" Foreground="White" KeyDown="TextBox_KeyDown" Margin="0,4,0,0" Grid.Row="2"/>
                     </Grid>
                 </Grid>
             </TabItem>
@@ -115,7 +118,7 @@
             </Menu>
         </Grid>
 
-        <avalonedit:TextEditor ShowLineNumbers="True" SyntaxHighlighting="HTML" x:Name="CodeEditor" FontFamily="Consolas" Padding="2,0,0,0" Grid.Column="1" Grid.Row="1" Foreground="White" TextInput="CodeEditor_TextInput" PreviewTextInput="CodeEditor_PreviewTextInput" IsEnabled="False" Background="#FF252526"/>
+        <avalonedit:TextEditor ShowLineNumbers="True" SyntaxHighlighting="HTML" x:Name="CodeEditor" FontFamily="Consolas" Padding="2,0,0,0" Grid.Column="1" Grid.Row="1" Foreground="White" TextInput="CodeEditor_TextInput" PreviewTextInput="CodeEditor_PreviewTextInput" IsEnabled="False" Background="{x:Null}"/>
 
     </Grid>
 </Window>

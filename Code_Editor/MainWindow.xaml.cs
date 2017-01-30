@@ -29,7 +29,7 @@ namespace Code_Editor
     public partial class MainWindow : Window
     {
         #region Variables
-        static string Extensions = "ASPX|*.aspx|Boo|*.boo|C# File|*.cs|C++ File|*.cpp|C++ File|*.h|C++ File|*.hpp|C++ File|*.cxx|CSS|*.css|COCO|*.casm|HTML|*.html|HTML|*.htm|Java|*.java|JavaScript|*.js|PHP|*.php|Tex|*.dvi|VBNET|*.vb|XML|*.xml|XML|*.xaml|XML|*.xshd|XMLDOC|*.xml";
+        static readonly string Extensions = "ASPX|*.aspx|Boo|*.boo|C# File|*.cs|C++ File|*.cpp|C++ File|*.h|C++ File|*.hpp|C++ File|*.cxx|CSS|*.css|COCO|*.casm|HTML|*.html|HTML|*.htm|Java|*.java|JavaScript|*.js|PHP|*.php|Tex|*.dvi|VBNET|*.vb|XML|*.xml|XML|*.xaml|XML|*.xshd|XMLDOC|*.xml";
         OpponentManager _OpponentManager = new OpponentManager();
         SettingManager _SettingManager = new SettingManager();
         public SaveFileDialog sd = new SaveFileDialog();
@@ -54,7 +54,6 @@ namespace Code_Editor
         {
             if(!Setting.OnlineMode)
                 System.Windows.MessageBox.Show("서버는 현재 오프라인 상태입니다.", "오프라인 모드", MessageBoxButton.OK, MessageBoxImage.Information);
-
             InitializeComponent();
             #region Initialize
             _OpponentManager.Init_Oppo();
@@ -120,13 +119,24 @@ namespace Code_Editor
             }
         }
 
+        private string ReturnExtension(string filext)
+        {
+            string[] temp = Extensions.Split('|');//[0]ASPX,[1]*.aspx[2]Boo[3]*.boo...
+            //1,3,5,7,9,...,37,39
+            string Ext = "";
+            for(int i=1;i<40;i+=2)
+            {
+                
+            }
+            return Ext;
+        }
+
         private void NewItem_Click(object sender, RoutedEventArgs e)
         {
             //New File Dialog
             /*
              * SaveFileDialog로 File저장하게 하고 할 것인지
              * 아니면 Listview로 VS 스타일로 갈 것인지 결정
-             * 
              * 그 다음 Create File모드로 해서 간다.
              */
             if (digSave.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -166,9 +176,16 @@ namespace Code_Editor
             //Setter
             if (Setting.Color)
             {
-                var colorBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF"+Setting.ColorID));
-                
-                CodeEditor.Background = colorBrush;
+                if(Setting.ColorID == "Transparent")
+                {
+                    var colorBrush = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0));
+                    CodeEditor.Background = colorBrush;
+                }
+                else
+                {
+                    var colorBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF" + Setting.ColorID));
+                    CodeEditor.Background = colorBrush;
+                }   
             }
             else
             {
