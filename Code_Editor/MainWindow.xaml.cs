@@ -326,7 +326,8 @@ namespace Code_Editor
 
         private void Trans_Click(object sender, RoutedEventArgs e)
         {
-
+            Translator t = new Translator();
+            t.Show();
         }
     }
 }

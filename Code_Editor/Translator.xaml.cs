@@ -35,48 +35,125 @@ namespace Code_Editor
         {
             int temp = 0;
             string rtnval = "";
-            switch (basetype)
+            try
             {
-                case "b":
-                    temp = Convert.ToInt32(baset, 2);
-                    break;
-                case "o":
-                    temp = Convert.ToInt32(baset, 8);
-                    break;
-                case "d":
-                    temp = Convert.ToInt32(baset);
-                    break;
-                case "h":
-                    temp = Convert.ToInt32(baset, 16);
-                    break;
+                switch (basetype)
+                {
+                    case "b":
+                        temp = Convert.ToInt32(baset, 2);
+                        break;
+                    case "o":
+                        temp = Convert.ToInt32(baset, 8);
+                        break;
+                    case "d":
+                        temp = Convert.ToInt32(baset);
+                        break;
+                    case "h":
+                        temp = Convert.ToInt32(baset, 16);
+                        break;
+                }
+                //String a => Convert.Int32(a) -> Convert.ToType(a) -> 리턴
+                switch (type)
+                {
+                    case "b":
+                        rtnval = Convert.ToString(temp, 2);
+                        break;
+                    case "o":
+                        rtnval = Convert.ToString(temp, 8);
+                        break;
+                    case "d":
+                        rtnval = Convert.ToString(temp, 10);
+                        break;
+                    case "h":
+                        rtnval = Convert.ToString(temp, 16);
+                        break;
+                }
             }
-            //String a => Convert.Int32(a) -> Convert.ToType(a) -> 리턴
-            switch (type)
+            catch(Exception)
             {
-                case "b":
-                    rtnval = Convert.ToString(temp,2);
-                    break;
-                case "o":
-                    rtnval = Convert.ToString(temp, 8);
-                    break;
-                case "d":
-                    rtnval = Convert.ToString(temp, 10);
-                    break;
-                case "h":
-                    rtnval = Convert.ToString(temp, 16);
-                    break;
+                rtnval = "";
             }
             return rtnval;
         }
 
         private void tCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            if (Base != null && Trans != null)
+            {
+                Trans.Text = Translate(base_type, Base.Text, trans_type);
+            }
         }
 
         private void bCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if(Base!=null&&Trans!=null)
+            {
+                Trans.Text = Translate(base_type, Base.Text, trans_type);
+            }
+        }
 
+        private void BBin_Selected(object sender, RoutedEventArgs e)
+        {
+            base_type = "b";
+        }
+
+        private void BOct_Selected(object sender, RoutedEventArgs e)
+        {
+            base_type = "o";
+        }
+
+        private void BDec_Selected(object sender, RoutedEventArgs e)
+        {
+            base_type = "d";
+        }
+
+        private void BHex_Selected(object sender, RoutedEventArgs e)
+        {
+            base_type = "h";
+        }
+
+        private void TBin_Selected(object sender, RoutedEventArgs e)
+        {
+            trans_type = "b";
+        }
+
+        private void TOct_Selected(object sender, RoutedEventArgs e)
+        {
+            trans_type = "o";
+        }
+
+        private void TDec_Selected(object sender, RoutedEventArgs e)
+        {
+            trans_type = "d";
+        }
+
+        private void THex_Selected(object sender, RoutedEventArgs e)
+        {
+            trans_type = "h";
+        }
+
+        private void RGB_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (RGB != null && HexC != null)
+            {
+                try
+                {
+                    HexC.Text = "";
+                    string ToHex = "";
+                    string[] RGBs = RGB.Text.Split(',');
+                    int tmp;
+                    for (int i = 0; i < 3; i++)
+                    {
+                        tmp = Convert.ToInt32(RGBs[i]);
+                        ToHex = Convert.ToString(tmp, 16);
+                        HexC.Text += ToHex;
+                    }
+                }
+                catch (Exception)
+                {
+                    HexC.Text = "";
+                }
+            }
         }
     }
 }

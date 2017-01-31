@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Code_Editor"
         mc:Ignorable="d"
-        Title="Splash" Height="270" Width="480" WindowStyle="None" ResizeMode="NoResize" Cursor="Wait">
+        Title="Splash" Height="270" Width="480" WindowStyle="None" ResizeMode="NoResize" Cursor="Wait" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Storyboard x:Key="Loading"/>
     </Window.Resources>

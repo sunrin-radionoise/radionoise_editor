@@ -16,12 +16,12 @@
                     </Grid.RowDefinitions>
                     <GroupBox Header="RGB Color" Grid.Row="0">
                         <Grid>
-                            <TextBox Text="255,255,255" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="246"/>
+                            <TextBox x:Name="RGB" Text="255,255,255" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="246" TextChanged="RGB_TextChanged"/>
                         </Grid>
                     </GroupBox>
                     <GroupBox Header="Hex Color" Grid.Row="1">
                         <Grid>
-                            <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="FFFFFF" VerticalAlignment="Top" Width="246"/>
+                            <TextBox x:Name="HexC" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="FFFFFF" VerticalAlignment="Top" Width="246"/>
                         </Grid>
                     </GroupBox>
                 </Grid>
@@ -39,10 +39,10 @@
                                 <RowDefinition Height="39*"/>
                             </Grid.RowDefinitions>
                             <ComboBox x:Name="bCombo" Margin="1,5,1,5" Grid.Row="0" SelectionChanged="bCombo_SelectionChanged">
-                                <ComboBoxItem Name="BBin" Content="Bin"/>
-                                <ComboBoxItem Name="BOct" Content="Oct"/>
-                                <ComboBoxItem Name="BDec" Content="Dec"/>
-                                <ComboBoxItem Name="BHex" Content="Hex"/>
+                                <ComboBoxItem Name="BBin" Content="Bin" Selected="BBin_Selected" IsSelected="True"/>
+                                <ComboBoxItem Name="BOct" Content="Oct" Selected="BOct_Selected"/>
+                                <ComboBoxItem Name="BDec" Content="Dec" Selected="BDec_Selected"/>
+                                <ComboBoxItem Name="BHex" Content="Hex" Selected="BHex_Selected"/>
                             </ComboBox>
                             <TextBox x:Name="Base" Margin="1,5,1,5" Grid.Row="1" TextChanged="Base_TextChanged"></TextBox>
                         </Grid>
@@ -53,11 +53,11 @@
                                 <RowDefinition Height="38*"/>
                                 <RowDefinition Height="39*"/>
                             </Grid.RowDefinitions>
-                            <ComboBox x:Name="tCombo" Margin="1,5,1,5" Grid.Row="0" SelectionChanged="tCombo_SelectionChanged">
-                                <ComboBoxItem Name="TBin" Content="Bin"/>
-                                <ComboBoxItem Name="TOct" Content="Oct"/>
-                                <ComboBoxItem Name="TDec" Content="Dec"/>
-                                <ComboBoxItem Name="THex" Content="Hex"/>
+                            <ComboBox x:Name="tCombo" Margin="1,5,1,5" Grid.Row="0" SelectionChanged="tCombo_SelectionChanged" SelectedIndex="0">
+                                <ComboBoxItem Name="TBin" Content="Bin" Selected="TBin_Selected" IsSelected="True"/>
+                                <ComboBoxItem Name="TOct" Content="Oct" Selected="TOct_Selected"/>
+                                <ComboBoxItem Name="TDec" Content="Dec" Selected="TDec_Selected"/>
+                                <ComboBoxItem Name="THex" Content="Hex" Selected="THex_Selected"/>
                             </ComboBox>
                             <TextBox x:Name="Trans" Margin="1,5,1,5" Grid.Row="1" IsEnabled="False"></TextBox>
                         </Grid>
