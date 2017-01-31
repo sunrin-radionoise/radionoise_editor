@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -146,6 +147,8 @@ namespace Code_Editor
                     {
                         tmp = Convert.ToInt32(RGBs[i]);
                         ToHex = Convert.ToString(tmp, 16);
+                        if (tmp < 16)
+                            ToHex = "0" + ToHex;//값이 16이면 10, 15면 F
                         HexC.Text += ToHex;
                     }
                 }
