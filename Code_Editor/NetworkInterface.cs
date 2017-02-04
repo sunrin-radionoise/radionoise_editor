@@ -14,7 +14,7 @@ namespace Code_Editor
         /// <summary>
         /// Base URL입니다.
         /// </summary>
-        static string BaseURL = "http://iwin247.net:8080";
+        static string BaseURL = "http://radionoise.iwin247.kr:80";
         /// <summary>
         /// 로그인
         /// </summary>
@@ -82,6 +82,10 @@ namespace Code_Editor
                 return false;
             }
         }
+        /// <summary>
+        /// Current Program Version을 가져옵니다.
+        /// </summary>
+        /// <returns></returns>
         public static bool GetVer()
         {
             HttpWebRequest req = (HttpWebRequest)WebRequest.Create(BaseURL + "/version");
@@ -100,9 +104,22 @@ namespace Code_Editor
                 return false; //Not Working
             }
         }
-        public void GetSetting()
+        public string GetSetting(string token)
         {
-          
+            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(BaseURL + "/setting/" + token);
+            Console.WriteLine(req.Address);
+            req.Method = "GET";
+            req.ContentType = "application/x-www-form-urlencoded";
+            try
+            {
+                var response = (HttpWebResponse)req.GetResponse();
+                var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+                return responseString;
+            }
+            catch(Exception)
+            {
+                return false.ToString();
+            }
         }
         public void GetUpdateFile()
         {

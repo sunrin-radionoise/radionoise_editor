@@ -124,9 +124,13 @@ namespace Code_Editor
             string[] temp = Extensions.Split('|');//[0]ASPX,[1]*.aspx[2]Boo[3]*.boo...
             //1,3,5,7,9,...,37,39
             string Ext = "";
+            string t = "*." + filext;
             for(int i=1;i<40;i+=2)
             {
-                
+                if(string.Compare(t,temp[i])>0)
+                {
+
+                }
             }
             return Ext;
         }
