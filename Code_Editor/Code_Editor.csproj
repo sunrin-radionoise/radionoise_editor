@@ -254,5 +254,14 @@
   <ItemGroup>
     <Resource Include="Resources\title.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon\1486453867_facebook_square.png" />
+    <Resource Include="Resources\icon\1486453889_github-square-social-media.png" />
+    <Resource Include="Resources\icon\1486453943_6_-_Google_Plus.png" />
+    <Resource Include="Resources\icon\1486453957_square-twitter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon\1486454236_square-facebook.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

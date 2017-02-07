@@ -34,9 +34,9 @@ namespace Code_Editor
             if (!Setting.OnlineMode)
             {
                 //Offline Mode
-                MainWindow m = new MainWindow();
-                m.Show();
-                Close();
+               // MainWindow m = new MainWindow();
+            //    m.Show();
+             //   Close();
                 
             }
             picCnt = rnd.Next(1, 20);

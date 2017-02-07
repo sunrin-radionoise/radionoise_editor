@@ -17,7 +17,7 @@
                     <Button x:Name="btnSync" Content="변경" Margin="0,44,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75" Click="btnSync_Click"/>
                     <Label Content="자동 저장 간격 : " HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top"/>
                     <ComboBox x:Name="Combo_Auto" HorizontalAlignment="Left" Margin="284,76,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged">
-                        <ComboBoxItem x:Name="Save_Off"  Content="꺼짐" />
+                        <ComboBoxItem x:Name="Save_Off"  Content="꺼짐" IsSelected="True" />
                         <ComboBoxItem x:Name="Save_OM" Content="1분" />
                         <ComboBoxItem x:Name="Save_FM" Content="5분" />
                         <ComboBoxItem x:Name="Save_TM" Content="10분" />
