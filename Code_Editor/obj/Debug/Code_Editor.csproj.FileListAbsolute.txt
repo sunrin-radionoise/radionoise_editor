@@ -93,3 +93,7 @@ D:\Documents\Visual Studio 2017\Projects\radionoise_editor\Code_Editor\obj\Debug
 D:\Documents\Visual Studio 2017\Projects\radionoise_editor\Code_Editor\obj\Debug\Translator.baml
 D:\Documents\Visual Studio 2017\Projects\radionoise_editor\Code_Editor\obj\Debug\TypePractice.g.cs
 D:\Documents\Visual Studio 2017\Projects\radionoise_editor\Code_Editor\obj\Debug\TypePractice.baml
+D:\Documents\Visual Studio 2017\Projects\radionoise_editor\Code_Editor\bin\Debug\Facebook.dll
+D:\Documents\Visual Studio 2017\Projects\radionoise_editor\Code_Editor\bin\Debug\Facebook.xml
+D:\Documents\Visual Studio 2017\Projects\radionoise_editor\Code_Editor\obj\Debug\SocialWindow.g.cs
+D:\Documents\Visual Studio 2017\Projects\radionoise_editor\Code_Editor\obj\Debug\SocialWindow.baml

@@ -56,9 +56,9 @@ namespace Code_Editor
 
     class SocialTokens
     {
-        static string FacebookToken { get; set; }
-        static string GithubToken { get; set; }
-        static string TwitterToken { get; set; }
+        public static string FacebookToken { get; set; }
+        public static string GithubToken { get; set; }
+        public static string TwitterToken { get; set; }
     }
 
     class SettingManager

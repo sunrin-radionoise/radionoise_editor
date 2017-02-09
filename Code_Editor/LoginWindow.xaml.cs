@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Facebook;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -167,6 +168,9 @@ namespace Code_Editor
         private void button_Click(object sender, RoutedEventArgs e)
         {
             //Facebook Login Button
+            var fb = new SocialWindow("fb");
+            fb.Show();
+            Console.Write(SocialTokens.FacebookToken);
         }
     }
 }
