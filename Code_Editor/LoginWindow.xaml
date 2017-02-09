@@ -412,7 +412,7 @@
             </CheckBox>
         </Grid>
         <Label x:Name="lblClose" Content="X" HorizontalAlignment="Left" Margin="773,10,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Tahoma" FontSize="16" MouseLeftButtonUp="lblClose_MouseLeftButtonUp" MouseDown="lblClose_MouseDown"/>
-        <Button x:Name="button" Content="" HorizontalAlignment="Left" Height="17" Margin="342.333,0,0,193" VerticalAlignment="Bottom" Width="25" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}" Visibility="Hidden">
+        <Button x:Name="button" Content="" HorizontalAlignment="Left" Height="17" Margin="342.333,0,0,193" VerticalAlignment="Bottom" Width="25" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}" Visibility="Hidden" Click="button_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Resources/icon/1486454236_square-facebook.png"/>
             </Button.Background>

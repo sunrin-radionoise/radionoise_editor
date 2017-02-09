@@ -53,6 +53,14 @@ namespace Code_Editor
         #endregion
         public static readonly string setting_path = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\Setting.ini";
     }
+
+    class SocialTokens
+    {
+        static string FacebookToken { get; set; }
+        static string GithubToken { get; set; }
+        static string TwitterToken { get; set; }
+    }
+
     class SettingManager
     {
 #region INI_APIS

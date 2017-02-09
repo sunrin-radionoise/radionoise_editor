@@ -100,13 +100,13 @@ namespace Code_Editor
                     MessageBox.Show("꺼짐");
                     break;
                 case "1분":
-                    MessageBox.Show("꺼짐");
+                    MessageBox.Show("1");
                     break;
                 case "5분":
-                    MessageBox.Show("꺼짐");
+                    MessageBox.Show("5");
                     break;
                 case "10분":
-                    MessageBox.Show("꺼짐");
+                    MessageBox.Show("10");
                     break;
             }
         }
