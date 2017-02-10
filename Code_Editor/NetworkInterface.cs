@@ -125,7 +125,25 @@ namespace Code_Editor
         {
            
         }
-
+        public bool AttachFacebook(string userToken)
+        {
+            //GET URL : BaseURL + auth/fb/token?access_token= + Token
+            //return success/fail
+            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(BaseURL +"/auth/fb/token"+SocialTokens.FacebookToken);
+            req.Method = "GET";
+            req.ContentType = "application/x-www-form-urlencoded";
+            try
+            {
+                var response = (HttpWebResponse)req.GetResponse();
+                var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+                Console.WriteLine(responseString);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
         public static bool Server_Status() //GET으로 서버가 값을 반환하는지를 판단한다.
         {
             HttpWebRequest req = (HttpWebRequest)WebRequest.Create(BaseURL + "/version");
