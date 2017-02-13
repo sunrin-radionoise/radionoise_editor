@@ -124,12 +124,12 @@ namespace Code_Editor
             string[] temp = Extensions.Split('|');//[0]ASPX,[1]*.aspx[2]Boo[3]*.boo...
             //1,3,5,7,9,...,37,39
             string Ext = "";
-            string t = "*." + filext;
+            string t = "*" + filext;
             for(int i=1;i<40;i+=2)
             {
-                if(string.Compare(t,temp[i])>0)
+                if(string.Equals(t,temp[i]))
                 {
-
+                    Ext = temp[i];
                 }
             }
             return Ext;
@@ -145,8 +145,11 @@ namespace Code_Editor
              */
             if (digSave.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                File.Create(digSave.FileName, 1, FileOptions.None);
+                File.Create(digSave.FileName, 1, FileOptions.None).Close();
+                
                 Current_File_Path = digSave.FileName;
+                
+                MessageBox.Show(ReturnExtension(System.IO.Path.GetExtension(Current_File_Path)));
                 CodeEditor.IsEnabled = true;
             }
         }

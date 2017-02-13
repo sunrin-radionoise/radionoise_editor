@@ -60,20 +60,23 @@ namespace Code_Editor
                     if (!Check_Server())
                     {
                         Setting.OnlineMode = false;
-                        //MainWindow m = new MainWindow();
-                        //m.Show();
-                        //Close();
-                        LoginWindow l = new LoginWindow();
-                        l.Show();
-                        Close();
+                       MainWindow m = new MainWindow();
+                       m.Show();
+                       Close();
+                       // LoginWindow l = new LoginWindow();
+                       // l.Show();
+                       // Close();
 
                         timer.Stop();
                     }
                     else {
                         Setting.OnlineMode = true;
                         lblWorking.Content = "Completed";
-                        LoginWindow l = new LoginWindow();
-                        l.Show();
+                        //LoginWindow l = new LoginWindow();
+                        //l.Show();
+                        MainWindow m = new MainWindow();
+                        m.Show();
+                        Close();
                         Close();
                         timer.Stop();
                     }

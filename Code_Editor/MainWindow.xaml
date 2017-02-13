@@ -118,7 +118,8 @@
             </Menu>
         </Grid>
 
-        <avalonedit:TextEditor ShowLineNumbers="True" SyntaxHighlighting="HTML" x:Name="CodeEditor" FontFamily="Consolas" Padding="2,0,0,0" Grid.Column="1" Grid.Row="1" Foreground="White" TextInput="CodeEditor_TextInput" PreviewTextInput="CodeEditor_PreviewTextInput" IsEnabled="False" Background="{x:Null}"/>
+        <avalonedit:TextEditor ShowLineNumbers="True" SyntaxHighlighting="C++" x:Name="CodeEditor" FontFamily="Consolas" Padding="2,0,0,0" Grid.Column="1" Grid.Row="1" Foreground="White" TextInput="CodeEditor_TextInput" PreviewTextInput="CodeEditor_PreviewTextInput" IsEnabled="False" Background="{x:Null}"/>
+        <avalonedit:SearchPanel Grid.Column="1" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
