@@ -291,6 +291,17 @@ namespace Code_Editor
                 sw.Write(CodeEditor.Text);
                 sw.Close();
             }
+            else
+            {
+                System.Windows.Forms.SaveFileDialog digSave = new System.Windows.Forms.SaveFileDialog()
+                {
+                    Title = "Save File"
+                };
+                if (digSave.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+
+                }
+            }
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)
