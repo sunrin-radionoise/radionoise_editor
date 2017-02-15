@@ -358,5 +358,10 @@ namespace Code_Editor
             Translator t = new Translator();
             t.Show();
         }
+
+        private void SaveAs_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
