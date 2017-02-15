@@ -299,7 +299,7 @@ namespace Code_Editor
                 };
                 if (digSave.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-
+                    //Save As가 아니라서 상관없지 않을까?
                 }
             }
         }
