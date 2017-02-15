@@ -302,9 +302,9 @@ namespace ICSharpCode.AvalonEdit
 		/// Gets/sets the syntax highlighting definition used to colorize the text.
 		/// </summary>
 		public IHighlightingDefinition SyntaxHighlighting {
-			get { return (IHighlightingDefinition)GetValue(SyntaxHighlightingProperty); }
-			set { SetValue(SyntaxHighlightingProperty, value); }
-		}
+            get => (IHighlightingDefinition)GetValue(SyntaxHighlightingProperty);
+            set => SetValue(SyntaxHighlightingProperty, value);
+        }
 		
 		IVisualLineTransformer colorizer;
 		

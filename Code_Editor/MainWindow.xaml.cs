@@ -29,7 +29,13 @@ namespace Code_Editor
     public partial class MainWindow : Window
     {
         #region Variables
-        static readonly string Extensions = "ASPX|*.aspx|Boo|*.boo|C# File|*.cs|C++ File|*.cpp|C++ File|*.h|C++ File|*.hpp|C++ File|*.cxx|CSS|*.css|COCO|*.casm|HTML|*.html|HTML|*.htm|Java|*.java|JavaScript|*.js|PHP|*.php|Tex|*.dvi|VBNET|*.vb|XML|*.xml|XML|*.xaml|XML|*.xshd|XMLDOC|*.xml";
+        static readonly string Extensions = "C#|*.cs|" + "JavaScript|*.js|" + 
+            "HTML|*.htm|HTML|*.html|" + 
+            "ASP/XHTML|*.asp|ASP/XHTML|*.aspx|ASP/XHTML|*.asax|ASP/XHTML|*.asmx|ASP/XHTML|*.ascx|ASP/XHTML|*.master|" +
+            "Boo|*.boo|" + "Coco|*.atg|" + "CSS|*.css|" + "C++|*.c|C++|*.h|C++|*.cc|C++|*.cpp|C++|*.hpp|" + 
+            "Java|*.java|" + "PHP|*.php|" + "VBNET|*.vb|" +
+            "XML|.xml|XML|.xsl|XML|.xslt|XML|.xsd|XML|.manifest|XML|.config|XML|.addin|XML|.xshd|XML|.wxs|XML|.wxi|XML|.wxl|XML|.proj|XML|.csproj|XML|.vbproj|XML|.ilproj|XML|.booproj|XML|.build|XML|.xfrm|XML|.targets|XML|.xaml|XML|.xpt|XML|.xft|XML|.map|XML|.wsdl|XML|.disco|XML|.ps1xml|XML|.nuspec";
+
         OpponentManager _OpponentManager = new OpponentManager();
         SettingManager _SettingManager = new SettingManager();
         public SaveFileDialog sd = new SaveFileDialog();
@@ -55,6 +61,7 @@ namespace Code_Editor
             if(!Setting.OnlineMode)
                 System.Windows.MessageBox.Show("서버는 현재 오프라인 상태입니다.", "오프라인 모드", MessageBoxButton.OK, MessageBoxImage.Information);
             InitializeComponent();
+            
             #region Initialize
             _OpponentManager.Init_Oppo();
             foreach (string o in Setting.OppoList)
@@ -119,20 +126,22 @@ namespace Code_Editor
             }
         }
 
-        private string ReturnExtension(string filext)
+        private void SetHighlightExtension(string filext)
         {
             string[] temp = Extensions.Split('|');//[0]ASPX,[1]*.aspx[2]Boo[3]*.boo...
             //1,3,5,7,9,...,37,39
             string Ext = "";
+            int cnt = 0;
             string t = "*" + filext;
             for(int i=1;i<40;i+=2)
             {
                 if(string.Equals(t,temp[i]))
                 {
                     Ext = temp[i];
+                    cnt = i - 1;
                 }
             }
-            return Ext;
+            CodeEditor.SyntaxHighlighting= ICSharpCode.AvalonEdit.Highlighting.HighlightingManager.Instance.GetDefinition(temp[cnt]);
         }
 
         private void NewItem_Click(object sender, RoutedEventArgs e)
@@ -148,8 +157,9 @@ namespace Code_Editor
                 File.Create(digSave.FileName, 1, FileOptions.None).Close();
                 
                 Current_File_Path = digSave.FileName;
-                
-                MessageBox.Show(ReturnExtension(System.IO.Path.GetExtension(Current_File_Path)));
+                CodeEditor.Text = "";
+                SetHighlightExtension(System.IO.Path.GetExtension(Current_File_Path));
+                //MessageBox.Show(ReturnExtension(System.IO.Path.GetExtension(Current_File_Path)));
                 CodeEditor.IsEnabled = true;
             }
         }
@@ -261,6 +271,7 @@ namespace Code_Editor
                 var open = new StreamReader(digOpen.FileName);
                 CodeEditor.Clear();
                 CodeEditor.Text = open.ReadToEnd();
+                SetHighlightExtension(System.IO.Path.GetExtension(digOpen.FileName));
                 CodeEditor.IsEnabled = true;
                 open.Close();
             }
