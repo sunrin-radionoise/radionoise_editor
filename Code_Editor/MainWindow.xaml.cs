@@ -291,17 +291,7 @@ namespace Code_Editor
                 sw.Write(CodeEditor.Text);
                 sw.Close();
             }
-            else
-            {
-                System.Windows.Forms.SaveFileDialog digSave = new System.Windows.Forms.SaveFileDialog()
-                {
-                    Title = "Save File"
-                };
-                if (digSave.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-                    //Save As가 아니라서 상관없지 않을까?
-                }
-            }
+           
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)
@@ -361,7 +351,20 @@ namespace Code_Editor
 
         private void SaveAs_Click(object sender, RoutedEventArgs e)
         {
-
+            //다른 이름으로 저장
+            {
+                System.Windows.Forms.SaveFileDialog digSave = new System.Windows.Forms.SaveFileDialog()
+                {
+                    Title = "Save File",
+                    Filter = Extensions
+                };
+                if (digSave.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    var sw = new StreamWriter(digSave.FileName);
+                    sw.Write(CodeEditor.Text);
+                    sw.Close();
+                }
+            }
         }
     }
 }
