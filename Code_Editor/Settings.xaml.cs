@@ -31,6 +31,7 @@ namespace Code_Editor
             lblpath.Content = Setting.ImagePath;
             ColorID.Text = Setting.ColorID;
             Opacity_slider.Value = Setting.BackOpacity;
+            lblFont.Content = Setting.Font + ", " + Setting.FontSize.ToString();
             if (Setting.Color)
                 chkColor.IsChecked = true;
             else
@@ -114,6 +115,25 @@ namespace Code_Editor
                 case "Save_TM":
                     MessageBox.Show("10");
                     break;
+            }
+        }
+
+        private void btnFont_Click(object sender, RoutedEventArgs e)
+        {
+            var f = new System.Windows.Forms.FontDialog()
+            {
+                ShowApply = false,
+                ShowColor = false,
+                ShowEffects = false,
+                ShowHelp = false,
+                FontMustExist = true,
+                AllowVerticalFonts = false
+            };
+            if(f.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                Setting.Font = f.Font.Name.ToString();
+                Setting.FontSize = Convert.ToInt32(f.Font.Size);
+                lblFont.Content = Setting.Font + ", " + Setting.FontSize.ToString();
             }
         }
     }
