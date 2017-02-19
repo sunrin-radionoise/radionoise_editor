@@ -23,9 +23,10 @@ namespace Code_Editor
         public Settings()
         {
             InitializeComponent();
+            InitializeContents();
         }
 
-        private void SettingDialog_Loaded(object sender, RoutedEventArgs e)
+        private void InitializeContents()
         {
             lblpath.Content = Setting.ImagePath;
             ColorID.Text = Setting.ColorID;
@@ -34,6 +35,11 @@ namespace Code_Editor
                 chkColor.IsChecked = true;
             else
                 chkColor.IsChecked = false;
+        }
+
+        private void SettingDialog_Loaded(object sender, RoutedEventArgs e)
+        {
+            
         }
 
         private void btnSync_Click(object sender, RoutedEventArgs e)
@@ -96,16 +102,16 @@ namespace Code_Editor
         {
             switch(((ComboBoxItem)Combo_Auto.SelectedItem).Name.ToString())
             {
-                case "꺼짐":
+                case "Save_Off":
                     MessageBox.Show("꺼짐");
                     break;
-                case "1분":
+                case "Save_OM":
                     MessageBox.Show("1");
                     break;
-                case "5분":
+                case "Save_FM":
                     MessageBox.Show("5");
                     break;
-                case "10분":
+                case "Save_TM":
                     MessageBox.Show("10");
                     break;
             }

@@ -18,7 +18,7 @@ namespace ICSharpCode.AvalonEdit.Highlighting
 		/// </summary>
 		TextDocument Document { get; }
 		
-			/// <summary>
+		/// <summary>
 		/// Gets the span stack at the end of the specified line.
 		/// -> GetSpanStack(1) returns the spans at the start of the second line.
 		/// </summary>
