@@ -79,13 +79,13 @@ namespace Code_Editor
             saveTimer.Start();
             sd.Filter = "C# File|*.cs|Python File|*.py|HTML File|*.html|CSS File|*.css|JS File|*.js|C File|*.c|C++ File|*.cpp|Header File|*.h|Text File|*.txt";
             sd.Title = "저장";
-            socket.On(Socket.EVENT_CONNECT, () => { });
-            socket.On("message", (msg) =>
-            {
-                Console.WriteLine(msg);
-                recTXT += (msg + "\r\n");
-            });
-            socket.Connect();
+            //socket.On(Socket.EVENT_CONNECT, () => { });
+            //socket.On("message", (msg) =>
+            //{
+            //    Console.WriteLine(msg);
+            //    recTXT += (msg + "\r\n");
+            //});
+            //socket.Connect();
             #endregion
             //Console.WriteLine("Message Send");
         }
@@ -333,6 +333,8 @@ namespace Code_Editor
             saveTimer.Stop();
             saveTimer.Interval = TimeSpan.FromMinutes(Setting.SaveTime);
             saveTimer.Start();
+            CodeEditor.FontSize = Setting.FontSize;
+            CodeEditor.FontFamily = new FontFamily(Setting.Font);
         }
         //private void Update_Oppo()
         //{
