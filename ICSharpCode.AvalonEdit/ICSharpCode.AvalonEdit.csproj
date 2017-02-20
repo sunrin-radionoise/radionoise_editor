@@ -405,22 +405,8 @@
       <DependentUpon>AXmlParser.cs</DependentUpon>
     </Compile>
     <Resource Include="themes\RightArrow.cur" />
-    <EmbeddedResource Include="Highlighting\Resources\ASPX.xshd" />
-    <EmbeddedResource Include="Highlighting\Resources\Boo.xshd" />
-    <EmbeddedResource Include="Highlighting\Resources\Coco-Mode.xshd" />
-    <EmbeddedResource Include="Highlighting\Resources\CPP-Mode.xshd" />
-    <EmbeddedResource Include="Highlighting\Resources\HTML-Mode.xshd" />
-    <EmbeddedResource Include="Highlighting\Resources\Java-Mode.xshd" />
-    <EmbeddedResource Include="Highlighting\Resources\JavaScript-Mode.xshd" />
-    <EmbeddedResource Include="Highlighting\Resources\Patch-Mode.xshd" />
-    <EmbeddedResource Include="Highlighting\Resources\PHP-Mode.xshd" />
-    <EmbeddedResource Include="Highlighting\Resources\Tex-Mode.xshd" />
-    <EmbeddedResource Include="Highlighting\Resources\VBNET-Mode.xshd" />
-    <EmbeddedResource Include="Highlighting\Resources\XML-Mode.xshd" />
     <EmbeddedResource Include="Highlighting\Resources\ModeV1.xsd" />
     <EmbeddedResource Include="Highlighting\Resources\ModeV2.xsd" />
-    <EmbeddedResource Include="Highlighting\Resources\CSharp-Mode.xshd" />
-    <EmbeddedResource Include="Highlighting\Resources\XmlDoc.xshd" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="CodeCompletion\CompletionList.xaml" />
@@ -435,17 +421,26 @@
     <Page Include="themes\generic.xaml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Highlighting\Resources\CSS-Mode.xshd" />
+    <None Include="Highlighting\Resources\ASPX_Dark.xshd" />
+    <None Include="Highlighting\Resources\Boo_Dark.xshd" />
+    <None Include="Highlighting\Resources\Coco-Mode_Dark.xshd" />
+    <None Include="Highlighting\Resources\CPP-Mode_Dark.xshd" />
+    <None Include="Highlighting\Resources\CSharp-Mode_Dark.xshd" />
+    <None Include="Highlighting\Resources\CSS-Mode_Dark.xshd" />
+    <None Include="Highlighting\Resources\HTML-Mode_Dark.xshd" />
+    <None Include="Highlighting\Resources\Java-Mode_Dark.xshd" />
+    <None Include="Highlighting\Resources\JavaScript-Mode_Dark.xshd" />
+    <None Include="Highlighting\Resources\MarkDown-Mode_Dark.xshd" />
+    <None Include="Highlighting\Resources\Patch-Mode_Dark.xshd" />
+    <None Include="Highlighting\Resources\PHP-Mode_Dark.xshd" />
+    <None Include="Highlighting\Resources\PowerShell_Dark.xshd" />
+    <None Include="Highlighting\Resources\Tex-Mode_Dark.xshd" />
+    <None Include="Highlighting\Resources\VBNET-Mode_Dark.xshd" />
+    <None Include="Highlighting\Resources\XML-Mode_Dark.xshd" />
+    <None Include="Highlighting\Resources\XmlDoc_Dark.xshd" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Resource Include="Search\next.png" />
     <Resource Include="Search\prev.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Highlighting\Resources\PowerShell.xshd" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Highlighting\Resources\MarkDown-Mode.xshd" />
   </ItemGroup>
 </Project>
