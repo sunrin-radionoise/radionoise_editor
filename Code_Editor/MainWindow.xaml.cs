@@ -69,6 +69,7 @@ namespace Code_Editor
                 oppoCombo.Items.Add(o);
             }
             _SettingManager.Load_Setting();
+            ApplySetting();
             //MessageBox.Show(Setting.Font + Setting.FontSize.ToString() + Setting.Color.ToString() + Setting.ImagePath + Setting.ID + Setting.PW);
             timer.Interval = TimeSpan.FromSeconds(0.1f);
             timer.Tick += new EventHandler(Timer_Tick);
@@ -89,13 +90,6 @@ namespace Code_Editor
             //Console.WriteLine("Message Send");
         }
         #region EventHandler
-        private void Update_Oppo()
-        {
-            _Opponent = Setting.OppoList;
-            //_Opponent.Add("New Opponent");
-
-        }
-
         private void saveTimer_Tick(object sender,EventArgs e)
         {
             if (Current_File_Path != "")
@@ -105,17 +99,14 @@ namespace Code_Editor
                 sw.Close();
             }
         }
-
         private void Timer_Tick(object sender, EventArgs e)
         {
             Message.Text = recTXT;
         }
-
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
         {
 
         }
-
         private void TextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
@@ -125,33 +116,8 @@ namespace Code_Editor
                 SendTXT.Text = ""; //메세지를 보냈으니 초기화
             }
         }
-
-        private void SetHighlightExtension(string filext)
-        {
-            string[] temp = Extensions.Split('|');//[0]ASPX,[1]*.aspx[2]Boo[3]*.boo...
-            //1,3,5,7,9,...,37,39
-            string Ext = "";
-            int cnt = 0;
-            string t = "*" + filext;
-            for(int i=1;i<40;i+=2)
-            {
-                if(string.Equals(t,temp[i]))
-                {
-                    Ext = temp[i];
-                    cnt = i - 1;
-                }
-            }
-            CodeEditor.SyntaxHighlighting= ICSharpCode.AvalonEdit.Highlighting.HighlightingManager.Instance.GetDefinition(temp[cnt]);
-        }
-
         private void NewItem_Click(object sender, RoutedEventArgs e)
         {
-            //New File Dialog
-            /*
-             * SaveFileDialog로 File저장하게 하고 할 것인지
-             * 아니면 Listview로 VS 스타일로 갈 것인지 결정
-             * 그 다음 Create File모드로 해서 간다.
-             */
             if (digSave.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 File.Create(digSave.FileName, 1, FileOptions.None).Close();
@@ -163,61 +129,29 @@ namespace Code_Editor
                 CodeEditor.IsEnabled = true;
             }
         }
-
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             //socket.Disconnect();
             _OpponentManager.Save_Oppo();
         }
-
         private void oppoCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //소켓을 열어주자
         }
-
         private void CodeEditor_TextInput(object sender, TextCompositionEventArgs e)
         {
 
         }
-
         private void CodeEditor_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
 
         }
-
         private void Settings_Click(object sender, RoutedEventArgs e)
         {
             Settings set = new Settings();
             set.ShowDialog();
-            _SettingManager.Save_Setting();
-            //Setter
-            if (Setting.Color)
-            {
-                if(Setting.ColorID == "Transparent")
-                {
-                    var colorBrush = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0));
-                    CodeEditor.Background = colorBrush;
-                }
-                else
-                {
-                    var colorBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF" + Setting.ColorID));
-                    CodeEditor.Background = colorBrush;
-                }   
-            }
-            else
-            {
-                var imgBrush = new ImageBrush()
-                {
-                    ImageSource = new BitmapImage(new Uri(Setting.ImagePath, UriKind.RelativeOrAbsolute))
-                };
-                CodeEditor.Background = imgBrush;
-            }
-            CodeEditor.Background.Opacity = Setting.BackOpacity;
-            saveTimer.Stop();
-            saveTimer.Interval = TimeSpan.FromMinutes(Setting.SaveTime);
-            saveTimer.Start();
+            ApplySetting();
         }
-
         private void digFont_Click(object sender, RoutedEventArgs e)
         {
             var fontDig = new System.Windows.Forms.FontDialog()
@@ -235,27 +169,22 @@ namespace Code_Editor
                 CodeEditor.FontSize = memFont.Size;
             }
         }
-
         private void Cut_Click(object sender, RoutedEventArgs e)
         {
             CodeEditor.Cut();
         }
-
         private void Paste_Click(object sender, RoutedEventArgs e)
         {
             CodeEditor.Paste();
         }
-
         private void Undo_Click(object sender, RoutedEventArgs e)
         {
             CodeEditor.Undo();
         }
-
         private void Redo_Click(object sender, RoutedEventArgs e)
         {
             CodeEditor.Redo();
         }
-
         private void Open_Click(object sender, RoutedEventArgs e)
         {
             /*
@@ -277,28 +206,14 @@ namespace Code_Editor
             }
 
         }
-
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            /*
-             * 만약 Save가 되어있었다면(원래 있던파일이라면) 바로 저장해 준다.
-             * 안 되어 있었다면 저장해 준다. 근데 만들때 문법강조를 사용하려면 미리 확장자를 지정해 줘야 하는데
-             * 상관 없지 않을까
-             */
-            if (Current_File_Path != "")
-            {
-                StreamWriter sw = new StreamWriter(Current_File_Path);
-                sw.Write(CodeEditor.Text);
-                sw.Close();
-            }
-           
+            SaveFile();
         }
-
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }
-
         private void addop_Click(object sender, RoutedEventArgs e)
         {
             AddOpponent a = new AddOpponent();
@@ -309,7 +224,6 @@ namespace Code_Editor
                 oppoCombo.Items.Add(o);
             }
         }
-
         private void OpenFolder_Click(object sender, RoutedEventArgs e)
         {
             if (digFolder.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -317,38 +231,15 @@ namespace Code_Editor
                 folder_path = digFolder.SelectedPath;
             }
         }
-        private void Folder_Add(string folderpath)
-        {
-            lstFolder.Items.Clear();
-            string[] files = Directory.GetFiles(folderpath);
-            foreach(string file in files)
-            {
-                string filename = System.IO.Path.GetFileNameWithoutExtension(file);
-                ListViewItem item = new ListViewItem()
-                {
-                    Content=filename,
-                    Tag=file
-                };
-                lstFolder.Items.Add(item);
-            }
-        }
-        #endregion
-        private void UpdateText(bool IsEditing)
-        {
-
-        }
-
         private void lstFolder_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             MessageBox.Show("DoubleClicked");
         }
-
         private void Trans_Click(object sender, RoutedEventArgs e)
         {
             Translator t = new Translator();
             t.Show();
         }
-
         private void SaveAs_Click(object sender, RoutedEventArgs e)
         {
             //다른 이름으로 저장
@@ -366,5 +257,88 @@ namespace Code_Editor
                 }
             }
         }
+        #endregion
+        #region Functions
+        private void SetHighlightExtension(string filext)
+        {
+            string[] temp = Extensions.Split('|');//[0]ASPX,[1]*.aspx[2]Boo[3]*.boo...
+            //1,3,5,7,9,...,37,39
+            string Ext = "";
+            int cnt = 0;
+            string t = "*" + filext;
+            for (int i = 1; i < 40; i += 2)
+            {
+                if (string.Equals(t, temp[i]))
+                {
+                    Ext = temp[i];
+                    cnt = i - 1;
+                }
+            }
+            CodeEditor.SyntaxHighlighting = ICSharpCode.AvalonEdit.Highlighting.HighlightingManager.Instance.GetDefinition(temp[cnt]);
+        }
+        //private void Folder_Add(string folderpath)
+        //{
+        //    lstFolder.Items.Clear();
+        //    string[] files = Directory.GetFiles(folderpath);
+        //    foreach (string file in files)
+        //    {
+        //        string filename = System.IO.Path.GetFileNameWithoutExtension(file);
+        //        ListViewItem item = new ListViewItem()
+        //        {
+        //            Content = filename,
+        //            Tag = file
+        //        };
+        //        lstFolder.Items.Add(item);
+        //    }
+        //}
+        private void SaveFile()
+        {
+            if (Current_File_Path != "")
+            {
+                StreamWriter sw = new StreamWriter(Current_File_Path);
+                sw.Write(CodeEditor.Text);
+                sw.Close();
+            }
+        }
+        //private void UpdateText(bool IsEditing)
+        //{
+
+        //}
+        private void ApplySetting()
+        {
+            _SettingManager.Save_Setting();
+            //Setter
+            if (Setting.Color)
+            {
+                if (Setting.ColorID == "Transparent")
+                {
+                    var colorBrush = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0));
+                    CodeEditor.Background = colorBrush;
+                }
+                else
+                {
+                    var colorBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF" + Setting.ColorID));
+                    CodeEditor.Background = colorBrush;
+                }
+            }
+            else
+            {
+                var imgBrush = new ImageBrush()
+                {
+                    ImageSource = new BitmapImage(new Uri(Setting.ImagePath, UriKind.RelativeOrAbsolute))
+                };
+                CodeEditor.Background = imgBrush;
+            }
+            CodeEditor.Background.Opacity = Setting.BackOpacity;
+            saveTimer.Stop();
+            saveTimer.Interval = TimeSpan.FromMinutes(Setting.SaveTime);
+            saveTimer.Start();
+        }
+        //private void Update_Oppo()
+        //{
+        //    _Opponent = Setting.OppoList;
+        //    //_Opponent.Add("New Opponent");
+        //}
+        #endregion
     }
 }
