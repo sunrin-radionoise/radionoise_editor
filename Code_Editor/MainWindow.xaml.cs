@@ -35,15 +35,11 @@ namespace Code_Editor
             "Boo|*.boo|" + "Coco|*.atg|" + "CSS|*.css|" + "C++|*.c|C++|*.h|C++|*.cc|C++|*.cpp|C++|*.hpp|" + 
             "Java|*.java|" + "PHP|*.php|" + "VBNET|*.vb|" +
             "XML|.xml|XML|.xsl|XML|.xslt|XML|.xsd|XML|.manifest|XML|.config|XML|.addin|XML|.xshd|XML|.wxs|XML|.wxi|XML|.wxl|XML|.proj|XML|.csproj|XML|.vbproj|XML|.ilproj|XML|.booproj|XML|.build|XML|.xfrm|XML|.targets|XML|.xaml|XML|.xpt|XML|.xft|XML|.map|XML|.wsdl|XML|.disco|XML|.ps1xml|XML|.nuspec";
-
-        OpponentManager _OpponentManager = new OpponentManager();
         SettingManager _SettingManager = new SettingManager();
         public SaveFileDialog sd = new SaveFileDialog();
-        string recTXT;
         DispatcherTimer timer = new DispatcherTimer();
         DispatcherTimer saveTimer = new DispatcherTimer();
         Socket socket = IO.Socket("http://iwin247.net:8080/");
-        List<string> _Opponent;
         private string Current_File_Path = "";
         private string folder_path = "";
         System.Windows.Forms.SaveFileDialog digSave = new System.Windows.Forms.SaveFileDialog()
@@ -63,11 +59,6 @@ namespace Code_Editor
             InitializeComponent();
             
             #region Initialize
-            _OpponentManager.Init_Oppo();
-            foreach (string o in Setting.OppoList)
-            {
-                oppoCombo.Items.Add(o);
-            }
             _SettingManager.Load_Setting();
             ApplySetting();
             //MessageBox.Show(Setting.Font + Setting.FontSize.ToString() + Setting.Color.ToString() + Setting.ImagePath + Setting.ID + Setting.PW);
@@ -101,7 +92,6 @@ namespace Code_Editor
         }
         private void Timer_Tick(object sender, EventArgs e)
         {
-            Message.Text = recTXT;
         }
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
         {
@@ -109,12 +99,8 @@ namespace Code_Editor
         }
         private void TextBox_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.Enter)
-            {
-                recTXT += ("me : \r\n");
-                socket.Emit("message", SendTXT.Text); //Socket으로 메세지를 보낸다.
-                SendTXT.Text = ""; //메세지를 보냈으니 초기화
-            }
+
+            
         }
         private void NewItem_Click(object sender, RoutedEventArgs e)
         {
@@ -131,8 +117,7 @@ namespace Code_Editor
         }
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            //socket.Disconnect();
-            _OpponentManager.Save_Oppo();
+
         }
         private void oppoCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -216,13 +201,6 @@ namespace Code_Editor
         }
         private void addop_Click(object sender, RoutedEventArgs e)
         {
-            AddOpponent a = new AddOpponent();
-            a.ShowDialog();
-            oppoCombo.Items.Clear();
-            foreach (string o in Setting.OppoList)
-            {
-                oppoCombo.Items.Add(o);
-            }
         }
         private void OpenFolder_Click(object sender, RoutedEventArgs e)
         {
