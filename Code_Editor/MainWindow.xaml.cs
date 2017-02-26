@@ -320,5 +320,10 @@ namespace Code_Editor
         //    //_Opponent.Add("New Opponent");
         //}
         #endregion
+
+        private void lstFolder_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
