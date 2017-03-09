@@ -36,7 +36,6 @@ namespace Code_Editor
          * AutoSave=1/5/10
          */
         #region Setting_Field
-        public static List<string> OppoList = new List<string> { "", };
         public static string Font { get; set; }
         public static int FontSize { get; set; }
         public static bool Color { get; set; }

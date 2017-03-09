@@ -29,10 +29,10 @@ namespace Code_Editor
     public partial class MainWindow : Window
     {
         #region Variables
-        static readonly string Extensions = "C#|*.cs|" + "JavaScript|*.js|" + 
-            "HTML|*.htm|HTML|*.html|" + 
+        static readonly string Extensions = "C#|*.cs|" + "JavaScript|*.js|" +
+            "HTML|*.htm|HTML|*.html|" +
             "ASP/XHTML|*.asp|ASP/XHTML|*.aspx|ASP/XHTML|*.asax|ASP/XHTML|*.asmx|ASP/XHTML|*.ascx|ASP/XHTML|*.master|" +
-            "Boo|*.boo|" + "Coco|*.atg|" + "CSS|*.css|" + "C++|*.c|C++|*.h|C++|*.cc|C++|*.cpp|C++|*.hpp|" + 
+            "Boo|*.boo|" + "Coco|*.atg|" + "CSS|*.css|" + "C++|*.c|C++|*.h|C++|*.cc|C++|*.cpp|C++|*.hpp|" +
             "Java|*.java|" + "PHP|*.php|" + "VBNET|*.vb|" +
             "XML|.xml|XML|.xsl|XML|.xslt|XML|.xsd|XML|.manifest|XML|.config|XML|.addin|XML|.xshd|XML|.wxs|XML|.wxi|XML|.wxl|XML|.proj|XML|.csproj|XML|.vbproj|XML|.ilproj|XML|.booproj|XML|.build|XML|.xfrm|XML|.targets|XML|.xaml|XML|.xpt|XML|.xft|XML|.map|XML|.wsdl|XML|.disco|XML|.ps1xml|XML|.nuspec";
         SettingManager _SettingManager = new SettingManager();
@@ -54,10 +54,10 @@ namespace Code_Editor
         #endregion
         public MainWindow()
         {
-            if(!Setting.OnlineMode)
-                System.Windows.MessageBox.Show("서버는 현재 오프라인 상태입니다.", "오프라인 모드", MessageBoxButton.OK, MessageBoxImage.Information);
+            if (!Setting.OnlineMode)
+                MessageBox.Show("서버는 현재 오프라인 상태입니다.", "오프라인 모드", MessageBoxButton.OK, MessageBoxImage.Information);
             InitializeComponent();
-            
+
             #region Initialize
             _SettingManager.Load_Setting();
             ApplySetting();
@@ -81,7 +81,7 @@ namespace Code_Editor
             //Console.WriteLine("Message Send");
         }
         #region EventHandler
-        private void saveTimer_Tick(object sender,EventArgs e)
+        private void saveTimer_Tick(object sender, EventArgs e)
         {
             if (Current_File_Path != "")
             {
@@ -100,14 +100,14 @@ namespace Code_Editor
         private void TextBox_KeyDown(object sender, KeyEventArgs e)
         {
 
-            
+
         }
         private void NewItem_Click(object sender, RoutedEventArgs e)
         {
             if (digSave.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 File.Create(digSave.FileName, 1, FileOptions.None).Close();
-                
+
                 Current_File_Path = digSave.FileName;
                 CodeEditor.Text = "";
                 SetHighlightExtension(System.IO.Path.GetExtension(Current_File_Path));
@@ -299,14 +299,28 @@ namespace Code_Editor
                     CodeEditor.Background = colorBrush;
                 }
             }
+            else if (Setting.ImagePath == "")
+            {
+                var colorBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF252525"));
+                CodeEditor.Background = colorBrush;
+            }
             else
             {
-                var imgBrush = new ImageBrush()
+                try
                 {
-                    ImageSource = new BitmapImage(new Uri(Setting.ImagePath, UriKind.RelativeOrAbsolute))
-                };
-                CodeEditor.Background = imgBrush;
+                    var imgBrush = new ImageBrush()
+                    {
+                        ImageSource = new BitmapImage(new Uri(Setting.ImagePath, UriKind.RelativeOrAbsolute))
+                    };
+                    CodeEditor.Background = imgBrush;
+                }
+                catch (Exception)
+                {
+                    var colorBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF252525"));
+                    CodeEditor.Background = colorBrush;
+                }
             }
+
             CodeEditor.Background.Opacity = Setting.BackOpacity;
             saveTimer.Stop();
             saveTimer.Interval = TimeSpan.FromMinutes(Setting.SaveTime);

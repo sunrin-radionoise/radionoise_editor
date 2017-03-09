@@ -27,7 +27,7 @@ namespace Code_Editor
         {
             InitializeComponent();
             lblVersion.Content = Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            timer.Interval = 500;
+            timer.Interval = 50;
             timer.Tick += new EventHandler(Timer_Tick);
             timer.Start();
         }

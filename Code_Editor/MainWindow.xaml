@@ -7,7 +7,7 @@
         xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
         xmlns:avalonedit="http://icsharpcode.net/sharpdevelop/avalonedit" x:Class="Code_Editor.MainWindow"
         mc:Ignorable="d"
-        Title="Radionoise Editor" Height="642.478" Width="982.921" SizeChanged="Window_SizeChanged" Closing="Window_Closing">
+        Title="Radionoise Editor" Height="568.978" Width="1047.421" SizeChanged="Window_SizeChanged" Closing="Window_Closing">
     <Window.Resources>
         <Style TargetType="{x:Type Paragraph}">
             <Setter Property="Margin" Value="0"/>
