@@ -6,7 +6,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-
+using Newtonsoft.Json;
 namespace Code_Editor
 {
     class NetworkInterface
@@ -22,7 +22,7 @@ namespace Code_Editor
         /// <param name="passwd">로그인할 PW</param>
         public static bool Login(string id, string passwd)
         {
-            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(BaseURL + "/auth/signin");
+            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(BaseURL + "/auth/signup");
             Console.WriteLine(req.Address);
             var postData = "id=" + id;
             postData += "&passwd=" + passwd;
@@ -42,8 +42,9 @@ namespace Code_Editor
                 Console.WriteLine(responseString);
                 return true;
             }
-            catch(Exception) //HTTP 400 Error : ID/PW Error Or Not Found Or param missing
+            catch(WebException e) //HTTP 400 Error : ID/PW Error Or Not Found Or param missing
             {
+                Console.WriteLine(((HttpWebResponse)e.Response).StatusCode);
                 return false;
             }
             
@@ -56,7 +57,7 @@ namespace Code_Editor
         /// <param name="name">가입할 이름</param>
         public static bool SignUp(string id, string passwd, string name)
         {
-            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(BaseURL + "/auth/signup");
+            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(BaseURL + "/auth/signin");
             Console.WriteLine(req.Address);
             var postData = "id=" + id;
             postData += "&passwd=" + passwd;
@@ -180,5 +181,6 @@ namespace Code_Editor
                 return "b"; //Not Working
             }
         }
+        
     }
 }

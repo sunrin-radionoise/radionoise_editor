@@ -183,7 +183,7 @@
     <Resource Include="Resources\pre_back.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="RadioNoise_Splash.png" />
+    <Resource Include="Resources\RadioNoise_Splash.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Back\D\1.jpg" />
@@ -272,6 +272,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\icon\1486454236_square-facebook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
