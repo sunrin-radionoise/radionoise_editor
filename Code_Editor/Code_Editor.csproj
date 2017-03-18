@@ -82,6 +82,7 @@
     <Compile Include="AddOpponent.xaml.cs">
       <DependentUpon>AddOpponent.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GItem.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
