@@ -25,6 +25,11 @@
         <Image HorizontalAlignment="Center" Height="106" Margin="336,85,350,259" VerticalAlignment="Center" Width="114" Source="Resources/RN_Logo.png"/>
         <Label Content="RadioNoise" HorizontalAlignment="Center" Margin="288,197,288,203" VerticalAlignment="Center" Foreground="White" FontFamily="/Code_Editor;component/Resources/Font/#Comfortaa" FontSize="36"/>
         <Button Content="로그인" Foreground="White" FontFamily="{StaticResource comfortaa}" HorizontalAlignment="Center" Width="211" VerticalAlignment="Center" Margin="294,252,295,168" Height="30" Background="{x:Null}" BorderBrush="White"></Button>
-        <Button Content="{Binding Source={StaticResource Github}}" Foreground="White" FontFamily="{StaticResource comfortaa}" HorizontalAlignment="Center" Width="211" VerticalAlignment="Center" Margin="294,293,295,127" Height="30" Background="{x:Null}" BorderBrush="White"></Button>
+        <Button Foreground="White" FontFamily="{StaticResource comfortaa}" HorizontalAlignment="Center" Width="211" VerticalAlignment="Center" Margin="294,293,295,127" Height="30" Background="{x:Null}" BorderBrush="White">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="Resources/github.png" Height="20" Width="51"></Image>
+                <TextBlock FontFamily="{StaticResource comfortaa}" Margin="0,4,0,0" Text="Github로 로그인      "/>
+            </StackPanel>
+        </Button>
     </Grid>
 </Window>
