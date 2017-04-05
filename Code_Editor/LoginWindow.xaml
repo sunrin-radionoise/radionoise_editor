@@ -21,15 +21,30 @@
 
 
     <Grid x:Name="grid1" Background="#FF333333">
-        <Label x:Name="lblClose" Content="X" HorizontalAlignment="Left" Margin="773,10,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Tahoma" FontSize="16" MouseLeftButtonUp="lblClose_MouseLeftButtonUp" MouseDown="lblClose_MouseDown"/>
-        <Image HorizontalAlignment="Center" Height="106" Margin="336,85,350,259" VerticalAlignment="Center" Width="114" Source="Resources/RN_Logo.png"/>
-        <Label Content="RadioNoise" HorizontalAlignment="Center" Margin="288,197,288,203" VerticalAlignment="Center" Foreground="White" FontFamily="/Code_Editor;component/Resources/Font/#Comfortaa" FontSize="36"/>
-        <Button Content="로그인" Foreground="White" FontFamily="{StaticResource comfortaa}" HorizontalAlignment="Center" Width="211" VerticalAlignment="Center" Margin="294,252,295,168" Height="30" Background="{x:Null}" BorderBrush="White"></Button>
-        <Button Foreground="White" FontFamily="{StaticResource comfortaa}" HorizontalAlignment="Center" Width="211" VerticalAlignment="Center" Margin="294,293,295,127" Height="30" Background="{x:Null}" BorderBrush="White">
-            <StackPanel Orientation="Horizontal">
-                <Image Source="Resources/github.png" Height="20" Width="51"></Image>
-                <TextBlock FontFamily="{StaticResource comfortaa}" Margin="0,4,0,0" Text="Github로 로그인      "/>
+        <Grid Opacity="0">
+            <Label x:Name="lblClose" Content="X" HorizontalAlignment="Left" Margin="773,10,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Tahoma" FontSize="16" MouseLeftButtonUp="lblClose_MouseLeftButtonUp" MouseDown="lblClose_MouseDown"/>
+            <Image HorizontalAlignment="Center" Height="106" Margin="336,85,350,259" VerticalAlignment="Center" Width="114" Source="Resources/RN_Logo.png"/>
+            <Label Content="RadioNoise" HorizontalAlignment="Center" Margin="288,197,288,203" VerticalAlignment="Center" Foreground="White" FontFamily="/Code_Editor;component/Resources/Font/#Comfortaa" FontSize="36"/>
+            <Button Content="로그인" Foreground="White" FontFamily="{StaticResource comfortaa}" HorizontalAlignment="Center" Width="211" VerticalAlignment="Center" Margin="294,252,295,168" Height="30" Background="{x:Null}" BorderBrush="White"></Button>
+            <Button Foreground="White" FontFamily="{StaticResource comfortaa}" HorizontalAlignment="Center" Width="211" VerticalAlignment="Center" Margin="294,293,295,127" Height="30" Background="{x:Null}" BorderBrush="White">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Resources/github.png" Height="20" Width="51"></Image>
+                    <TextBlock FontFamily="{StaticResource comfortaa}" Margin="0,4,0,0" Text="Github로 로그인      "/>
+                </StackPanel>
+            </Button>
+        </Grid>
+        <Grid>
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <StackPanel Orientation="Horizontal" Height="80" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Width="254">
+                    <Image Source="Resources/RN_Logo.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="Uniform" Height="50" Margin="0,0,3,0"/>
+                    <TextBlock Text="RadioNoise" FontSize="30" FontFamily="{StaticResource comfortaa}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" Margin="5,0,0,0" Width="178"/>
+                </StackPanel>
+                <TextBox Width="100" Height="20"></TextBox>
+                <TextBox Width="100" Height="20"></TextBox>
+                <Button Width="100" Height="25"></Button>
+                <CheckBox Content="로그인 유지" Foreground="White" HorizontalAlignment="Center"></CheckBox>
+                <Label Content="계정 찾기" Foreground="White" HorizontalAlignment="Center"></Label>
             </StackPanel>
-        </Button>
+        </Grid>
     </Grid>
 </Window>
