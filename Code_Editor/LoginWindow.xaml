@@ -35,13 +35,13 @@
         </Grid>
         <Grid>
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                <StackPanel Orientation="Horizontal" Height="80" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Width="254">
+                <StackPanel Orientation="Horizontal" Height="80" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,20" Width="254">
                     <Image Source="Resources/RN_Logo.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="Uniform" Height="50" Margin="0,0,3,0"/>
                     <TextBlock Text="RadioNoise" FontSize="30" FontFamily="{StaticResource comfortaa}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" Margin="5,0,0,0" Width="178"/>
                 </StackPanel>
-                <TextBox Width="100" Height="20"></TextBox>
-                <TextBox Width="100" Height="20"></TextBox>
-                <Button Width="100" Height="25"></Button>
+                <TextBox Width="300" Height="20" Background="{x:Null}" BorderBrush="White" BorderThickness="0,0,0,1" Margin="0,0,0,10"/>
+                <TextBox Width="300" Height="20" Background="{x:Null}" BorderBrush="White" BorderThickness="0,0,0,1"></TextBox>
+                <Button Width="100" Height="25" Background="Transparent" BorderBrush="White" Margin="0,30,0,10" Content="로그인" Foreground="White"></Button>
                 <CheckBox Content="로그인 유지" Foreground="White" HorizontalAlignment="Center"></CheckBox>
                 <Label Content="계정 찾기" Foreground="White" HorizontalAlignment="Center"></Label>
             </StackPanel>
