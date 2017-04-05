@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:Code_Editor"
              StartupUri="Splash.xaml">
     <Application.Resources>
-         
+        <FontFamily x:Key="comfortaa">pack://application:,,,/Resources/Font/#Comfortaa</FontFamily>
     </Application.Resources>
 </Application>

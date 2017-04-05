@@ -113,18 +113,7 @@ namespace Code_Editor
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
 
-            if(NetworkInterface.Login(txtID.Text,txtPass.Password))
-            {
-                //Login Success
-                Setting.ID = txtID.Text;
-                MainWindow m = new MainWindow();
-                m.Show();
-                Close();
-            }
-            else
-            {
-                MessageBox.Show("Login Failed","Error",MessageBoxButton.OK,MessageBoxImage.Information);
-            }
+           
         }
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)
@@ -138,20 +127,7 @@ namespace Code_Editor
             }
             else
             {
-                //Register 처리해주기
-                if(NetworkInterface.SignUp(txtID.Text,txtPass.Password,txtName.Text))
-                {
-                    //Register 성공하면 로그인하라고 해야함
-                    MessageBox.Show("등록 성공하였습니다.", "성공", MessageBoxButton.OK, MessageBoxImage.Information);
-
-                }
-                else
-                {
-                    //실패하면 다시 하라고 해줘여함
-                    MessageBox.Show("이미 있는 계정입니다. 다시 시도해 주세요","오류",MessageBoxButton.OK,MessageBoxImage.Information);
-                }
-                BeginStoryboard(storyBoard_Rev);
-                isReg = false;
+              
             }
         }
 
