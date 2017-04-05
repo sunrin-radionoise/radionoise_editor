@@ -17,23 +17,95 @@
     </x:Code>
     <Window.Resources>
         <Image x:Key="Github" Source="Resources/github.png"></Image>
+        <Storyboard x:Key="DMain">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Main">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="Main">
+                <EasingThicknessKeyFrame KeyTime="0" Value="0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:1" Value="0,0,100,0"/>
+            </ThicknessAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="AMain">
+            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="Main">
+                <EasingThicknessKeyFrame KeyTime="0" Value="100,0,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:1" Value="0"/>
+            </ThicknessAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Main">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="DLogin">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Login">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="Login">
+                <EasingThicknessKeyFrame KeyTime="0" Value="0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:1" Value="0,0,100,0"/>
+            </ThicknessAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="ULogin">
+            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="Login">
+                <EasingThicknessKeyFrame KeyTime="0" Value="100,0,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:1" Value="0"/>
+            </ThicknessAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Login">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="DReg">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Register">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="Register">
+                <EasingThicknessKeyFrame KeyTime="0" Value="0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:1" Value="0,0,100,0"/>
+            </ThicknessAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="UReg">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Register">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="Register">
+                <EasingThicknessKeyFrame KeyTime="0" Value="100,0,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:1" Value="0"/>
+            </ThicknessAnimationUsingKeyFrames>
+        </Storyboard>
     </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource DMain}"/>
+            <BeginStoryboard Storyboard="{StaticResource AMain}"/>
+            <BeginStoryboard Storyboard="{StaticResource DLogin}"/>
+            <BeginStoryboard Storyboard="{StaticResource ULogin}"/>
+            <BeginStoryboard Storyboard="{StaticResource DReg}"/>
+            <BeginStoryboard Storyboard="{StaticResource UReg}"/>
+        </EventTrigger>
+    </Window.Triggers>
 
 
     <Grid x:Name="grid1" Background="#FF333333">
-        <Grid Opacity="100">
-            <Label x:Name="lblClose" Content="X" HorizontalAlignment="Left" Margin="773,10,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Tahoma" FontSize="16" MouseLeftButtonUp="lblClose_MouseLeftButtonUp" MouseDown="lblClose_MouseDown"/>
-            <Image HorizontalAlignment="Center" Height="106" Margin="336,85,350,259" VerticalAlignment="Center" Width="114" Source="Resources/RN_Logo.png"/>
-            <Label Content="RadioNoise" HorizontalAlignment="Center" Margin="288,197,288,203" VerticalAlignment="Center" Foreground="White" FontFamily="/Code_Editor;component/Resources/Font/#Comfortaa" FontSize="36"/>
-            <Button Content="로그인" Foreground="White" FontFamily="{StaticResource comfortaa}" HorizontalAlignment="Center" Width="211" VerticalAlignment="Center" Margin="294,252,295,168" Height="30" Background="{x:Null}" BorderBrush="White"></Button>
-            <Button Foreground="White" FontFamily="{StaticResource comfortaa}" HorizontalAlignment="Center" Width="211" VerticalAlignment="Center" Margin="294,293,295,127" Height="30" Background="{x:Null}" BorderBrush="White">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="Resources/github.png" Height="20" Width="51"></Image>
-                    <TextBlock FontFamily="{StaticResource comfortaa}" Margin="0,4,0,0" Text="Github로 로그인      "/>
-                </StackPanel>
-            </Button>
+        <Label x:Name="lblClose" Content="X" HorizontalAlignment="Left" Margin="773,10,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Tahoma" FontSize="16" MouseLeftButtonUp="lblClose_MouseLeftButtonUp" MouseDown="lblClose_MouseDown"/>
+        <Grid Name="Main" Opacity="100">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Image HorizontalAlignment="Center" Height="106" Margin="0,0,0,0" VerticalAlignment="Center" Width="114" Source="Resources/RN_Logo.png"/>
+                <Label Content="RadioNoise" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Foreground="White" FontFamily="/Code_Editor;component/Resources/Font/#Comfortaa" FontSize="36"/>
+                <Button Content="로그인" Foreground="White" FontFamily="{StaticResource comfortaa}" HorizontalAlignment="Center" Width="211" VerticalAlignment="Center" Margin="0,10,0,10" Height="30" Background="{x:Null}" BorderBrush="White"></Button>
+                <Button Foreground="White" FontFamily="{StaticResource comfortaa}" HorizontalAlignment="Center" Width="211" VerticalAlignment="Center" Margin="0,0,0,0" Height="30" Background="{x:Null}" BorderBrush="White">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="Resources/github.png" Height="20" Width="51"></Image>
+                        <TextBlock FontFamily="{StaticResource comfortaa}" Margin="0,4,0,0" Text="Github로 로그인      "/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
         </Grid>
-        <Grid Opacity="0">
+        <Grid Name="Login" Opacity="0">
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                 <StackPanel Orientation="Horizontal" Height="80" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,20" Width="254">
                     <Image Source="Resources/RN_Logo.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="Uniform" Height="50" Margin="0,0,3,0"/>
@@ -46,7 +118,7 @@
                 <Label Content="계정 찾기" Foreground="White" HorizontalAlignment="Center"></Label>
             </StackPanel>
         </Grid>
-        <Grid Opacity="0">
+        <Grid Name="Register" Opacity="0">
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                 <StackPanel Orientation="Horizontal" Height="80" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,20" Width="254">
                     <Image Source="Resources/RN_Logo.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="Uniform" Height="50" Margin="0,0,3,0"/>
