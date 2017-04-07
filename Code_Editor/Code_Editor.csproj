@@ -336,5 +336,8 @@
   <ItemGroup>
     <Resource Include="Resources\github.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\back_.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

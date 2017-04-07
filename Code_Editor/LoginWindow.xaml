@@ -26,6 +26,10 @@
                 <EasingThicknessKeyFrame KeyTime="0" Value="0"/>
                 <EasingThicknessKeyFrame KeyTime="0:0:1" Value="0,0,100,0"/>
             </ThicknessAnimationUsingKeyFrames>
+            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.IsHitTestVisible)" Storyboard.TargetName="Main">
+                <DiscreteBooleanKeyFrame KeyTime="0" Value="True"/>
+                <DiscreteBooleanKeyFrame KeyTime="0:0:1" Value="False"/>
+            </BooleanAnimationUsingKeyFrames>
         </Storyboard>
         <Storyboard x:Key="AMain">
             <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="Main">
@@ -36,6 +40,10 @@
                 <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1"/>
             </DoubleAnimationUsingKeyFrames>
+            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.IsHitTestVisible)" Storyboard.TargetName="Main">
+                <DiscreteBooleanKeyFrame KeyTime="0" Value="False"/>
+                <DiscreteBooleanKeyFrame KeyTime="0:0:1" Value="True"/>
+            </BooleanAnimationUsingKeyFrames>
         </Storyboard>
         <Storyboard x:Key="DLogin">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Login">
@@ -46,6 +54,10 @@
                 <EasingThicknessKeyFrame KeyTime="0" Value="0"/>
                 <EasingThicknessKeyFrame KeyTime="0:0:1" Value="0,0,100,0"/>
             </ThicknessAnimationUsingKeyFrames>
+            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.IsHitTestVisible)" Storyboard.TargetName="Login">
+                <DiscreteBooleanKeyFrame KeyTime="0" Value="True"/>
+                <DiscreteBooleanKeyFrame KeyTime="0:0:1" Value="False"/>
+            </BooleanAnimationUsingKeyFrames>
         </Storyboard>
         <Storyboard x:Key="ULogin">
             <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="Login">
@@ -56,6 +68,10 @@
                 <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1"/>
             </DoubleAnimationUsingKeyFrames>
+            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.IsHitTestVisible)" Storyboard.TargetName="Login">
+                <DiscreteBooleanKeyFrame KeyTime="0" Value="False"/>
+                <DiscreteBooleanKeyFrame KeyTime="0:0:1" Value="True"/>
+            </BooleanAnimationUsingKeyFrames>
         </Storyboard>
         <Storyboard x:Key="DReg">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Register">
@@ -66,6 +82,10 @@
                 <EasingThicknessKeyFrame KeyTime="0" Value="0"/>
                 <EasingThicknessKeyFrame KeyTime="0:0:1" Value="0,0,100,0"/>
             </ThicknessAnimationUsingKeyFrames>
+            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.IsEnabled)" Storyboard.TargetName="Register">
+                <DiscreteBooleanKeyFrame KeyTime="0" Value="True"/>
+                <DiscreteBooleanKeyFrame KeyTime="0:0:1" Value="False"/>
+            </BooleanAnimationUsingKeyFrames>
         </Storyboard>
         <Storyboard x:Key="UReg">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Register">
@@ -76,9 +96,13 @@
                 <EasingThicknessKeyFrame KeyTime="0" Value="100,0,0,0"/>
                 <EasingThicknessKeyFrame KeyTime="0:0:1" Value="0"/>
             </ThicknessAnimationUsingKeyFrames>
+            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.IsEnabled)" Storyboard.TargetName="Register">
+                <DiscreteBooleanKeyFrame KeyTime="0" Value="False"/>
+                <DiscreteBooleanKeyFrame KeyTime="0:0:1" Value="True"/>
+            </BooleanAnimationUsingKeyFrames>
         </Storyboard>
     </Window.Resources>
-    <Window.Triggers>
+    <Window.Triggers> <!--
         <EventTrigger RoutedEvent="FrameworkElement.Loaded">
             <BeginStoryboard Storyboard="{StaticResource DMain}"/>
             <BeginStoryboard Storyboard="{StaticResource AMain}"/>
@@ -86,49 +110,50 @@
             <BeginStoryboard Storyboard="{StaticResource ULogin}"/>
             <BeginStoryboard Storyboard="{StaticResource DReg}"/>
             <BeginStoryboard Storyboard="{StaticResource UReg}"/>
-        </EventTrigger>
+        </EventTrigger> -->
     </Window.Triggers>
 
 
     <Grid x:Name="grid1" Background="#FF333333">
+        <Image Name="BackButton" IsHitTestVisible="False" Source="Resources/back_.png" Margin="10,10,771,420"/>
         <Label x:Name="lblClose" Content="X" HorizontalAlignment="Left" Margin="773,10,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Tahoma" FontSize="16" MouseLeftButtonUp="lblClose_MouseLeftButtonUp" MouseDown="lblClose_MouseDown"/>
-        <Grid Name="Main" Opacity="100">
+        <Grid Name="Main" Opacity="100" IsHitTestVisible="True">
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Image HorizontalAlignment="Center" Height="106" Margin="0,0,0,0" VerticalAlignment="Center" Width="114" Source="Resources/RN_Logo.png"/>
                 <Label Content="RadioNoise" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Foreground="White" FontFamily="/Code_Editor;component/Resources/Font/#Comfortaa" FontSize="36"/>
-                <Button Content="로그인" Foreground="White" FontFamily="{StaticResource comfortaa}" HorizontalAlignment="Center" Width="211" VerticalAlignment="Center" Margin="0,10,0,10" Height="30" Background="{x:Null}" BorderBrush="White"></Button>
-                <Button Foreground="White" FontFamily="{StaticResource comfortaa}" HorizontalAlignment="Center" Width="211" VerticalAlignment="Center" Margin="0,0,0,0" Height="30" Background="{x:Null}" BorderBrush="White">
+                <Button Name="BtnLogin" Content="로그인" Foreground="White" FontFamily="{StaticResource comfortaa}" HorizontalAlignment="Center" Width="211" VerticalAlignment="Center" Margin="0,10,0,10" Height="30" Background="{x:Null}" BorderBrush="White" Click="BtnLogin_Click_1"></Button>
+                <Button Name="BtnGithub" Foreground="White" FontFamily="{StaticResource comfortaa}" HorizontalAlignment="Center" Width="211" VerticalAlignment="Center" Margin="0,0,0,0" Height="30" Background="{x:Null}" BorderBrush="White">
                     <StackPanel Orientation="Horizontal">
                         <Image Source="Resources/github.png" Height="20" Width="51"></Image>
                         <TextBlock FontFamily="{StaticResource comfortaa}" Margin="0,4,0,0" Text="Github로 로그인      "/>
                     </StackPanel>
                 </Button>
+                <Label Name="LblRegister" Content="계정이 없으신가요?" HorizontalAlignment="Center" Foreground="Gray" Margin="0,10,0,0" MouseLeftButtonDown="LblRegister_MouseLeftButtonDown"/>
             </StackPanel>
         </Grid>
-        <Grid Name="Login" Opacity="0">
+        <Grid Name="Login" Opacity="0" IsHitTestVisible="False">
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                 <StackPanel Orientation="Horizontal" Height="80" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,20" Width="254">
                     <Image Source="Resources/RN_Logo.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="Uniform" Height="50" Margin="0,0,3,0"/>
                     <TextBlock Text="RadioNoise" FontSize="30" FontFamily="{StaticResource comfortaa}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" Margin="5,0,0,0" Width="178"/>
                 </StackPanel>
-                <TextBox Width="300" Height="20" Background="{x:Null}" BorderBrush="White" BorderThickness="0,0,0,1" Margin="0,0,0,10"/>
-                <TextBox Width="300" Height="20" Background="{x:Null}" BorderBrush="White" BorderThickness="0,0,0,1"></TextBox>
-                <Button Width="200" Height="30" Background="Transparent" BorderBrush="White" Margin="0,30,0,10" Content="로그인" Foreground="White"></Button>
-                <CheckBox Content="로그인 유지" Foreground="White" HorizontalAlignment="Center" Margin="0,0,0,10"></CheckBox>
+                <TextBox Name="LoginID" Width="300" Height="20" Background="{x:Null}" BorderBrush="White" Foreground="White" BorderThickness="0,0,0,1" Margin="0,0,0,10"/>
+                <TextBox Name="LoginPW" Width="300" Height="20" Background="{x:Null}" BorderBrush="White" Foreground="White" BorderThickness="0,0,0,1"></TextBox>
+                <Button Name="Login_Btn" Width="200" Height="30" Background="Transparent" BorderBrush="White" Margin="0,30,0,10" Content="로그인" Foreground="White" Click="Login_Btn_Click"></Button>
                 <Label Content="계정 찾기" Foreground="White" HorizontalAlignment="Center"></Label>
             </StackPanel>
         </Grid>
-        <Grid Name="Register" Opacity="0">
+        <Grid Name="Register" Opacity="0" IsHitTestVisible="False">
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                 <StackPanel Orientation="Horizontal" Height="80" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,20" Width="254">
                     <Image Source="Resources/RN_Logo.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="Uniform" Height="50" Margin="0,0,3,0"/>
                     <TextBlock Text="RadioNoise" FontSize="30" FontFamily="{StaticResource comfortaa}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" Margin="5,0,0,0" Width="178"/>
                 </StackPanel>
-                <TextBox Width="300" Height="20" Background="{x:Null}" BorderBrush="White" BorderThickness="0,0,0,1" Margin="0,0,0,10"/>
-                <TextBox Width="300" Height="20" Background="{x:Null}" BorderBrush="White" BorderThickness="0,0,0,1" Margin="0,0,0,10"/>
-                <TextBox Width="300" Height="20" Background="{x:Null}" BorderBrush="White" BorderThickness="0,0,0,1"></TextBox>
-                <Button Width="200" Height="30" Background="Transparent" BorderBrush="White" Margin="0,30,0,10" Content="가입" Foreground="White"></Button>
-                <Button Foreground="White" FontFamily="{StaticResource comfortaa}" HorizontalAlignment="Center" Width="200" VerticalAlignment="Center" Margin="0,0,0,10" Height="30" Background="{x:Null}" BorderBrush="White">
+                <TextBox Name="Nick" Width="300" Height="20" Background="{x:Null}" BorderBrush="White" Foreground="White"  BorderThickness="0,0,0,1" Margin="0,0,0,10"/>
+                <TextBox Name="Mail" Width="300" Height="20" Background="{x:Null}" BorderBrush="White" Foreground="White"  BorderThickness="0,0,0,1" Margin="0,0,0,10"/>
+                <TextBox Name="Passwd" Width="300" Height="20" Background="{x:Null}" BorderBrush="White" Foreground="White"  BorderThickness="0,0,0,1"></TextBox>
+                <Button Name="Signup" Width="200" Height="30" Background="Transparent" BorderBrush="White" Margin="0,30,0,10" Content="가입" Foreground="White"></Button>
+                <Button Name="Github_Signup" Foreground="White" FontFamily="{StaticResource comfortaa}" HorizontalAlignment="Center" Width="200" VerticalAlignment="Center" Margin="0,0,0,10" Height="30" Background="{x:Null}" BorderBrush="White">
                     <StackPanel Orientation="Horizontal">
                         <Image Source="Resources/github.png" Height="20" Width="51"></Image>
                         <TextBlock FontFamily="{StaticResource comfortaa}" Margin="0,4,0,0" Text="Github로 로그인      "/>

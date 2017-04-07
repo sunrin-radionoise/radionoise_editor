@@ -11,6 +11,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
@@ -30,45 +31,6 @@ namespace Code_Editor
         public LoginWindow()
         {
             InitializeComponent();
-            Random rnd = new Random();
-            ImageBrush imgB;
-            if (!Setting.OnlineMode)
-            {
-                //Offline Mode
-               // MainWindow m = new MainWindow();
-            //    m.Show();
-             //   Close();
-                
-            }
-            picCnt = rnd.Next(1, 20);
-            if (curTime > 4 && curTime < 17) //5~16시
-            {
-                imgB = new ImageBrush()
-                {
-                    ImageSource = new BitmapImage(new Uri(curPath + @"D\" + picCnt.ToString() + ".jpg", UriKind.RelativeOrAbsolute)),
-                    Stretch = Stretch.Fill
-                };
-            }
-            else if (curTime > 16 && curTime < 22) //17~21시
-            {
-                imgB = new ImageBrush()
-                {
-                    ImageSource = new BitmapImage(new Uri(curPath + @"S\" + picCnt.ToString() + ".jpg", UriKind.RelativeOrAbsolute)),
-                    Stretch = Stretch.Fill
-                };
-            }
-            else //22~4시
-            {
-                imgB = new ImageBrush()
-                {
-                    ImageSource = new BitmapImage(new Uri(curPath + @"N\" + picCnt.ToString() + ".jpg", UriKind.RelativeOrAbsolute)),
-                    Stretch = Stretch.Fill
-                };
-            }
-            grid1.Background = imgB;
-            _Timer.Interval = 10000; //20sec당 1Tick
-            _Timer.Tick += new EventHandler(Timer_Tick);
-            _Timer.Start();
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -147,6 +109,36 @@ namespace Code_Editor
             var fb = new SocialWindow("fb");
             fb.Show();
             Console.Write(SocialTokens.FacebookToken);
+        }
+
+        private void BtnLogin_Click_1(object sender, RoutedEventArgs e)
+        {
+            Storyboard storyBoard = (Storyboard)FindResource("DMain");
+            Storyboard storyBoard2 = (Storyboard)FindResource("ULogin");
+            BeginStoryboard(storyBoard);
+            
+            BeginStoryboard(storyBoard2);
+        }
+        /// <summary>
+        /// 로그인화면의 로그인버튼 누를때 이벤트이다.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Login_Btn_Click(object sender, RoutedEventArgs e)
+        {
+            //로그인화면의 로그인버튼을 누른것이다.
+            Storyboard s1 = (Storyboard)FindResource("DLogin");
+            Storyboard s2 = (Storyboard)FindResource("AMain");
+            BeginStoryboard(s1);
+            BeginStoryboard(s2);
+        }
+
+        private void LblRegister_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Storyboard s1 = (Storyboard)FindResource("DMain");
+            Storyboard s2 = (Storyboard)FindResource("UReg");
+            BeginStoryboard(s1);
+            BeginStoryboard(s2);
         }
     }
 }
