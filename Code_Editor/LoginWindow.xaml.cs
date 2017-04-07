@@ -22,6 +22,7 @@ namespace Code_Editor
     /// </summary>
     public partial class LoginWindow : Window
     {
+        public string Current_Page = "Main";
         private static bool isReg = false;
         int picCnt = 0;
         int curTime = DateTime.Now.Hour;
@@ -35,41 +36,7 @@ namespace Code_Editor
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            int curTime = DateTime.Now.Hour;
-            System.Windows.Media.Animation.Storyboard stbLow = (System.Windows.Media.Animation.Storyboard)FindResource("Opacity_Lower");
-            System.Windows.Media.Animation.Storyboard stbUp = (System.Windows.Media.Animation.Storyboard)FindResource("Opacity_Upper");
-            ImageBrush imgB;
-            BeginStoryboard(stbLow);
-            if (curTime > 4 && curTime < 17) //5~16시
-            {
-                imgB = new ImageBrush()
-                {
-                    ImageSource = new BitmapImage(new Uri(curPath + @"D\" + picCnt.ToString() + ".jpg", UriKind.RelativeOrAbsolute)),
-                    Stretch = Stretch.Fill
-                };
-            }
-            else if(curTime > 16 && curTime < 22) //17~21시
-            {
-                imgB = new ImageBrush()
-                {
-                    ImageSource = new BitmapImage(new Uri(curPath + @"S\" + picCnt.ToString() + ".jpg", UriKind.RelativeOrAbsolute)),
-                    Stretch = Stretch.Fill
-                };
-            }
-            else //22~4시
-            {
-                imgB = new ImageBrush()
-                {
-                    ImageSource = new BitmapImage(new Uri(curPath + @"N\" + picCnt.ToString() + ".jpg", UriKind.RelativeOrAbsolute)),
-                    Stretch = Stretch.Fill
-                };
-            }
-            if (picCnt == 20)
-                picCnt = 1;
-            else
-                picCnt++;
-            grid1.Background = imgB;
-            BeginStoryboard(stbUp);
+            
         }
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
@@ -113,11 +80,13 @@ namespace Code_Editor
 
         private void BtnLogin_Click_1(object sender, RoutedEventArgs e)
         {
+            //메인화면의 로그인 버튼을 누른 것이다.
             Storyboard storyBoard = (Storyboard)FindResource("DMain");
             Storyboard storyBoard2 = (Storyboard)FindResource("ULogin");
+            Current_Page = "Login";
             BeginStoryboard(storyBoard);
-            
             BeginStoryboard(storyBoard2);
+            BackButton.IsHitTestVisible = true;
         }
         /// <summary>
         /// 로그인화면의 로그인버튼 누를때 이벤트이다.
@@ -127,18 +96,47 @@ namespace Code_Editor
         private void Login_Btn_Click(object sender, RoutedEventArgs e)
         {
             //로그인화면의 로그인버튼을 누른것이다.
-            Storyboard s1 = (Storyboard)FindResource("DLogin");
-            Storyboard s2 = (Storyboard)FindResource("AMain");
-            BeginStoryboard(s1);
-            BeginStoryboard(s2);
+            //Storyboard s1 = (Storyboard)FindResource("DLogin");
+            //Storyboard s2 = (Storyboard)FindResource("AMain");
+            //BeginStoryboard(s1);
+            //BeginStoryboard(s2);
+            
         }
 
         private void LblRegister_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
+        {   
+            //회원가입 화면으로 넘어가는 것이다.
             Storyboard s1 = (Storyboard)FindResource("DMain");
             Storyboard s2 = (Storyboard)FindResource("UReg");
+            Current_Page = "Reg";
             BeginStoryboard(s1);
             BeginStoryboard(s2);
+            BackButton.IsHitTestVisible = true;
+        }
+
+        private void BackButton_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Storyboard dl = (Storyboard)FindResource("DLogin");
+            Storyboard dr = (Storyboard)FindResource("DReg");
+            Storyboard um = (Storyboard)FindResource("AMain");
+            switch(Current_Page)
+            {
+                case "Main":
+                    BackButton.IsHitTestVisible = false;
+                    break;
+                case "Login":
+                    BeginStoryboard(dl);
+                    BeginStoryboard(um);
+                    Current_Page = "Main";
+                    BackButton.IsHitTestVisible = false;
+                    break;
+                case "Reg":
+                    BeginStoryboard(dr);
+                    BeginStoryboard(um);
+                    Current_Page = "Main";
+                    BackButton.IsHitTestVisible = false;
+                    break;
+            }
         }
     }
 }

@@ -96,7 +96,7 @@
                 <EasingThicknessKeyFrame KeyTime="0" Value="100,0,0,0"/>
                 <EasingThicknessKeyFrame KeyTime="0:0:1" Value="0"/>
             </ThicknessAnimationUsingKeyFrames>
-            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.IsEnabled)" Storyboard.TargetName="Register">
+            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.IsHitTestVisible)" Storyboard.TargetName="Register">
                 <DiscreteBooleanKeyFrame KeyTime="0" Value="False"/>
                 <DiscreteBooleanKeyFrame KeyTime="0:0:1" Value="True"/>
             </BooleanAnimationUsingKeyFrames>
@@ -115,7 +115,7 @@
 
 
     <Grid x:Name="grid1" Background="#FF333333">
-        <Image Name="BackButton" IsHitTestVisible="False" Source="Resources/back_.png" Margin="10,10,771,420"/>
+        <Image Name="BackButton" IsHitTestVisible="False" Source="Resources/back_.png" Margin="10,10,771,420" MouseLeftButtonDown="BackButton_MouseLeftButtonDown"/>
         <Label x:Name="lblClose" Content="X" HorizontalAlignment="Left" Margin="773,10,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Tahoma" FontSize="16" MouseLeftButtonUp="lblClose_MouseLeftButtonUp" MouseDown="lblClose_MouseDown"/>
         <Grid Name="Main" Opacity="100" IsHitTestVisible="True">
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -140,7 +140,7 @@
                 <TextBox Name="LoginID" Width="300" Height="20" Background="{x:Null}" BorderBrush="White" Foreground="White" BorderThickness="0,0,0,1" Margin="0,0,0,10"/>
                 <TextBox Name="LoginPW" Width="300" Height="20" Background="{x:Null}" BorderBrush="White" Foreground="White" BorderThickness="0,0,0,1"></TextBox>
                 <Button Name="Login_Btn" Width="200" Height="30" Background="Transparent" BorderBrush="White" Margin="0,30,0,10" Content="로그인" Foreground="White" Click="Login_Btn_Click"></Button>
-                <Label Content="계정 찾기" Foreground="White" HorizontalAlignment="Center"></Label>
+                <Label Name="FindAccount" Content="계정 찾기" Foreground="White" HorizontalAlignment="Center"></Label>
             </StackPanel>
         </Grid>
         <Grid Name="Register" Opacity="0" IsHitTestVisible="False">
