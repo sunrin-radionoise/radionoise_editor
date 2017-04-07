@@ -206,9 +206,15 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Resource Include="Resources\Font\Comfortaa-Bold.ttf" />
-    <Resource Include="Resources\Font\Comfortaa-Light.ttf" />
-    <Resource Include="Resources\Font\Comfortaa-Regular.ttf" />
+    <Resource Include="Resources\Font\Comfortaa-Bold.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Font\Comfortaa-Light.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Font\Comfortaa-Regular.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -222,10 +228,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\pre_back.png" />
+    <Resource Include="Resources\pre_back.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\RadioNoise_Splash.png" />
+    <Resource Include="Resources\RadioNoise_Splash.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Back\D\1.jpg" />
@@ -301,25 +311,39 @@
     <Resource Include="Resources\Back\S\9.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\splash.png" />
+    <Resource Include="Resources\splash.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\title.png" />
+    <Resource Include="Resources\title.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\icon\1486453867_facebook_square.png" />
-    <Resource Include="Resources\icon\1486453889_github-square-social-media.png" />
-    <Resource Include="Resources\icon\1486453943_6_-_Google_Plus.png" />
-    <Resource Include="Resources\icon\1486453957_square-twitter.png" />
+    <Resource Include="Resources\icon\1486453867_facebook_square.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\icon\1486453889_github-square-social-media.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\icon\1486453943_6_-_Google_Plus.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\icon\1486453957_square-twitter.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\icon\1486454236_square-facebook.png" />
+    <Resource Include="Resources\icon\1486454236_square-facebook.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Views\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\RN_Logo.png" />
+    <Resource Include="Resources\RN_Logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
@@ -334,10 +358,14 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\github.png" />
+    <Resource Include="Resources\github.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\back_.png" />
+    <Resource Include="Resources\back_.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

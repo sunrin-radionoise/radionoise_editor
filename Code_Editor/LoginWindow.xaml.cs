@@ -25,6 +25,7 @@ namespace Code_Editor
         public string Current_Page = "Main";
         private static bool isReg = false;
         int picCnt = 0;
+        private NetworkInterface _NetworkInterface = new NetworkInterface();
         int curTime = DateTime.Now.Hour;
         static string curPath = System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\Resources\Back\";
         System.Windows.Forms.Timer _Timer = new System.Windows.Forms.Timer();
@@ -32,32 +33,6 @@ namespace Code_Editor
         public LoginWindow()
         {
             InitializeComponent();
-        }
-
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnLogin_Click(object sender, RoutedEventArgs e)
-        {
-
-           
-        }
-
-        private void btnRegister_Click(object sender, RoutedEventArgs e)
-        {
-            System.Windows.Media.Animation.Storyboard storyBoard = (System.Windows.Media.Animation.Storyboard)FindResource("Register");
-            System.Windows.Media.Animation.Storyboard storyBoard_Rev = (System.Windows.Media.Animation.Storyboard)FindResource("Register_Rev");
-            if (!isReg)
-            {
-                BeginStoryboard(storyBoard);
-                isReg = true;
-            }
-            else
-            {
-              
-            }
         }
 
         private void lblClose_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -68,14 +43,6 @@ namespace Code_Editor
         private void lblClose_MouseDown(object sender, MouseButtonEventArgs e)
         {
             Close();
-        }
-
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
-            //Facebook Login Button
-            var fb = new SocialWindow("fb");
-            fb.Show();
-            Console.Write(SocialTokens.FacebookToken);
         }
 
         private void BtnLogin_Click_1(object sender, RoutedEventArgs e)
@@ -100,7 +67,15 @@ namespace Code_Editor
             //Storyboard s2 = (Storyboard)FindResource("AMain");
             //BeginStoryboard(s1);
             //BeginStoryboard(s2);
-            
+            if(NetworkInterface.Login(LoginID.Text, LoginPW.Text))
+            {
+                MainWindow m = new MainWindow();
+                m.Show();
+            }
+            else
+            {
+                MessageBox.Show("로그인에 실패했습니다.","로그인",MessageBoxButton.OK,MessageBoxImage.Asterisk);
+            }
         }
 
         private void LblRegister_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -136,6 +111,18 @@ namespace Code_Editor
                     Current_Page = "Main";
                     BackButton.IsHitTestVisible = false;
                     break;
+            }
+        }
+
+        private void Signup_Click(object sender, RoutedEventArgs e)
+        {
+            if(NetworkInterface.SignUp(Mail.Text,Passwd.Text,Nick.Text))
+            {
+                MessageBox.Show("가입에 성공하였습니다.", "회원 가입", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+            }
+            else
+            {
+                MessageBox.Show("이미 존재하는 계정입니다.", "회원 가입", MessageBoxButton.OK, MessageBoxImage.Asterisk);
             }
         }
     }
