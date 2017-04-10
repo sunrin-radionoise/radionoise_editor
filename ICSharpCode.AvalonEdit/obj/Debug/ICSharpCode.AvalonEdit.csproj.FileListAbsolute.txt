@@ -62,3 +62,19 @@ D:\Documents\Visual Studio 2017\Projects\radionoise_editor\ICSharpCode.AvalonEdi
 D:\Documents\Visual Studio 2017\Projects\radionoise_editor\ICSharpCode.AvalonEdit\obj\Debug\ICSharpCode.AvalonEdit.g.resources
 D:\Documents\Visual Studio 2017\Projects\radionoise_editor\ICSharpCode.AvalonEdit\obj\Debug\ICSharpCode.AvalonEdit.dll
 D:\Documents\Visual Studio 2017\Projects\radionoise_editor\ICSharpCode.AvalonEdit\obj\Debug\ICSharpCode.AvalonEdit.pdb
+C:\Users\Sunrin\Source\Repos\radionoise_editor\bin\Debug\ICSharpCode.AvalonEdit.xml
+C:\Users\Sunrin\Source\Repos\radionoise_editor\bin\Debug\ICSharpCode.AvalonEdit.dll
+C:\Users\Sunrin\Source\Repos\radionoise_editor\bin\Debug\ICSharpCode.AvalonEdit.pdb
+C:\Users\Sunrin\Source\Repos\radionoise_editor\ICSharpCode.AvalonEdit\obj\Debug\ICSharpCode.AvalonEdit.csprojResolveAssemblyReference.cache
+C:\Users\Sunrin\Source\Repos\radionoise_editor\ICSharpCode.AvalonEdit\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Sunrin\Source\Repos\radionoise_editor\ICSharpCode.AvalonEdit\obj\Debug\ICSharpCode.AvalonEdit_MarkupCompile.cache
+C:\Users\Sunrin\Source\Repos\radionoise_editor\ICSharpCode.AvalonEdit\obj\Debug\ICSharpCode.AvalonEdit_MarkupCompile.lref
+C:\Users\Sunrin\Source\Repos\radionoise_editor\ICSharpCode.AvalonEdit\obj\Debug\CodeCompletion\CompletionList.baml
+C:\Users\Sunrin\Source\Repos\radionoise_editor\ICSharpCode.AvalonEdit\obj\Debug\CodeCompletion\InsightWindow.baml
+C:\Users\Sunrin\Source\Repos\radionoise_editor\ICSharpCode.AvalonEdit\obj\Debug\Search\SearchPanel.baml
+C:\Users\Sunrin\Source\Repos\radionoise_editor\ICSharpCode.AvalonEdit\obj\Debug\Search\DropDownButton.baml
+C:\Users\Sunrin\Source\Repos\radionoise_editor\ICSharpCode.AvalonEdit\obj\Debug\TextEditor.baml
+C:\Users\Sunrin\Source\Repos\radionoise_editor\ICSharpCode.AvalonEdit\obj\Debug\themes\generic.baml
+C:\Users\Sunrin\Source\Repos\radionoise_editor\ICSharpCode.AvalonEdit\obj\Debug\ICSharpCode.AvalonEdit.g.resources
+C:\Users\Sunrin\Source\Repos\radionoise_editor\ICSharpCode.AvalonEdit\obj\Debug\ICSharpCode.AvalonEdit.dll
+C:\Users\Sunrin\Source\Repos\radionoise_editor\ICSharpCode.AvalonEdit\obj\Debug\ICSharpCode.AvalonEdit.pdb
