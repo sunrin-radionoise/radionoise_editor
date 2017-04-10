@@ -48,43 +48,11 @@
             <ColumnDefinition Width="107*"/>
             <ColumnDefinition Width="416*"/>
         </Grid.ColumnDefinitions>
-
-
-        <TabControl TabStripPlacement="Bottom" Grid.Row="2" Background="{x:Null}" BorderBrush="#FF3F3F46">
-            <TabItem Header="Proj" Margin="0,0,-17,0" HorizontalAlignment="Left" Width="50" BorderBrush="#FF3F3F46" Foreground="White">
-                <TabItem.Background>
-                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
-                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
-                        <GradientStop Color="#FF252526"/>
-                    </LinearGradientBrush>
-                </TabItem.Background>
-                <Grid>
-                    <ListView x:Name="lstFolder" Background="{x:Null}" Foreground="White" BorderBrush="#FF252526" MouseDoubleClick="lstFolder_MouseDoubleClick" SelectionChanged="lstFolder_SelectionChanged">
-                        <ListView.View>
-                            <GridView>
-                                <GridViewColumn/>
-                            </GridView>
-                        </ListView.View>
-                    </ListView>
-                </Grid>
-            </TabItem>
-            <TabItem Header="Chat" Margin="2,0,-15,0" Height="20" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.45" Foreground="White">
-                <TabItem.Background>
-                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
-                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
-                        <GradientStop Color="#FF252526"/>
-                    </LinearGradientBrush>
-                </TabItem.Background>
-                <Grid>
-                    <WebBrowser Name="WebBrowser1" />
-                </Grid>
-            </TabItem>
-        </TabControl>
-
+        <Grid Grid.ColumnSpan="1" Grid.Row="1"></Grid>
         <Grid Grid.ColumnSpan="2" Background="#FF424242">
-            <Menu VerticalAlignment="Center" Background="#FF424242" Margin="0,0,0,0" MouseLeftButtonDown="Menu_MouseLeftButtonDown" PreviewMouseLeftButtonDown="Menu_PreviewMouseLeftButtonDown">
+            <Menu VerticalAlignment="Center" Background="#FF424242" Margin="10,0,0,0" MouseLeftButtonDown="Menu_MouseLeftButtonDown" PreviewMouseLeftButtonDown="Menu_PreviewMouseLeftButtonDown">
                 <Image Source="Resources/RN_Logo.png" Width="18" Height="18"  />
-                <MenuItem Header="File" Foreground="White" Background="#FF424242" BorderBrush="#FF424242" Template="{DynamicResource MenuItemControlTemplate1}">
+                <MenuItem Header="파일" Foreground="White" Background="#FF424242" BorderBrush="#FF424242" Template="{DynamicResource MenuItemControlTemplate1}">
                     <MenuItem x:Name="New" Header="_New" Click="NewItem_Click" Background="#FF424242" BorderBrush="#FF424242" />
                     <MenuItem x:Name="Open" Header="_Open" Background="#FF424242" BorderBrush="#FF424242" Click="Open_Click"/>
                     <MenuItem x:Name="OpenOnline" Header="_Open Online" Background="#FF424242" BorderBrush="#FF424242" Click="Open_Click"/>
@@ -94,13 +62,13 @@
                     <Separator/>
                     <MenuItem x:Name="Exit" Header="_Exit" Background="#FF424242" BorderBrush="#FF424242" Click="Exit_Click"/>
                 </MenuItem>
-                <MenuItem Header="_Edit" Foreground="White" Background="#FF424242" Template="{DynamicResource MenuItemControlTemplate1}">
+                <MenuItem Header="편집" Foreground="White" Background="#FF424242" Template="{DynamicResource MenuItemControlTemplate1}">
                     <MenuItem x:Name="Cut" Header="_Cut" Background="#FF424242" BorderBrush="#FF424242" Click="Cut_Click" />
                     <MenuItem x:Name="Paste" Header="_Paste" Background="#FF424242" BorderBrush="#FF424242" Click="Paste_Click" />
                     <MenuItem x:Name="Undo" Header="_Undo" Background="#FF424242"  BorderBrush="#FF424242" Click="Undo_Click"/>
                     <MenuItem x:Name="Redo" Header="_Redo" Background="#FF424242" BorderBrush="#FF424242" Click="Redo_Click" />
                 </MenuItem>
-                <MenuItem Header="_Tools" Foreground="White" Template="{DynamicResource MenuItemControlTemplate1}">
+                <MenuItem Header="도구" Foreground="White" Template="{DynamicResource MenuItemControlTemplate1}">
                     <MenuItem x:Name="Sett" Header="_Settings" Background="#FF424242" BorderBrush="#FF424242" Click="Settings_Click" />
                     <MenuItem x:Name="Trans" Header="_Translator" Background="#FF424242" BorderBrush="#FF424242" Click="Trans_Click" />
                 </MenuItem>
