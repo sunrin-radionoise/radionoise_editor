@@ -7,7 +7,7 @@
         xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
         xmlns:avalonedit="http://icsharpcode.net/sharpdevelop/avalonedit" x:Class="Code_Editor.MainWindow"
         mc:Ignorable="d"
-        Title="Radionoise Editor" Height="568.978" Width="1047.421" SizeChanged="Window_SizeChanged" Closing="Window_Closing" WindowStyle="None">
+        Title="Radionoise Editor" Height="568.978" Width="1047.421" SizeChanged="Window_SizeChanged" Closing="Window_Closing" WindowStyle="None" ResizeMode="NoResize">
     <Window.Resources>
         <Style TargetType="{x:Type Paragraph}">
             <Setter Property="Margin" Value="0"/>
@@ -23,13 +23,13 @@
                     <Path x:Name="GlyphPanel" Data="F1M10,1.2L4.7,9.1 4.5,9.1 0,5.2 1.3,3.5 4.3,6.1 8.3,0 10,1.2z" Fill="{TemplateBinding Foreground}" FlowDirection="LeftToRight" Margin="3" Visibility="Collapsed" VerticalAlignment="Center"/>
                     <ContentPresenter ContentTemplate="{TemplateBinding HeaderTemplate}" Content="{TemplateBinding Header}" Grid.Column="1" ContentStringFormat="{TemplateBinding HeaderStringFormat}" ContentSource="Header" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
                     <Popup x:Name="PART_Popup" AllowsTransparency="True" Focusable="False" IsOpen="{Binding IsSubmenuOpen, RelativeSource={RelativeSource TemplatedParent}}" PopupAnimation="{DynamicResource {x:Static SystemParameters.MenuPopupAnimationKey}}" Placement="Bottom">
-                        <Border x:Name="SubMenuBorder" BorderBrush="#FF252526" BorderThickness="1" Background="#FF252526" Padding="2">
+                        <Border x:Name="SubMenuBorder" BorderBrush="#FF252526" BorderThickness="1" Background="#FF424242" Padding="2">
                             <ScrollViewer x:Name="SubMenuScrollViewer" Style="{DynamicResource {ComponentResourceKey ResourceId=MenuScrollViewer, TypeInTargetAssembly={x:Type FrameworkElement}}}">
                                 <Grid RenderOptions.ClearTypeHint="Enabled">
                                     <Canvas HorizontalAlignment="Left" Height="0" VerticalAlignment="Top" Width="0">
                                         <Rectangle x:Name="OpaqueRect" Fill="{Binding Background, ElementName=SubMenuBorder}" Height="{Binding ActualHeight, ElementName=SubMenuBorder}" Width="{Binding ActualWidth, ElementName=SubMenuBorder}"/>
                                     </Canvas>
-                                    <Rectangle Fill="#FFD7D7D7" HorizontalAlignment="Left" Margin="29,2,0,2" Width="1"/>
+                                    <Rectangle Fill="#FF424242" HorizontalAlignment="Left" Margin="29,2,0,2" Width="1"/>
                                     <ItemsPresenter x:Name="ItemsPresenter" KeyboardNavigation.DirectionalNavigation="Cycle" Grid.IsSharedSizeScope="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" KeyboardNavigation.TabNavigation="Cycle"/>
                                 </Grid>
                             </ScrollViewer>
@@ -39,17 +39,9 @@
             </Border>
         </ControlTemplate>
     </Window.Resources>
-    <x:Code>
-        <![CDATA[            
-        private void WindowMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            DragMove();
-        }
-    ]]>
-    </x:Code>
     <Grid Margin="0,0,0,0" Background="#FF252526">
         <Grid.RowDefinitions>
-            <RowDefinition Height="18"/>
+            <RowDefinition Height="30"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -89,29 +81,32 @@
             </TabItem>
         </TabControl>
 
-        <Grid Grid.ColumnSpan="2" Background="#FF3F3F46">
-            <Menu DockPanel.Dock="Top" Background="#FF252526" >
-                <MenuItem Header="File" Foreground="White" Background="#FF252526" BorderBrush="#FF252526" Template="{DynamicResource MenuItemControlTemplate1}">
-                    <MenuItem x:Name="New" Header="_New" Click="NewItem_Click" Background="#FF252526" BorderBrush="#FF252526" />
-                    <MenuItem x:Name="Open" Header="_Open" Background="#FF252526" BorderBrush="#FF252526" Click="Open_Click"/>
-                    <MenuItem x:Name="OpenOnline" Header="_Open Online" Background="#FF252526" BorderBrush="#FF252526" Click="Open_Click"/>
+        <Grid Grid.ColumnSpan="2" Background="#FF424242">
+            <Menu VerticalAlignment="Center" Background="#FF424242" Margin="0,0,0,0" MouseLeftButtonDown="Menu_MouseLeftButtonDown" PreviewMouseLeftButtonDown="Menu_PreviewMouseLeftButtonDown">
+                <Image Source="Resources/RN_Logo.png" Width="18" Height="18"  />
+                <MenuItem Header="File" Foreground="White" Background="#FF424242" BorderBrush="#FF424242" Template="{DynamicResource MenuItemControlTemplate1}">
+                    <MenuItem x:Name="New" Header="_New" Click="NewItem_Click" Background="#FF424242" BorderBrush="#FF424242" />
+                    <MenuItem x:Name="Open" Header="_Open" Background="#FF424242" BorderBrush="#FF424242" Click="Open_Click"/>
+                    <MenuItem x:Name="OpenOnline" Header="_Open Online" Background="#FF424242" BorderBrush="#FF424242" Click="Open_Click"/>
                     <!--<MenuItem x:Name="OpenFolder" Header="_Open Folder" Background="#FF252526" BorderBrush="#FF252526" Click="OpenFolder_Click" /> -->
-                    <MenuItem x:Name="Save" Header="_Save" Background="#FF252526" BorderBrush="#FF252526" Click="Save_Click"/>
-                    <MenuItem x:Name="SaveAs" Header="_Save As" Background="#FF252526" BorderBrush="#FF252526" Click="SaveAs_Click"/>
+                    <MenuItem x:Name="Save" Header="_Save" Background="#FF424242" BorderBrush="#FF424242" Click="Save_Click"/>
+                    <MenuItem x:Name="SaveAs" Header="_Save As" Background="#FF424242" BorderBrush="#FF424242" Click="SaveAs_Click"/>
                     <Separator/>
-                    <MenuItem x:Name="Exit" Header="_Exit" Background="#FF252526" BorderBrush="#FF252526" Click="Exit_Click"/>
+                    <MenuItem x:Name="Exit" Header="_Exit" Background="#FF424242" BorderBrush="#FF424242" Click="Exit_Click"/>
                 </MenuItem>
-                <MenuItem Header="_Edit" Foreground="White" Background="#FF252526" Template="{DynamicResource MenuItemControlTemplate1}">
-                    <MenuItem x:Name="Cut" Header="_Cut" Background="#FF252526" BorderBrush="#FF252526" Click="Cut_Click" />
-                    <MenuItem x:Name="Paste" Header="_Paste" Background="#FF252526" BorderBrush="#FF252526" Click="Paste_Click" />
-                    <MenuItem x:Name="Undo" Header="_Undo" Background="#FF252526"  BorderBrush="#FF252526" Click="Undo_Click"/>
-                    <MenuItem x:Name="Redo" Header="_Redo" Background="#FF252526" BorderBrush="#FF252526" Click="Redo_Click" />
+                <MenuItem Header="_Edit" Foreground="White" Background="#FF424242" Template="{DynamicResource MenuItemControlTemplate1}">
+                    <MenuItem x:Name="Cut" Header="_Cut" Background="#FF424242" BorderBrush="#FF424242" Click="Cut_Click" />
+                    <MenuItem x:Name="Paste" Header="_Paste" Background="#FF424242" BorderBrush="#FF424242" Click="Paste_Click" />
+                    <MenuItem x:Name="Undo" Header="_Undo" Background="#FF424242"  BorderBrush="#FF424242" Click="Undo_Click"/>
+                    <MenuItem x:Name="Redo" Header="_Redo" Background="#FF424242" BorderBrush="#FF424242" Click="Redo_Click" />
                 </MenuItem>
                 <MenuItem Header="_Tools" Foreground="White" Template="{DynamicResource MenuItemControlTemplate1}">
-                    <MenuItem x:Name="Sett" Header="_Settings" Background="#FF252526" BorderBrush="#FF252526" Click="Settings_Click" />
-                    <MenuItem x:Name="Trans" Header="_Translator" Background="#FF252526" BorderBrush="#FF252526" Click="Trans_Click" />
+                    <MenuItem x:Name="Sett" Header="_Settings" Background="#FF424242" BorderBrush="#FF424242" Click="Settings_Click" />
+                    <MenuItem x:Name="Trans" Header="_Translator" Background="#FF424242" BorderBrush="#FF424242" Click="Trans_Click" />
                 </MenuItem>
+
             </Menu>
+            <TextBlock Text="X" Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown" />
         </Grid>
 
         <avalonedit:TextEditor ShowLineNumbers="True" SyntaxHighlighting="C++" x:Name="CodeEditor" FontFamily="Consolas" Padding="2,0,0,0" Grid.Column="1" Grid.Row="1" Foreground="White" TextInput="CodeEditor_TextInput" PreviewTextInput="CodeEditor_PreviewTextInput" IsEnabled="False" Background="{x:Null}" Margin="0,0,0,-15" />
