@@ -50,14 +50,39 @@
             <ColumnDefinition Width="107*"/>
             <ColumnDefinition Width="416*"/>
         </Grid.ColumnDefinitions>
-        <Grid Grid.ColumnSpan="1" Grid.Row="1">
+        <Grid Name="GridInit" Grid.ColumnSpan="1" Grid.Row="1" Opacity="0" IsHitTestVisible="False">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="28*"/>
                 <ColumnDefinition Width="158*"/>
                 <ColumnDefinition Width="28*"/>
             </Grid.ColumnDefinitions>
-            <Image Source="Resources/RN_Logo.png" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,50,0,0" Grid.Column="1" />
+            <StackPanel Grid.Column="1">
+                <Image Source="Resources/RN_Logo.png" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,50,0,0" Grid.Column="1" />
+                <Image Source="Resources/Radionoise.png" Grid.Column="1" />
+            </StackPanel>
+            <StackPanel Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,10">
+                <TextBlock Text="새로 만들기" Margin="0,0,0,10" HorizontalAlignment="Center" Foreground="White"/>
+                <TextBlock Text="파일 열기" Margin="0,0,0,10" HorizontalAlignment="Center" Foreground="White" />
+                <TextBlock Text="리포지토리 검색" Margin="0,0,0,10" HorizontalAlignment="Center" Foreground="White" />
+            </StackPanel>
         </Grid>
+        <Grid Name="GridOpened" Grid.ColumnSpan="1" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.3*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10*"/>
+                <ColumnDefinition Width="158*"/>
+                <ColumnDefinition Width="10*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="1" Grid.RowSpan="3">
+                <Image Source="Resources/Radionoise.png" Grid.Column="1" Grid.RowSpan="1"/>
+                <Grid Grid.ColumnSpan="1" Grid.RowSpan="1"></Grid>
+            </StackPanel>
+        </Grid>
+
         <Grid Grid.ColumnSpan="2" Background="#FF424242">
             <Menu VerticalAlignment="Center" Background="#FF424242" Margin="10,0,0,0" MouseLeftButtonDown="Menu_MouseLeftButtonDown" PreviewMouseLeftButtonDown="Menu_PreviewMouseLeftButtonDown" PreviewMouseMove="Menu_PreviewMouseMove" PreviewMouseLeftButtonUp="Menu_PreviewMouseLeftButtonUp">
                 <Image Source="Resources/RN_Logo.png" Width="25" Height="25"  />
@@ -90,7 +115,7 @@
 
             </Menu>
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0" Orientation="Horizontal">
-                <Button Name="BtnMinimize" Content="━" Width="20" Height="20" Background="Transparent" BorderBrush="Transparent" Foreground="White" Click="BtnMinimize_Click" /> 
+                <Button Name="BtnMinimize" Content="━" Width="20" Height="20" Background="Transparent" BorderBrush="Transparent" Foreground="White" Click="BtnMinimize_Click" />
                 <Button Name="BtnMaximize" Content="ㅁ" Width="20" Height="20" Margin="0,0,0,0" Background="Transparent" BorderBrush="Transparent" Foreground="White" Click="BtnMaximize_Click" />
                 <Button Name="BtnClose" VerticalAlignment="Center" HorizontalAlignment="Right" Content="X" Width="20" Height="20" Margin="0,0,0,0" Background="Transparent" BorderBrush="Transparent" Foreground="White" Click="BtnClose_Click" />
             </StackPanel>
