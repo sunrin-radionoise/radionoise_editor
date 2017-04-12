@@ -342,7 +342,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\account.jpg" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\RN_Logo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

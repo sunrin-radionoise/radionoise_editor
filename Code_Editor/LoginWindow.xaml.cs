@@ -71,6 +71,7 @@ namespace Code_Editor
             {
                 MainWindow m = new MainWindow();
                 m.Show();
+                Close();
             }
             else
             {

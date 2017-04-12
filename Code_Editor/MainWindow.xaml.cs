@@ -29,6 +29,7 @@ namespace Code_Editor
     public partial class MainWindow : Window
     {
         #region Variables
+        public bool IsMaximized = false;
         static readonly string Extensions = "C#|*.cs|" + "JavaScript|*.js|" +
             "HTML|*.htm|HTML|*.html|" +
             "ASP/XHTML|*.asp|ASP/XHTML|*.aspx|ASP/XHTML|*.asax|ASP/XHTML|*.asmx|ASP/XHTML|*.ascx|ASP/XHTML|*.master|" +
@@ -343,16 +344,54 @@ namespace Code_Editor
         private void Menu_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             DragMove();
+
         }
 
         private void Menu_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            DragMove();
+            if(FileM.IsMouseOver != true && Edit.IsMouseOver != true && Tools.IsMouseOver != true)
+            {
+                DragMove();
+            }
         }
 
         private void TextBlock_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             Close();
+        }
+
+        private void Menu_PreviewMouseMove(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void Menu_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void BtnMinimize_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
+
+        private void BtnClose_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void BtnMaximize_Click(object sender, RoutedEventArgs e)
+        {
+            if(IsMaximized)
+            {
+                WindowState = WindowState.Normal;
+                IsMaximized = false;
+            }
+            else
+            {
+                WindowState = WindowState.Maximized;
+                IsMaximized = true;
+            }
         }
     }
 }

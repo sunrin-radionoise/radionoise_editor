@@ -7,7 +7,9 @@
         xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
         xmlns:avalonedit="http://icsharpcode.net/sharpdevelop/avalonedit" x:Class="Code_Editor.MainWindow"
         mc:Ignorable="d"
-        Title="Radionoise Editor" Height="568.978" Width="1047.421" SizeChanged="Window_SizeChanged" Closing="Window_Closing" WindowStyle="None" ResizeMode="NoResize">
+        AllowsTransparency="True"
+    
+        Title="Radionoise Editor" Height="568.978" Width="1047.421" SizeChanged="Window_SizeChanged" Closing="Window_Closing" WindowStyle="None" ResizeMode="CanResizeWithGrip">
     <Window.Resources>
         <Style TargetType="{x:Type Paragraph}">
             <Setter Property="Margin" Value="0"/>
@@ -41,18 +43,31 @@
     </Window.Resources>
     <Grid Margin="0,0,0,0" Background="#FF252526">
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="50"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="107*"/>
             <ColumnDefinition Width="416*"/>
         </Grid.ColumnDefinitions>
-        <Grid Grid.ColumnSpan="1" Grid.Row="1"></Grid>
+        <Grid Grid.ColumnSpan="1" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="28*"/>
+                <ColumnDefinition Width="158*"/>
+                <ColumnDefinition Width="28*"/>
+            </Grid.ColumnDefinitions>
+            <Image Source="Resources/RN_Logo.png" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,50,0,0" Grid.Column="1" />
+        </Grid>
         <Grid Grid.ColumnSpan="2" Background="#FF424242">
-            <Menu VerticalAlignment="Center" Background="#FF424242" Margin="10,0,0,0" MouseLeftButtonDown="Menu_MouseLeftButtonDown" PreviewMouseLeftButtonDown="Menu_PreviewMouseLeftButtonDown">
-                <Image Source="Resources/RN_Logo.png" Width="18" Height="18"  />
-                <MenuItem Header="파일" Foreground="White" Background="#FF424242" BorderBrush="#FF424242" Template="{DynamicResource MenuItemControlTemplate1}">
+            <Menu VerticalAlignment="Center" Background="#FF424242" Margin="10,0,0,0" MouseLeftButtonDown="Menu_MouseLeftButtonDown" PreviewMouseLeftButtonDown="Menu_PreviewMouseLeftButtonDown" PreviewMouseMove="Menu_PreviewMouseMove" PreviewMouseLeftButtonUp="Menu_PreviewMouseLeftButtonUp">
+                <Image Source="Resources/RN_Logo.png" Width="25" Height="25"  />
+                <Ellipse Width="30" Height="30" >
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="Resources/account.jpg"/>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <TextBlock Margin="-10,0,0,0" Text="Account" Foreground="White" FontSize="15"/>
+                <MenuItem Name="FileM"  Header="파일" FontSize="15" Foreground="White" Background="#FF424242" BorderBrush="#FF424242" Template="{DynamicResource MenuItemControlTemplate1}">
                     <MenuItem x:Name="New" Header="_New" Click="NewItem_Click" Background="#FF424242" BorderBrush="#FF424242" />
                     <MenuItem x:Name="Open" Header="_Open" Background="#FF424242" BorderBrush="#FF424242" Click="Open_Click"/>
                     <MenuItem x:Name="OpenOnline" Header="_Open Online" Background="#FF424242" BorderBrush="#FF424242" Click="Open_Click"/>
@@ -62,19 +77,23 @@
                     <Separator/>
                     <MenuItem x:Name="Exit" Header="_Exit" Background="#FF424242" BorderBrush="#FF424242" Click="Exit_Click"/>
                 </MenuItem>
-                <MenuItem Header="편집" Foreground="White" Background="#FF424242" Template="{DynamicResource MenuItemControlTemplate1}">
+                <MenuItem Name="Edit" Header="편집" FontSize="15" Foreground="White" Background="#FF424242" Template="{DynamicResource MenuItemControlTemplate1}">
                     <MenuItem x:Name="Cut" Header="_Cut" Background="#FF424242" BorderBrush="#FF424242" Click="Cut_Click" />
                     <MenuItem x:Name="Paste" Header="_Paste" Background="#FF424242" BorderBrush="#FF424242" Click="Paste_Click" />
                     <MenuItem x:Name="Undo" Header="_Undo" Background="#FF424242"  BorderBrush="#FF424242" Click="Undo_Click"/>
                     <MenuItem x:Name="Redo" Header="_Redo" Background="#FF424242" BorderBrush="#FF424242" Click="Redo_Click" />
                 </MenuItem>
-                <MenuItem Header="도구" Foreground="White" Template="{DynamicResource MenuItemControlTemplate1}">
+                <MenuItem Name="Tools" Header="도구" FontSize="15" Foreground="White" Template="{DynamicResource MenuItemControlTemplate1}">
                     <MenuItem x:Name="Sett" Header="_Settings" Background="#FF424242" BorderBrush="#FF424242" Click="Settings_Click" />
                     <MenuItem x:Name="Trans" Header="_Translator" Background="#FF424242" BorderBrush="#FF424242" Click="Trans_Click" />
                 </MenuItem>
 
             </Menu>
-            <TextBlock Text="X" Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown" />
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0" Orientation="Horizontal">
+                <Button Name="BtnMinimize" Content="━" Width="20" Height="20" Background="Transparent" BorderBrush="Transparent" Foreground="White" Click="BtnMinimize_Click" /> 
+                <Button Name="BtnMaximize" Content="ㅁ" Width="20" Height="20" Margin="0,0,0,0" Background="Transparent" BorderBrush="Transparent" Foreground="White" Click="BtnMaximize_Click" />
+                <Button Name="BtnClose" VerticalAlignment="Center" HorizontalAlignment="Right" Content="X" Width="20" Height="20" Margin="0,0,0,0" Background="Transparent" BorderBrush="Transparent" Foreground="White" Click="BtnClose_Click" />
+            </StackPanel>
         </Grid>
 
         <avalonedit:TextEditor ShowLineNumbers="True" SyntaxHighlighting="C++" x:Name="CodeEditor" FontFamily="Consolas" Padding="2,0,0,0" Grid.Column="1" Grid.Row="1" Foreground="White" TextInput="CodeEditor_TextInput" PreviewTextInput="CodeEditor_PreviewTextInput" IsEnabled="False" Background="{x:Null}" Margin="0,0,0,-15" />
