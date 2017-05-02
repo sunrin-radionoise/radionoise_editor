@@ -1,24 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Win32;
+using Quobject.SocketIoClientDotNet.Client;
+using System;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using SocketIOClient;
-using Microsoft.Win32;
-using Quobject.SocketIoClientDotNet.Client;
-using System.Threading;
-using System.Windows.Threading;
-using System.IO;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Threading;
 
 namespace Code_Editor
 {
@@ -58,7 +47,6 @@ namespace Code_Editor
             if (!Setting.OnlineMode)
                 MessageBox.Show("서버는 현재 오프라인 상태입니다.", "오프라인 모드", MessageBoxButton.OK, MessageBoxImage.Information);
             InitializeComponent();
-
             #region Initialize
             _SettingManager.Load_Setting();
             ApplySetting();
@@ -71,15 +59,7 @@ namespace Code_Editor
             saveTimer.Start();
             sd.Filter = "C# File|*.cs|Python File|*.py|HTML File|*.html|CSS File|*.css|JS File|*.js|C File|*.c|C++ File|*.cpp|Header File|*.h|Text File|*.txt";
             sd.Title = "저장";
-            //socket.On(Socket.EVENT_CONNECT, () => { });
-            //socket.On("message", (msg) =>
-            //{
-            //    Console.WriteLine(msg);
-            //    recTXT += (msg + "\r\n");
-            //});
-            //socket.Connect();
             #endregion
-            //Console.WriteLine("Message Send");
         }
         #region EventHandler
         private void saveTimer_Tick(object sender, EventArgs e)
