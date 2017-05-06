@@ -23,8 +23,6 @@ namespace Code_Editor
     public partial class LoginWindow : Window
     {
         public string Current_Page = "Main";
-        private static bool isReg = false;
-        int picCnt = 0;
         private NetworkInterface _NetworkInterface = new NetworkInterface();
         int curTime = DateTime.Now.Hour;
         static string curPath = System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\Resources\Back\";
@@ -63,12 +61,10 @@ namespace Code_Editor
         private void Login_Btn_Click(object sender, RoutedEventArgs e)
         {
             //로그인화면의 로그인버튼을 누른것이다.
-            //Storyboard s1 = (Storyboard)FindResource("DLogin");
-            //Storyboard s2 = (Storyboard)FindResource("AMain");
-            //BeginStoryboard(s1);
-            //BeginStoryboard(s2);
             if(NetworkInterface.Login(LoginID.Text, LoginPW.Text))
             {
+                Account.ID = LoginID.Text;
+                Account.PW = LoginPW.Text;
                 MainWindow m = new MainWindow();
                 m.Show();
                 Close();

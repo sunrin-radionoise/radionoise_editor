@@ -115,6 +115,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Account.cs" />
     <Compile Include="AddOpponent.xaml.cs">
       <DependentUpon>AddOpponent.xaml</DependentUpon>
     </Compile>

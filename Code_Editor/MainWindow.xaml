@@ -17,6 +17,20 @@
         <Style TargetType="{x:Type TreeViewItem}">
             <Setter Property="Foreground" Value="White"/>
         </Style>
+        <Style TargetType="{x:Type ScrollBar}">
+            <Setter Property="Background" Value="#252525"/>
+            <Setter Property="BorderBrush" Value="#252525"/>
+            <Setter Property="Foreground" Value="#353535"/>
+        </Style>
+        <Style TargetType="{x:Type Thumb}">
+            <Setter Property="Background" Value="#353535"/>
+            <Setter Property="BorderBrush" Value="#353535"/>
+        </Style>
+        <Style TargetType="{x:Type RepeatButton}">
+            <Setter Property="Background" Value="#252525" />
+            <Setter Property="BorderBrush" Value="#252525" />
+            <Setter Property="BorderThickness" Value="1" />
+        </Style>
         <ControlTemplate x:Key="MenuItemControlTemplate1" TargetType="{x:Type MenuItem}">
             <Border x:Name="templateRoot" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
                 <Grid VerticalAlignment="Center">
@@ -84,21 +98,25 @@
                 <Image Source="Resources/Radionoise.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1"/>
             </StackPanel>
             <TreeView Name="SolutionTree" Margin="0,0,0,10" Grid.Column="1" Grid.Row="1" Background="Transparent" BorderBrush="Transparent">
-                
+                <TreeViewItem Header="File1" />
+                <TreeViewItem Header="Folder1">
+                    <TreeViewItem Header="File2"/>
+                </TreeViewItem>
             </TreeView>
             <WebBrowser Grid.Column="1" Grid.Row="2" Margin="0,0,0,10"></WebBrowser>
         </Grid>
 
         <Grid Grid.ColumnSpan="2" Background="#FF424242">
-            <Menu VerticalAlignment="Center" Background="#FF424242" Margin="10,0,0,0" MouseLeftButtonDown="Menu_MouseLeftButtonDown" PreviewMouseLeftButtonDown="Menu_PreviewMouseLeftButtonDown" PreviewMouseMove="Menu_PreviewMouseMove" PreviewMouseLeftButtonUp="Menu_PreviewMouseLeftButtonUp">
+            <Menu VerticalAlignment="Center" Background="#FF424242" Margin="10,0,0,0" MouseLeftButtonDown="Menu_MouseLeftButtonDown" PreviewMouseLeftButtonDown="Menu_PreviewMouseLeftButtonDown" PreviewMouseMove="Menu_PreviewMouseMove" PreviewMouseLeftButtonUp="Menu_PreviewMouseLeftButtonUp" PreviewMouseDoubleClick="Title_DoubleClick">
                 <Image Source="Resources/RN_Logo.png" Width="25" Height="25"  />
+
                 <StackPanel Orientation="Horizontal">
-                <Ellipse Width="30" Height="30" >
-                    <Ellipse.Fill>
-                        <ImageBrush ImageSource="Resources/account.jpg"/>
-                    </Ellipse.Fill>
-                </Ellipse>
-                <TextBlock Margin="5,0,0,0" Text="Account" Foreground="White" FontSize="15" VerticalAlignment="Center"/>
+                    <Ellipse Name="UserPic" Width="30" Height="30" Margin="5,0">
+                        <Ellipse.Fill>
+                            <ImageBrush ImageSource="Resources/account.jpg"/>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <TextBlock Name="TextAccount" Margin="10,0,10,0" Text="" Foreground="White" FontSize="15" VerticalAlignment="Center"/>
                 </StackPanel>
                 <MenuItem Name="FileM"  Header="파일" FontSize="15" Foreground="White" Background="#FF424242" BorderBrush="#FF424242" Template="{DynamicResource MenuItemControlTemplate1}">
                     <MenuItem x:Name="New" Header="_New" Click="NewItem_Click" Background="#FF424242" BorderBrush="#FF424242" />
@@ -128,8 +146,6 @@
                 <Button Name="BtnClose" VerticalAlignment="Center" HorizontalAlignment="Right" Content="X" Width="20" Height="20" Margin="0,0,0,0" Background="Transparent" BorderBrush="Transparent" Foreground="White" Click="BtnClose_Click" />
             </StackPanel>
         </Grid>
-
-        <avalonedit:TextEditor ShowLineNumbers="True" SyntaxHighlighting="C++" x:Name="CodeEditor" FontFamily="Consolas" Padding="2,0,0,0" Grid.Column="1" Grid.Row="1" Foreground="White" TextInput="CodeEditor_TextInput" PreviewTextInput="CodeEditor_PreviewTextInput" IsEnabled="False" Background="{x:Null}" Margin="0,0,0,-15" />
-
+        <avalonedit:TextEditor ShowLineNumbers="True" SyntaxHighlighting="C++" x:Name="CodeEditor" FontFamily="Consolas" Padding="2,0,0,0" Grid.Column="1" Grid.Row="1" Foreground="White" TextInput="CodeEditor_TextInput" PreviewTextInput="CodeEditor_PreviewTextInput" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"  IsEnabled="False" Background="{x:Null}" Margin="0,0,0,0" />
     </Grid>
 </Window>

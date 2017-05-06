@@ -57,6 +57,7 @@ namespace Code_Editor
             saveTimer.Interval = TimeSpan.FromMinutes(Setting.SaveTime);
             saveTimer.Tick += new EventHandler(saveTimer_Tick);
             saveTimer.Start();
+            TextAccount.Text = Account.ID; //Fucking WHy can't see
             sd.Filter = "C# File|*.cs|Python File|*.py|HTML File|*.html|CSS File|*.css|JS File|*.js|C File|*.c|C++ File|*.cpp|Header File|*.h|Text File|*.txt";
             sd.Title = "저장";
             #endregion
@@ -362,7 +363,17 @@ namespace Code_Editor
 
         private void BtnMaximize_Click(object sender, RoutedEventArgs e)
         {
-            if(IsMaximized)
+            Maximize();          
+        }
+
+        private void Title_DoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Maximize();
+        }
+
+        private void Maximize()
+        {
+            if (IsMaximized)
             {
                 WindowState = WindowState.Normal;
                 IsMaximized = false;
