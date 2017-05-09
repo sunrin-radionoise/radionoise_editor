@@ -1,24 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Win32;
+using Quobject.SocketIoClientDotNet.Client;
+using System;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using SocketIOClient;
-using Microsoft.Win32;
-using Quobject.SocketIoClientDotNet.Client;
-using System.Threading;
-using System.Windows.Threading;
-using System.IO;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Threading;
 
 namespace Code_Editor
 {
@@ -29,6 +18,7 @@ namespace Code_Editor
     public partial class MainWindow : Window
     {
         #region Variables
+        public bool IsMaximized = false;
         static readonly string Extensions = "C#|*.cs|" + "JavaScript|*.js|" +
             "HTML|*.htm|HTML|*.html|" +
             "ASP/XHTML|*.asp|ASP/XHTML|*.aspx|ASP/XHTML|*.asax|ASP/XHTML|*.asmx|ASP/XHTML|*.ascx|ASP/XHTML|*.master|" +
@@ -57,7 +47,6 @@ namespace Code_Editor
             if (!Setting.OnlineMode)
                 MessageBox.Show("서버는 현재 오프라인 상태입니다.", "오프라인 모드", MessageBoxButton.OK, MessageBoxImage.Information);
             InitializeComponent();
-
             #region Initialize
             _SettingManager.Load_Setting();
             ApplySetting();
@@ -68,17 +57,10 @@ namespace Code_Editor
             saveTimer.Interval = TimeSpan.FromMinutes(Setting.SaveTime);
             saveTimer.Tick += new EventHandler(saveTimer_Tick);
             saveTimer.Start();
+            TextAccount.Text = Account.ID; //Fucking WHy can't see
             sd.Filter = "C# File|*.cs|Python File|*.py|HTML File|*.html|CSS File|*.css|JS File|*.js|C File|*.c|C++ File|*.cpp|Header File|*.h|Text File|*.txt";
             sd.Title = "저장";
-            //socket.On(Socket.EVENT_CONNECT, () => { });
-            //socket.On("message", (msg) =>
-            //{
-            //    Console.WriteLine(msg);
-            //    recTXT += (msg + "\r\n");
-            //});
-            //socket.Connect();
             #endregion
-            //Console.WriteLine("Message Send");
         }
         #region EventHandler
         private void saveTimer_Tick(object sender, EventArgs e)
@@ -338,6 +320,69 @@ namespace Code_Editor
         private void lstFolder_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void Menu_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+
+        }
+
+        private void Menu_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if(FileM.IsMouseOver != true && Edit.IsMouseOver != true && Tools.IsMouseOver != true)
+            {
+                DragMove();
+            }
+        }
+
+        private void TextBlock_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Close();
+        }
+
+        private void Menu_PreviewMouseMove(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void Menu_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void BtnMinimize_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
+
+        private void BtnClose_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void BtnMaximize_Click(object sender, RoutedEventArgs e)
+        {
+            Maximize();          
+        }
+
+        private void Title_DoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Maximize();
+        }
+
+        private void Maximize()
+        {
+            if (IsMaximized)
+            {
+                WindowState = WindowState.Normal;
+                IsMaximized = false;
+            }
+            else
+            {
+                WindowState = WindowState.Maximized;
+                IsMaximized = true;
+            }
         }
     }
 }

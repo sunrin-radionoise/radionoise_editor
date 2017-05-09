@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Code_Editor
 {
-    class GItem
+    interface GItem
     {
-        string name;
-        string type;
-        List<GItem> subitem;
+        string Name { get; set; }
+        string Type { get; set; }
+        List<GItem> Subitem { get; set; }
     }
 }
