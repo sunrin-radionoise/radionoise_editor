@@ -19,12 +19,19 @@ namespace Code_Editor
     {
         #region Variables
         public bool IsMaximized = false;
+        static readonly string OpenExtensions = "C#|*.cs|" + "JavaScript|*.js|" +
+    "HTML|*.htm|HTML|*.html|" +
+    "ASP/XHTML|*.asp|ASP/XHTML|*.aspx|ASP/XHTML|*.asax|ASP/XHTML|*.asmx|ASP/XHTML|*.ascx|ASP/XHTML|*.master|" +
+    "Boo|*.boo|" + "Coco|*.atg|" + "CSS|*.css|" + "C++|*.c|C++|*.h|C++|*.cc|C++|*.cpp|C++|*.hpp|" +
+    "Java|*.java|" + "PHP|*.php|" + "VBNET|*.vb|" +
+    "XML|.xml;.xsl;.xslt;.xsd;.manifest;.config;.addin;.xshd;.wxs;.wxi;.wxl;.proj;.csproj;.vbproj;.ilproj;.booproj;.build;.xfrm;.targets;.xaml;.xpt;.xft;.map|XML|.wsdl|XML|.disco|XML|.ps1xml|XML|.nuspec";
+
         static readonly string Extensions = "C#|*.cs|" + "JavaScript|*.js|" +
             "HTML|*.htm|HTML|*.html|" +
             "ASP/XHTML|*.asp|ASP/XHTML|*.aspx|ASP/XHTML|*.asax|ASP/XHTML|*.asmx|ASP/XHTML|*.ascx|ASP/XHTML|*.master|" +
             "Boo|*.boo|" + "Coco|*.atg|" + "CSS|*.css|" + "C++|*.c|C++|*.h|C++|*.cc|C++|*.cpp|C++|*.hpp|" +
             "Java|*.java|" + "PHP|*.php|" + "VBNET|*.vb|" +
-            "XML|.xml|XML|.xsl|XML|.xslt|XML|.xsd|XML|.manifest|XML|.config|XML|.addin|XML|.xshd|XML|.wxs|XML|.wxi|XML|.wxl|XML|.proj|XML|.csproj|XML|.vbproj|XML|.ilproj|XML|.booproj|XML|.build|XML|.xfrm|XML|.targets|XML|.xaml|XML|.xpt|XML|.xft|XML|.map|XML|.wsdl|XML|.disco|XML|.ps1xml|XML|.nuspec";
+            "XML|*.xml|XML|*.xsl|XML|*.xslt|XML|*.xsd|XML|*.manifest|XML|*.config|XML|*.addin|XML|*.xshd|XML|*.wxs|XML|*.wxi|XML|*.wxl|XML|*.proj|XML|*.csproj|XML|*.vbproj|XML|*.ilproj|XML|*.booproj|XML|*.build|XML|*.xfrm|XML|*.targets|XML|*.xaml|XML|*.xpt|XML|*.xft|XML|*.map|XML|*.wsdl|XML|*.disco|XML|*.ps1xml|XML|*.nuspec";
         SettingManager _SettingManager = new SettingManager();
         public SaveFileDialog sd = new SaveFileDialog();
         DispatcherTimer timer = new DispatcherTimer();
@@ -226,9 +233,9 @@ namespace Code_Editor
             string Ext = "";
             int cnt = 0;
             string t = "*" + filext;
-            for (int i = 1; i < 40; i += 2)
+            for (int i = 1; i < 97; i += 2)
             {
-                if (string.Equals(t, temp[i]))
+                if (t == temp[i])
                 {
                     Ext = temp[i];
                     cnt = i - 1;
