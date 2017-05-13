@@ -1,11 +1,11 @@
 ﻿<SyntaxDefinition name="CSS" extensions=".css" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
-	<Color name="Comment" foreground="Green" />
-	<Color name="String" foreground="Brown" />
-	<Color name="Selector" foreground="#FF569CD6" fontWeight="bold" />
-	<Color name="Class" foreground="Magenta" />
-	<Color name="Property" foreground="Red"/>
-	<Color name="Value" foreground="#FF569CD6" />
-	<Color name="Default" foreground="Pink" />
+	<Color name="Comment" foreground="Green" /> <!--주석-->
+	<Color name="String" foreground="Brown" /> <!--문자열-->
+	<Color name="Selector" foreground="#FF569CD6" fontWeight="bold" /> <!--선택자-->
+	<Color name="Class" foreground="#FF569CD6" /> <!--클래스-->
+	<Color name="Property" foreground="#FFB77FDB"/> <!--프로퍼티-->
+	<Color name="Value" foreground="#FFFFFFFF" />
+	<Color name="Default" foreground="#FF569CD6" />
 	<Color name="CurlyBraces" foreground="#FFFFFFFF" />
 	<Color name="Colon" foreground="#FFFFFFFF" />
 	<RuleSet ignoreCase="true">

@@ -7,17 +7,17 @@
   <Color name="String" foreground="Brown"  />
   <Color name="Character" foreground="Magenta"  />
   <Color name="Comment" foreground="Green" />
-  <Color name="Punctuation" foreground="#FF49FF49" />
-  <Color name="AccessKeywords" foreground="#FFFFFFFF" fontWeight="bold" />
+  <Color name="Punctuation" foreground="#FFFFFFFF" />
+  <Color name="AccessKeywords" foreground="#FF569CD6" fontWeight="bold" />
   <Color name="OperatorKeywords" foreground="Cyan" fontWeight="bold" />
   <Color name="SelectionStatements" foreground="#FF569CD6" fontWeight="bold" />
   <Color name="IterationStatements" foreground="#FF569CD6" fontWeight="bold" />
   <Color name="ExceptionHandlingStatements" foreground="Teal" fontWeight="bold" />
-  <Color name="ValueTypes" foreground="Red" fontWeight="bold" />
+  <Color name="ValueTypes" foreground="#FF569CD6" fontWeight="bold" />
   <Color name="ReferenceTypes" foreground="#FF569CD6" />
   <Color name="Void" foreground="#FF569CD6" />
   <Color name="JumpStatements" foreground="#FF569CD6" />
-  <Color name="Modifiers" foreground="Brown" />
+  <Color name="Modifiers" foreground="#FF569CD6" />
   <Color name="AccessModifiers" foreground="#FF569CD6" fontWeight="bold" />
   <Color name="Package" foreground="Green" fontWeight="bold" />
   <Color name="Literals" foreground="#FFFFFFFF" fontWeight="bold" />

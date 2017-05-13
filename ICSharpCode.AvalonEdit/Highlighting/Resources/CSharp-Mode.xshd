@@ -9,7 +9,7 @@
 	<Color name="ValueTypes" fontWeight="bold" foreground="#FF569CD6" exampleText="bool b = true;" />
 	<Color name="ReferenceTypes" foreground="#FF569CD6" exampleText="object o;" />
 	<Color name="MethodCall" foreground="#FF569CD6" fontWeight="bold" exampleText="o.ToString();"/>
-	<Color name="NumberLiteral" foreground="Lime" exampleText="3.1415f"/>
+	<Color name="NumberLiteral" foreground="White" exampleText="3.1415f"/>
 	<Color name="ThisOrBaseReference" fontWeight="bold" exampleText="this.Do(); base.Do();"/>
 	<Color name="NullOrValueKeywords" fontWeight="bold" exampleText="if (value == null)"/>
 	<Color name="Keywords" fontWeight="bold" foreground="#FF569CD6" exampleText="if (a) {} else {}"/>

@@ -4,11 +4,11 @@
 <SyntaxDefinition name="C++" extensions=".c;.h;.cc;.cpp;.hpp" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
 	<Color name="Comment" foreground="Green" />
 	<Color name="Character" foreground="Fuchsia" />
-	<Color name="String" foreground="Brown" />
-	<Color name="Preprocessor" foreground="Green" />
-	<Color name="Punctuation" foreground="#FF009900" />
-	<Color name="MethodName" foreground="MidnightBlue" fontWeight="bold" />
-	<Color name="Digits" foreground="#FF569CD6" />
+	<Color name="String" foreground="#FFD69D85" />
+	<Color name="Preprocessor" foreground="#FF808080" />
+	<Color name="Punctuation" foreground="#FFFFFFFF" />
+	<Color name="MethodName" foreground="#FFFFFFFF" fontWeight="bold" />
+	<Color name="Digits" foreground="White" />
 	<Color name="CompoundKeywords" foreground="#FF569CD6" fontWeight="bold" />
 	<Color name="This" foreground="#FF569CD6" fontWeight="bold" />
 	<Color name="Operators" foreground="#FF00CECE" fontWeight="bold" />
